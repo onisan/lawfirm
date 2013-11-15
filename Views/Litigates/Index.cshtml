@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_LITIGATES>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <!--<th>
+            @Html.DisplayNameFor(model => model.LITID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ADLAWID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CASEID)
+        </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.SDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RESULTS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       <!-- <td>
+            @Html.DisplayFor(modelItem => item.LITID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ADLAWID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CASEID)
+        </td>-->
+        <td>
+            @Html.DisplayFor(modelItem => item.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RESULTS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LITID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LITID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LITID })
+        </td>
+    </tr>
+}
+
+</table>
