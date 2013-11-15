@@ -1,6 +1,12 @@
 ﻿@model IEnumerable<MvcLawFirm.Models.NRBM_LITIGATES>
 
 @{
+    MvcLawFirm.Models.LawFirmDbContext db = new MvcLawFirm.Models.LawFirmDbContext();
+    var adLawyers =
+        from adlaw in db.NRBM_ADVERSELAWYER
+        join lit in db.NRBM_LITIGATES on adlaw.ADLAWID equals lit.ADLAWID
+        select new { FirstName = adlaw.FNAME, LastName = adlaw.LNAME, lit.SDATE, lit.EDATE, lit.RESULTS, lit.LITID };
+    
     ViewBag.Title = "Index";
 }
 
@@ -11,20 +17,14 @@
 </p>
 <table>
     <tr>
-        <!--<th>
-            @Html.DisplayNameFor(model => model.LITID)
+        <th>
+            ADVERSE LAWYER
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ADLAWID)
+            START DATE
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CASEID)
-        </th>-->
-        <th>
-            @Html.DisplayNameFor(model => model.SDATE)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EDATE)
+            END DATE
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RESULTS)
@@ -32,25 +32,19 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in adLawyers) {
     <tr>
-       <!-- <td>
-            @Html.DisplayFor(modelItem => item.LITID)
+        <td>
+            @Html.DisplayFor(adLawyersItem => item.FirstName) @Html.DisplayFor(adLawyersItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ADLAWID)
+            @Html.DisplayFor(adLawyersItem => item.SDATE)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CASEID)
-        </td>-->
-        <td>
-            @Html.DisplayFor(modelItem => item.SDATE)
+            @Html.DisplayFor(adLawyersItem => item.EDATE)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EDATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RESULTS)
+            @Html.DisplayFor(adLawyersItem => item.RESULTS)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.LITID }) |
