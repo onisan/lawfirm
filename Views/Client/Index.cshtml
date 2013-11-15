@@ -15,13 +15,15 @@
             @Html.DisplayNameFor(model => model.CLIENTID)
         </th>-->
         <th>
-            @Html.DisplayNameFor(model => model.FNAME)
+            NAME
+           <!-- @Html.DisplayNameFor(model => model.FNAME)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LNAME)
+            @Html.DisplayNameFor(model => model.LNAME)-->
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BUSNAME)
+            BUSINESS
+            <!--@Html.DisplayNameFor(model => model.BUSNAME)-->
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EMAIL)
@@ -41,10 +43,7 @@
             @Html.DisplayFor(modelItem => item.CLIENTID)
         </td>-->
         <td>
-            @Html.DisplayFor(modelItem => item.FNAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LNAME)
+            @Html.DisplayFor(modelItem => item.FNAME) @Html.DisplayFor(modelItem => item.LNAME)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BUSNAME)
