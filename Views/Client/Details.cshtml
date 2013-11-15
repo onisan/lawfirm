@@ -1,0 +1,64 @@
+﻿@model MvcLawFirm.Models.NRBM_CLIENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NRBM_CLIENT</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENTID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENTID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BUSNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BUSNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ADDRESS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ADDRESS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOB)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOB)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CLIENTID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

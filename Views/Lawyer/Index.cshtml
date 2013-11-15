@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_LAWYER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LAWID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAWID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSITION)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LAWID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LAWID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LAWID })
+        </td>
+    </tr>
+}
+
+</table>

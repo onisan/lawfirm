@@ -1,0 +1,71 @@
+﻿@model MvcLawFirm.Models.NRBM_CASE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NRBM_CASE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CASEID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CASEID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENTID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENTID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EVIDENCE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EVIDENCE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CATEGORY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CATEGORY)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LITIGATION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LITIGATION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOTES)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOTES)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CASEID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

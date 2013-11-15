@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="Model.Store.NRBM_ADVERSELAWYER" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_APPOINTMENT" EntityType="Model.Store.NRBM_APPOINTMENT" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_CASE" EntityType="Model.Store.NRBM_CASE" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_CLIENT" EntityType="Model.Store.NRBM_CLIENT" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_COUNSELS" EntityType="Model.Store.NRBM_COUNSELS" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_COURTAPPEARANCE" EntityType="Model.Store.NRBM_COURTAPPEARANCE" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_LAWYER" EntityType="Model.Store.NRBM_LAWYER" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_LITIGATES" EntityType="Model.Store.NRBM_LITIGATES" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_PHONE" EntityType="Model.Store.NRBM_PHONE" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_SETS" EntityType="Model.Store.NRBM_SETS" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_STAFF" EntityType="Model.Store.NRBM_STAFF" store:Type="Tables" Schema="CS342" />
+    <EntitySet Name="NRBM_WORKSFOR" EntityType="Model.Store.NRBM_WORKSFOR" store:Type="Tables" Schema="CS342" />
+  </EntityContainer>
+  <EntityType Name="NRBM_ADVERSELAWYER">
+    <Key>
+      <PropertyRef Name="ADLAWID" />
+    </Key>
+    <Property Name="ADLAWID" Type="number" Nullable="false" />
+    <Property Name="FNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="LNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="ADDRESS" Type="varchar2" MaxLength="255" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="255" />
+    <Property Name="PHONE" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NRBM_APPOINTMENT">
+    <Key>
+      <PropertyRef Name="APTID" />
+    </Key>
+    <Property Name="APTID" Type="number" Nullable="false" />
+    <Property Name="LAWID" Type="number" />
+    <Property Name="CASEID" Type="number" />
+    <Property Name="CLIENTID" Type="number" />
+    <Property Name="DATEON" Type="date" />
+    <Property Name="LOCATION" Type="varchar2" MaxLength="255" />
+    <Property Name="DESCRIPTION" Type="varchar2" MaxLength="510" />
+  </EntityType>
+  <EntityType Name="NRBM_CASE">
+    <Key>
+      <PropertyRef Name="CASEID" />
+    </Key>
+    <Property Name="CASEID" Type="number" Nullable="false" />
+    <Property Name="CLIENTID" Type="number" />
+    <Property Name="SDATE" Type="date" />
+    <Property Name="EDATE" Type="date" />
+    <Property Name="EVIDENCE" Type="varchar2" MaxLength="255" />
+    <Property Name="CATEGORY" Type="varchar2" />
+    <Property Name="LITIGATION" Type="varchar2" />
+    <Property Name="NOTES" Type="varchar2" />
+  </EntityType>
+  <EntityType Name="NRBM_CLIENT">
+    <Key>
+      <PropertyRef Name="CLIENTID" />
+    </Key>
+    <Property Name="CLIENTID" Type="number" Nullable="false" />
+    <Property Name="FNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="LNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="BUSNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="255" />
+    <Property Name="ADDRESS" Type="varchar2" MaxLength="255" />
+    <Property Name="DOB" Type="date" />
+  </EntityType>
+  <EntityType Name="NRBM_COUNSELS">
+    <Key>
+      <PropertyRef Name="COUNSELSID" />
+    </Key>
+    <Property Name="COUNSELSID" Type="number" Nullable="false" />
+    <Property Name="LAWID" Type="number" />
+    <Property Name="CLIENTID" Type="number" />
+    <Property Name="SDATE" Type="varchar2" MaxLength="100" />
+    <Property Name="EDATE" Type="varchar2" MaxLength="100" />
+    <Property Name="HOURS" Type="number" />
+    <Property Name="FEES" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NRBM_COURTAPPEARANCE">
+    <Key>
+      <PropertyRef Name="CAID" />
+    </Key>
+    <Property Name="CAID" Type="number" Nullable="false" />
+    <Property Name="CASEID" Type="number" />
+    <Property Name="CLIENTID" Type="number" />
+    <Property Name="LAWID" Type="number" />
+    <Property Name="ADLAWID" Type="number" />
+    <Property Name="DATEON" Type="date" />
+    <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NRBM_LAWYER">
+    <Key>
+      <PropertyRef Name="LAWID" />
+    </Key>
+    <Property Name="LAWID" Type="number" Nullable="false" />
+    <Property Name="FNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="LNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="POSITION" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NRBM_LITIGATES">
+    <Key>
+      <PropertyRef Name="LITID" />
+    </Key>
+    <Property Name="LITID" Type="number" Nullable="false" />
+    <Property Name="ADLAWID" Type="number" />
+    <Property Name="CASEID" Type="number" />
+    <Property Name="SDATE" Type="date" />
+    <Property Name="EDATE" Type="date" />
+    <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NRBM_PHONE">
+    <Key>
+      <PropertyRef Name="PHONEID" />
+    </Key>
+    <Property Name="PHONEID" Type="number" Nullable="false" />
+    <Property Name="CLIENTID" Type="number" />
+    <Property Name="HOME" Type="varchar2" MaxLength="100" />
+    <Property Name="CELL" Type="varchar2" MaxLength="100" />
+    <Property Name="BUSINESS" Type="varchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="NRBM_SETS">
+    <Key>
+      <PropertyRef Name="SETSID" />
+    </Key>
+    <Property Name="SETSID" Type="number" Nullable="false" />
+    <Property Name="STAFFID" Type="number" />
+    <Property Name="APTID" Type="number" />
+    <Property Name="DATESET" Type="date" />
+  </EntityType>
+  <EntityType Name="NRBM_STAFF">
+    <Key>
+      <PropertyRef Name="STAFFID" />
+    </Key>
+    <Property Name="STAFFID" Type="number" Nullable="false" />
+    <Property Name="FNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="LNAME" Type="varchar2" MaxLength="255" />
+    <Property Name="TITLE" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NRBM_WORKSFOR">
+    <Key>
+      <PropertyRef Name="WORKID" />
+    </Key>
+    <Property Name="WORKID" Type="number" Nullable="false" />
+    <Property Name="STAFFID" Type="number" />
+    <Property Name="LAWID" Type="number" />
+    <Property Name="SDATE" Type="date" />
+    <Property Name="EDATE" Type="date" />
+    <Property Name="SALARY" Type="number" />
+    <Property Name="HOURS" Type="number" />
+  </EntityType>
+</Schema>

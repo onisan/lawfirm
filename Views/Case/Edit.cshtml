@@ -1,0 +1,91 @@
+﻿@model MvcLawFirm.Models.NRBM_CASE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>NRBM_CASE</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CASEID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CASEID)
+            @Html.ValidationMessageFor(model => model.CASEID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENTID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLIENTID)
+            @Html.ValidationMessageFor(model => model.CLIENTID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SDATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SDATE)
+            @Html.ValidationMessageFor(model => model.SDATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EDATE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EDATE)
+            @Html.ValidationMessageFor(model => model.EDATE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EVIDENCE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EVIDENCE)
+            @Html.ValidationMessageFor(model => model.EVIDENCE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CATEGORY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CATEGORY)
+            @Html.ValidationMessageFor(model => model.CATEGORY)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LITIGATION)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LITIGATION)
+            @Html.ValidationMessageFor(model => model.LITIGATION)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NOTES)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NOTES)
+            @Html.ValidationMessageFor(model => model.NOTES)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

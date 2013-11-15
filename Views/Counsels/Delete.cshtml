@@ -1,0 +1,67 @@
+﻿@model MvcLawFirm.Models.NRBM_COUNSELS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>NRBM_COUNSELS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.COUNSELSID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.COUNSELSID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LAWID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LAWID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CLIENTID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENTID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HOURS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HOURS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FEES)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FEES)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

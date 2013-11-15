@@ -1,0 +1,43 @@
+﻿@model MvcLawFirm.Models.NRBM_STAFF
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NRBM_STAFF</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.STAFFID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.STAFFID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TITLE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TITLE)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.STAFFID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

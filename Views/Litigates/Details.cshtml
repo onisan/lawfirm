@@ -1,0 +1,57 @@
+﻿@model MvcLawFirm.Models.NRBM_LITIGATES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>NRBM_LITIGATES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LITID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LITID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ADLAWID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ADLAWID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CASEID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CASEID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EDATE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RESULTS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RESULTS)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.LITID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

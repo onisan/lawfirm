@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="NRBM_ADVERSELAWYER">
+      <EntityTypeMapping TypeName="Model.NRBM_ADVERSELAWYER">
+        <MappingFragment StoreEntitySet="NRBM_ADVERSELAWYER">
+          <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_APPOINTMENT">
+      <EntityTypeMapping TypeName="Model.NRBM_APPOINTMENT">
+        <MappingFragment StoreEntitySet="NRBM_APPOINTMENT">
+          <ScalarProperty Name="APTID" ColumnName="APTID" />
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="DATEON" ColumnName="DATEON" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_CASE">
+      <EntityTypeMapping TypeName="Model.NRBM_CASE">
+        <MappingFragment StoreEntitySet="NRBM_CASE">
+          <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="EVIDENCE" ColumnName="EVIDENCE" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="LITIGATION" ColumnName="LITIGATION" />
+          <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_CLIENT">
+      <EntityTypeMapping TypeName="Model.NRBM_CLIENT">
+        <MappingFragment StoreEntitySet="NRBM_CLIENT">
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="BUSNAME" ColumnName="BUSNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_COUNSELS">
+      <EntityTypeMapping TypeName="Model.NRBM_COUNSELS">
+        <MappingFragment StoreEntitySet="NRBM_COUNSELS">
+          <ScalarProperty Name="COUNSELSID" ColumnName="COUNSELSID" />
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+          <ScalarProperty Name="FEES" ColumnName="FEES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_COURTAPPEARANCE">
+      <EntityTypeMapping TypeName="Model.NRBM_COURTAPPEARANCE">
+        <MappingFragment StoreEntitySet="NRBM_COURTAPPEARANCE">
+          <ScalarProperty Name="CAID" ColumnName="CAID" />
+          <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
+          <ScalarProperty Name="DATEON" ColumnName="DATEON" />
+          <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_LAWYER">
+      <EntityTypeMapping TypeName="Model.NRBM_LAWYER">
+        <MappingFragment StoreEntitySet="NRBM_LAWYER">
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_LITIGATES">
+      <EntityTypeMapping TypeName="Model.NRBM_LITIGATES">
+        <MappingFragment StoreEntitySet="NRBM_LITIGATES">
+          <ScalarProperty Name="LITID" ColumnName="LITID" />
+          <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
+          <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+          <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_PHONE">
+      <EntityTypeMapping TypeName="Model.NRBM_PHONE">
+        <MappingFragment StoreEntitySet="NRBM_PHONE">
+          <ScalarProperty Name="PHONEID" ColumnName="PHONEID" />
+          <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+          <ScalarProperty Name="HOME" ColumnName="HOME" />
+          <ScalarProperty Name="CELL" ColumnName="CELL" />
+          <ScalarProperty Name="BUSINESS" ColumnName="BUSINESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_SETS">
+      <EntityTypeMapping TypeName="Model.NRBM_SETS">
+        <MappingFragment StoreEntitySet="NRBM_SETS">
+          <ScalarProperty Name="SETSID" ColumnName="SETSID" />
+          <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+          <ScalarProperty Name="APTID" ColumnName="APTID" />
+          <ScalarProperty Name="DATESET" ColumnName="DATESET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_STAFF">
+      <EntityTypeMapping TypeName="Model.NRBM_STAFF">
+        <MappingFragment StoreEntitySet="NRBM_STAFF">
+          <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+          <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+          <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NRBM_WORKSFOR">
+      <EntityTypeMapping TypeName="Model.NRBM_WORKSFOR">
+        <MappingFragment StoreEntitySet="NRBM_WORKSFOR">
+          <ScalarProperty Name="WORKID" ColumnName="WORKID" />
+          <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+          <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+          <ScalarProperty Name="SDATE" ColumnName="SDATE" />
+          <ScalarProperty Name="EDATE" ColumnName="EDATE" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+          <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

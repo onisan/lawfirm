@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_WORKSFOR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WORKID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAFFID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LAWID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOURS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WORKID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAFFID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LAWID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOURS)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WORKID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WORKID })
+        </td>
+    </tr>
+}
+
+</table>
