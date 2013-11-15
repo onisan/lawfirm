@@ -4,21 +4,13 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Counsels Relation</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>NRBM_COUNSELS</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.COUNSELSID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.COUNSELSID)
-            @Html.ValidationMessageFor(model => model.COUNSELSID)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.LAWID)
