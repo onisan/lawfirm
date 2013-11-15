@@ -1,10 +1,10 @@
 ﻿@model MvcLawFirm.Models.NRBM_LAWYER
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Lawyer";
 }
 
-<h2>Edit</h2>
+<h2>Edit Lawyer</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,16 +13,10 @@
     <fieldset>
         <legend>NRBM_LAWYER</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LAWID)
-            @Html.ValidationMessageFor(model => model.LAWID)
-        </div>
+        
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FNAME)
+            FIRST NAME
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FNAME)
@@ -30,7 +24,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LNAME)
+            LAST NAME
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LNAME)
@@ -38,7 +32,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.POSITION)
+            POSITION
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.POSITION)
