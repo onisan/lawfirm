@@ -4,14 +4,14 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Appointment</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>NRBM_APPOINTMENT</legend>
-
+        <!--
         <div class="editor-label">
             @Html.LabelFor(model => model.APTID)
         </div>
@@ -43,7 +43,7 @@
             @Html.EditorFor(model => model.CLIENTID)
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
-
+            -->
         <div class="editor-label">
             @Html.LabelFor(model => model.DATEON)
         </div>
