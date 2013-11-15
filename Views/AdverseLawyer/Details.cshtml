@@ -1,0 +1,58 @@
+﻿@model MvcLawFirm.Models.NRBM_ADVERSELAWYER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details for Adverse Lawyer</h2>
+
+<fieldset>
+    <legend>NRBM_ADVERSELAWYER</legend>
+    <!--
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ADLAWID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ADLAWID)
+    </div>
+        -->
+    <div class="display-label">
+        NAME
+        <!-- @Html.DisplayNameFor(model => model.FNAME)-->
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FNAME) @Html.DisplayFor(model => model.LNAME)
+    </div>
+    <!--
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LNAME)
+    </div>
+        -->
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ADDRESS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ADDRESS)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EMAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PHONE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PHONE)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ADLAWID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
