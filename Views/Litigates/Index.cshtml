@@ -4,9 +4,11 @@
     MvcLawFirm.Models.LawFirmDbContext db = new MvcLawFirm.Models.LawFirmDbContext();
     var adLawyers =
         from adlaw in db.NRBM_ADVERSELAWYER
-        join lit in db.NRBM_LITIGATES on adlaw.ADLAWID equals lit.ADLAWID
-        select new { FirstName = adlaw.FNAME, LastName = adlaw.LNAME, lit.SDATE, lit.EDATE, lit.RESULTS, lit.LITID };
-    
+        from lit in db.NRBM_LITIGATES
+        where adlaw.ADLAWID == lit.ADLAWID
+        from cases in db.NRBM_CASE
+        where cases.CASEID == lit.CASEID
+        select new { lit.LITID, adlaw.FNAME, adlaw.LNAME, CaseStart = cases.SDATE, CaseEnd = cases.EDATE, LitStart = lit.SDATE, LitEnd = lit.EDATE, lit.RESULTS };
     ViewBag.Title = "Index";
 }
 
@@ -21,13 +23,19 @@
             ADVERSE LAWYER
         </th>
         <th>
-            START DATE
+            CASE START
         </th>
         <th>
-            END DATE
+            CASE END
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RESULTS)
+            LITIGATION START
+        </th>
+        <th>
+            LITIGATION END
+        </th>
+        <th>
+            RESULTS
         </th>
         <th></th>
     </tr>
@@ -35,13 +43,19 @@
 @foreach (var item in adLawyers) {
     <tr>
         <td>
-            @Html.DisplayFor(adLawyersItem => item.FirstName) @Html.DisplayFor(adLawyersItem => item.LastName)
+            @Html.DisplayFor(adLawyersItem => item.FNAME) @Html.DisplayFor(adLawyersItem => item.LNAME)
         </td>
         <td>
-            @Html.DisplayFor(adLawyersItem => item.SDATE)
+            @Html.DisplayFor(adLawyersItem => item.CaseStart)
         </td>
         <td>
-            @Html.DisplayFor(adLawyersItem => item.EDATE)
+            @Html.DisplayFor(adLawyersItem => item.CaseEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(adLawyersItem => item.LitStart)
+        </td>
+        <td>
+            @Html.DisplayFor(adLawyersItem => item.LitEnd)
         </td>
         <td>
             @Html.DisplayFor(adLawyersItem => item.RESULTS)
