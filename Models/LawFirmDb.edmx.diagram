@@ -28,6 +28,7 @@
         <EntityTypeShape EntityType="LawFirm.NRBM_STAFFHISTORY" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFOR" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFORHISTORY" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LawFirm.NRBM_APTVIEW" Width="1.5" PointX="12.75" PointY="4.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

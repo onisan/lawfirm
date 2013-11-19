@@ -18,18 +18,8 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            var aptView = new AppointmentView();
-            var lawfname =
-                (from lawyer in db.NRBM_LAWYER
-                where lawyer.LAWID == aptView.LAWID
-                select new { lawyer.FNAME }.ToString()).ToList();
-            aptView.LawFname = lawfname;
-            var lawlname =
-                from lawyer in db.NRBM_LAWYER
-                where lawyer.LAWID == aptView.LAWID
-                select new { lawyer.LNAME }.ToString();
-            aptView.LawLname = lawlname.ToList();
-            return View(aptView);
+
+            return View(db.NRBM_APTVIEW.ToList());
         }
 
         //

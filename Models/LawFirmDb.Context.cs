@@ -51,48 +51,49 @@ namespace MvcLawFirm.Models
         public DbSet<NRBM_STAFFHISTORY> NRBM_STAFFHISTORY { get; set; }
         public DbSet<NRBM_WORKSFOR> NRBM_WORKSFOR { get; set; }
         public DbSet<NRBM_WORKSFORHISTORY> NRBM_WORKSFORHISTORY { get; set; }
+        public DbSet<NRBM_APTVIEW> NRBM_APTVIEW { get; set; }
     
-        public virtual int NRBM_PROC_DELETEADVERSELAWYER(Nullable<int> aDLAW_ID)
+        public virtual int NRBM_PROC_DELETEADVERSELAWYER(Nullable<decimal> aDLAW_ID)
         {
             var aDLAW_IDParameter = aDLAW_ID.HasValue ?
                 new ObjectParameter("ADLAW_ID", aDLAW_ID) :
-                new ObjectParameter("ADLAW_ID", typeof(int));
+                new ObjectParameter("ADLAW_ID", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NRBM_PROC_DELETEADVERSELAWYER", aDLAW_IDParameter);
         }
     
-        public virtual int NRBM_PROC_DELETECASE(Nullable<int> cASE_CASEID)
+        public virtual int NRBM_PROC_DELETECASE(Nullable<decimal> cASE_CASEID)
         {
             var cASE_CASEIDParameter = cASE_CASEID.HasValue ?
                 new ObjectParameter("CASE_CASEID", cASE_CASEID) :
-                new ObjectParameter("CASE_CASEID", typeof(int));
+                new ObjectParameter("CASE_CASEID", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NRBM_PROC_DELETECASE", cASE_CASEIDParameter);
         }
     
-        public virtual int NRBM_PROC_DELETECLIENT(Nullable<int> cLIENT_CID)
+        public virtual int NRBM_PROC_DELETECLIENT(Nullable<decimal> cLIENT_CID)
         {
             var cLIENT_CIDParameter = cLIENT_CID.HasValue ?
                 new ObjectParameter("CLIENT_CID", cLIENT_CID) :
-                new ObjectParameter("CLIENT_CID", typeof(int));
+                new ObjectParameter("CLIENT_CID", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NRBM_PROC_DELETECLIENT", cLIENT_CIDParameter);
         }
     
-        public virtual int NRBM_PROC_DELETELAWYER(Nullable<int> lAWYER_LAWID)
+        public virtual int NRBM_PROC_DELETELAWYER(Nullable<decimal> lAWYER_LAWID)
         {
             var lAWYER_LAWIDParameter = lAWYER_LAWID.HasValue ?
                 new ObjectParameter("LAWYER_LAWID", lAWYER_LAWID) :
-                new ObjectParameter("LAWYER_LAWID", typeof(int));
+                new ObjectParameter("LAWYER_LAWID", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NRBM_PROC_DELETELAWYER", lAWYER_LAWIDParameter);
         }
     
-        public virtual int NRBM_PROC_DELETESTAFF(Nullable<int> sTAFF_SID)
+        public virtual int NRBM_PROC_DELETESTAFF(Nullable<decimal> sTAFF_SID)
         {
             var sTAFF_SIDParameter = sTAFF_SID.HasValue ?
                 new ObjectParameter("STAFF_SID", sTAFF_SID) :
-                new ObjectParameter("STAFF_SID", typeof(int));
+                new ObjectParameter("STAFF_SID", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("NRBM_PROC_DELETESTAFF", sTAFF_SIDParameter);
         }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LawFirm.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LawFirm.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="LawFirmStoreContainer">
           <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="LawFirm.Store.NRBM_ADVERSELAWYER" store:Type="Tables" Schema="CS342" />
           <EntitySet Name="NRBM_ADVERSELAWYERHISTORY" EntityType="LawFirm.Store.NRBM_ADVERSELAWYERHISTORY" store:Type="Tables" Schema="CS342" />
@@ -29,6 +29,20 @@
           <EntitySet Name="NRBM_STAFFHISTORY" EntityType="LawFirm.Store.NRBM_STAFFHISTORY" store:Type="Tables" Schema="CS342" />
           <EntitySet Name="NRBM_WORKSFOR" EntityType="LawFirm.Store.NRBM_WORKSFOR" store:Type="Tables" Schema="CS342" />
           <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="LawFirm.Store.NRBM_WORKSFORHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.Store.NRBM_APTVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_APTVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_APTVIEW"."APTID" AS "APTID", 
+      "NRBM_APTVIEW"."LAWID" AS "LAWID", 
+      "NRBM_APTVIEW"."CLIENTID" AS "CLIENTID", 
+      "NRBM_APTVIEW"."LFNAME" AS "LFNAME", 
+      "NRBM_APTVIEW"."LLNAME" AS "LLNAME", 
+      "NRBM_APTVIEW"."CFNAME" AS "CFNAME", 
+      "NRBM_APTVIEW"."CLNAME" AS "CLNAME", 
+      "NRBM_APTVIEW"."APTDATE" AS "APTDATE", 
+      "NRBM_APTVIEW"."LOCATION" AS "LOCATION", 
+      "NRBM_APTVIEW"."DESCRIPTION" AS "DESCRIPTION"
+      FROM "CS342"."NRBM_APTVIEW" "NRBM_APTVIEW"</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -296,23 +310,33 @@
           <Property Name="HOURS" Type="number" />
           <Property Name="DATEDELETED" Type="date" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_APTVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_APTVIEW">
+          <Key>
+            <PropertyRef Name="APTID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Name="APTID" Type="number" Nullable="false" />
+          <Property Name="LAWID" Type="number" Nullable="false" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
+          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="APTDATE" Type="date" />
+          <Property Name="LOCATION" Type="varchar2" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="510" />
+        </EntityType>
         <Function Name="NRBM_PROC_DELETEADVERSELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
           <Parameter Name="ADLAW_ID" Type="number" Mode="In" />
         </Function>
         <Function Name="NRBM_PROC_DELETECASE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
           <Parameter Name="CASE_CASEID" Type="number" Mode="In" />
         </Function>
-        <Function Name="NRBM_PROC_DELETECLIENT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
-          <Parameter Name="CLIENT_CID" Type="number" Mode="In" />
-        </Function>
-        <Function Name="NRBM_PROC_DELETELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
-          <Parameter Name="LAWYER_LAWID" Type="number" Mode="In" />
-        </Function>
-        <Function Name="NRBM_PROC_DELETESTAFF" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
-          <Parameter Name="STAFF_SID" Type="number" Mode="In" />
-        </Function>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LawFirm" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -341,10 +365,10 @@
           <EntitySet Name="NRBM_WORKSFOR" EntityType="LawFirm.NRBM_WORKSFOR" />
           <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="LawFirm.NRBM_WORKSFORHISTORY" />
           <FunctionImport Name="NRBM_PROC_DELETEADVERSELAWYER">
-            <Parameter Name="ADLAW_ID" Mode="In" Type="Decimal" />
+          <Parameter Name="ADLAW_ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="NRBM_PROC_DELETECASE">
-            <Parameter Name="CASE_CASEID" Mode="In" Type="Decimal" />
+          <Parameter Name="CASE_CASEID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="NRBM_PROC_DELETECLIENT">
             <Parameter Name="CLIENT_CID" Mode="In" Type="Decimal" />
@@ -355,6 +379,7 @@
           <FunctionImport Name="NRBM_PROC_DELETESTAFF">
             <Parameter Name="STAFF_SID" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.NRBM_APTVIEW" />
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -621,6 +646,23 @@
           <Property Name="SALARY" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="DATEDELETED" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="NRBM_APTVIEW">
+          <Key>
+            <PropertyRef Name="APTID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Type="Int32" Name="APTID" Nullable="false" />
+          <Property Type="Int32" Name="LAWID" Nullable="false" />
+          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
+          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="APTDATE" Nullable="false" />
+          <Property Type="String" Name="LOCATION" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="510" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -919,10 +961,23 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETEADVERSELAWYER" FunctionName="LawFirm.Store.NRBM_PROC_DELETEADVERSELAWYER" />
           <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETECASE" FunctionName="LawFirm.Store.NRBM_PROC_DELETECASE" />
-          <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETECLIENT" FunctionName="LawFirm.Store.NRBM_PROC_DELETECLIENT" />
-          <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETELAWYER" FunctionName="LawFirm.Store.NRBM_PROC_DELETELAWYER" />
-          <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETESTAFF" FunctionName="LawFirm.Store.NRBM_PROC_DELETESTAFF" />
-        </EntityContainerMapping>
+          <EntitySetMapping Name="NRBM_APTVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_APTVIEW">
+              <MappingFragment StoreEntitySet="NRBM_APTVIEW">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="APTDATE" ColumnName="APTDATE" />
+                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
+                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
+                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
+                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
+                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="APTID" ColumnName="APTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
