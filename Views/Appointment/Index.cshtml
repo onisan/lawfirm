@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_APPOINTMENT>
+﻿@model MvcLawFirm.Models.AppointmentView
 
 @{
     ViewBag.Title = "Index";
@@ -12,43 +12,34 @@
 <table>
     <tr>
        <!-- <th>
-            @Html.DisplayNameFor(model => model.APTID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LAWID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CASEID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CLIENTID)
+            @Html.DisplayNameFor(model => model.Appointment.APTID)
         </th> -->
         <th>
-            @Html.DisplayNameFor(model => model.DATEON)
+            LAWYER
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LOCATION)
+            CLIENT
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DESCRIPTION)
+            DATE
+        </th>
+        <th>
+            LOCATION
+        </th>
+        <th>
+            DESCRIPTION
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => Model.LawFname.GetEnumerator().MoveNext().ToString())
+        </td>
         <!--<td>
-            @Html.DisplayFor(modelItem => item.APTID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LAWID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CASEID)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.CLIENTID)
-        </td>-->
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.DATEON)
         </td>
@@ -57,7 +48,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
-        </td>
+        </td>-->
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.APTID}) |
             @Html.ActionLink("Details", "Details", new { id=item.APTID }) |

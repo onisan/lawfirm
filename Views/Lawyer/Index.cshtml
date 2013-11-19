@@ -12,16 +12,18 @@
 <table>
     <tr>
         <th>
-            Name
+            NAME
         </th>
         <th>
-            Position
+            POSITION
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FNAME) @Html.DisplayFor(modelItem => item.LNAME)
         <td>
             @Html.DisplayFor(modelItem => item.FNAME) @Html.DisplayFor(modelItem => item.LNAME)
         <td>

@@ -18,7 +18,7 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            return View(db.NRBM_LITIGATES.ToList());
+            return View();
         }
 
         //
