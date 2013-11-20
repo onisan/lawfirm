@@ -43,6 +43,21 @@
       "NRBM_APTVIEW"."DESCRIPTION" AS "DESCRIPTION"
       FROM "CS342"."NRBM_APTVIEW" "NRBM_APTVIEW"</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.Store.NRBM_COUNSELSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COUNSELSVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_COUNSELSVIEW"."COUNSELSID" AS "COUNSELSID", 
+      "NRBM_COUNSELSVIEW"."LAWID" AS "LAWID", 
+      "NRBM_COUNSELSVIEW"."CLIENTID" AS "CLIENTID", 
+      "NRBM_COUNSELSVIEW"."LFNAME" AS "LFNAME", 
+      "NRBM_COUNSELSVIEW"."LLNAME" AS "LLNAME", 
+      "NRBM_COUNSELSVIEW"."CFNAME" AS "CFNAME", 
+      "NRBM_COUNSELSVIEW"."CLNAME" AS "CLNAME", 
+      "NRBM_COUNSELSVIEW"."STARTDATE" AS "STARTDATE", 
+      "NRBM_COUNSELSVIEW"."ENDDATE" AS "ENDDATE", 
+      "NRBM_COUNSELSVIEW"."HOURS" AS "HOURS", 
+      "NRBM_COUNSELSVIEW"."FEES" AS "FEES"
+      FROM "CS342"."NRBM_COUNSELSVIEW" "NRBM_COUNSELSVIEW"</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -330,6 +345,27 @@
           <Property Name="LOCATION" Type="varchar2" MaxLength="255" />
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="510" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_COUNSELSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_COUNSELSVIEW">
+          <Key>
+            <PropertyRef Name="COUNSELSID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Name="COUNSELSID" Type="number" Nullable="false" />
+          <Property Name="LAWID" Type="number" Nullable="false" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
+          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="STARTDATE" Type="varchar2" MaxLength="100" />
+          <Property Name="ENDDATE" Type="varchar2" MaxLength="100" />
+          <Property Name="HOURS" Type="number" />
+          <Property Name="FEES" Type="varchar2" MaxLength="100" />
+        </EntityType>
         <Function Name="NRBM_PROC_DELETEADVERSELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
           <Parameter Name="ADLAW_ID" Type="number" Mode="In" />
         </Function>
@@ -380,6 +416,7 @@
             <Parameter Name="STAFF_SID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.NRBM_APTVIEW" />
+          <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.NRBM_COUNSELSVIEW" />
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -402,17 +439,17 @@
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="PHONE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_APPOINTMENT">
           <Key>
             <PropertyRef Name="APTID" />
           </Key>
           <Property Name="APTID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="DATEON" Type="DateTime" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="DATEON" Type="DateTime" Precision="0" />
           <Property Name="LOCATION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="510" Unicode="false" FixedLength="false" />
         </EntityType>
@@ -421,22 +458,22 @@
             <PropertyRef Name="APTID" />
           </Key>
           <Property Name="APTID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="DATEON" Type="DateTime" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="DATEON" Type="DateTime" Precision="0" />
           <Property Name="LOCATION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="510" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_CASE">
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
           <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="EVIDENCE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="CATEGORY" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="LITIGATION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
@@ -447,14 +484,14 @@
             <PropertyRef Name="CASEID" />
           </Key>
           <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="EVIDENCE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="CATEGORY" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="LITIGATION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="NOTES" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_CLIENT">
           <Key>
@@ -466,7 +503,7 @@
           <Property Name="BUSNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DOB" Type="DateTime" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_CLIENTHISTORY">
           <Key>
@@ -478,16 +515,16 @@
           <Property Name="BUSNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DOB" Type="DateTime" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_COUNSELS">
           <Key>
             <PropertyRef Name="COUNSELSID" />
           </Key>
           <Property Name="COUNSELSID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
@@ -498,24 +535,24 @@
             <PropertyRef Name="COUNSELSID" />
           </Key>
           <Property Name="COUNSELSID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
+          <Property Name="LAWID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FEES" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCE">
           <Key>
             <PropertyRef Name="CAID" />
           </Key>
           <Property Name="CAID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="ADLAWID" Type="Int32" Nullable="false" />
-          <Property Name="DATEON" Type="DateTime" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="ADLAWID" Type="Int32" />
+          <Property Name="DATEON" Type="DateTime" Precision="0" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCEHISTORY">
@@ -523,13 +560,13 @@
             <PropertyRef Name="CAID" />
           </Key>
           <Property Name="CAID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="ADLAWID" Type="Int32" Nullable="false" />
-          <Property Name="DATEON" Type="DateTime" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="ADLAWID" Type="Int32" />
+          <Property Name="DATEON" Type="DateTime" Precision="0" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_LAWYER">
           <Key>
@@ -548,17 +585,17 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="POSITION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_LITIGATES">
           <Key>
             <PropertyRef Name="LITID" />
           </Key>
           <Property Name="LITID" Type="Int32" Nullable="false" />
-          <Property Name="ADLAWID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="ADLAWID" Type="Int32" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="NRBM_LITIGATESHISTORY">
@@ -566,19 +603,19 @@
             <PropertyRef Name="LITID" />
           </Key>
           <Property Name="LITID" Type="Int32" Nullable="false" />
-          <Property Name="ADLAWID" Type="Int32" Nullable="false" />
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="ADLAWID" Type="Int32" />
+          <Property Name="CASEID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_PHONE">
           <Key>
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
+          <Property Name="CLIENTID" Type="Int32" />
           <Property Name="HOME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CELL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="BUSINESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
@@ -588,20 +625,20 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
+          <Property Name="CLIENTID" Type="Int32" />
           <Property Name="HOME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CELL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="BUSINESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_SETS">
           <Key>
             <PropertyRef Name="SETSID" />
           </Key>
           <Property Name="SETSID" Type="Int32" Nullable="false" />
-          <Property Name="STAFFID" Type="Int32" Nullable="false" />
+          <Property Name="STAFFID" Type="Int32" />
           <Property Name="APTID" Type="Int32" />
-          <Property Name="DATESET" Type="DateTime" />
+          <Property Name="DATESET" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_STAFF">
           <Key>
@@ -620,17 +657,17 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="TITLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_WORKSFOR">
           <Key>
             <PropertyRef Name="WORKID" />
           </Key>
           <Property Name="WORKID" Type="Int32" Nullable="false" />
-          <Property Name="STAFFID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="STAFFID" Type="Int32" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="SALARY" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
@@ -639,13 +676,13 @@
             <PropertyRef Name="WORKID" />
           </Key>
           <Property Name="WORKID" Type="Int32" Nullable="false" />
-          <Property Name="STAFFID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Int32" Nullable="false" />
-          <Property Name="SDATE" Type="DateTime" />
-          <Property Name="EDATE" Type="DateTime" />
+          <Property Name="STAFFID" Type="Int32" />
+          <Property Name="LAWID" Type="Int32" />
+          <Property Name="SDATE" Type="DateTime" Precision="0" />
+          <Property Name="EDATE" Type="DateTime" Precision="0" />
           <Property Name="SALARY" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="DATEDELETED" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="NRBM_APTVIEW">
           <Key>
@@ -660,9 +697,27 @@
           <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="APTDATE" Nullable="false" />
+          <Property Type="DateTime" Name="APTDATE" Precision="0" />
           <Property Type="String" Name="LOCATION" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="DESCRIPTION" MaxLength="510" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NRBM_COUNSELSVIEW">
+          <Key>
+            <PropertyRef Name="COUNSELSID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Type="Decimal" Name="COUNSELSID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="LAWID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="CLIENTID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STARTDATE" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ENDDATE" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
+          <Property Type="String" Name="FEES" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -974,6 +1029,23 @@
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
                 <ScalarProperty Name="APTID" ColumnName="APTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NRBM_COUNSELSVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_COUNSELSVIEW">
+              <MappingFragment StoreEntitySet="NRBM_COUNSELSVIEW">
+                <ScalarProperty Name="FEES" ColumnName="FEES" />
+                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
+                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
+                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
+                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
+                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="COUNSELSID" ColumnName="COUNSELSID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
