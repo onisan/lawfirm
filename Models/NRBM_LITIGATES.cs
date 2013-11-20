@@ -15,8 +15,8 @@ namespace MvcLawFirm.Models
     public partial class NRBM_LITIGATES
     {
         public int LITID { get; set; }
-        public int ADLAWID { get; set; }
-        public int CASEID { get; set; }
+        public Nullable<int> ADLAWID { get; set; }
+        public Nullable<int> CASEID { get; set; }
         public Nullable<System.DateTime> SDATE { get; set; }
         public Nullable<System.DateTime> EDATE { get; set; }
         public string RESULTS { get; set; }

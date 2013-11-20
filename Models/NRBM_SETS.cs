@@ -15,7 +15,7 @@ namespace MvcLawFirm.Models
     public partial class NRBM_SETS
     {
         public int SETSID { get; set; }
-        public int STAFFID { get; set; }
+        public Nullable<int> STAFFID { get; set; }
         public Nullable<int> APTID { get; set; }
         public Nullable<System.DateTime> DATESET { get; set; }
     }

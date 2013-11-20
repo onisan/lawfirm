@@ -21,7 +21,7 @@ namespace MvcLawFirm.Models
         public string LLNAME { get; set; }
         public string CFNAME { get; set; }
         public string CLNAME { get; set; }
-        public System.DateTime APTDATE { get; set; }
+        public Nullable<System.DateTime> APTDATE { get; set; }
         public string LOCATION { get; set; }
         public string DESCRIPTION { get; set; }
     }

@@ -10,7 +10,6 @@
 namespace MvcLawFirm.Models
 {
     using System;
-    using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Objects;
@@ -53,24 +52,11 @@ namespace MvcLawFirm.Models
         public DbSet<NRBM_WORKSFOR> NRBM_WORKSFOR { get; set; }
         public DbSet<NRBM_WORKSFORHISTORY> NRBM_WORKSFORHISTORY { get; set; }
         public DbSet<NRBM_APTVIEW> NRBM_APTVIEW { get; set; }
-<<<<<<< HEAD
-        [DataType(DataType.Date)]
-        public DateTime DATEON { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime SDATE { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime EDATE { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime DATESET { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime DOB { get; set; }
-=======
         public DbSet<NRBM_COUNSELSVIEW> NRBM_COUNSELSVIEW { get; set; }
         public DbSet<NRBM_COURTVIEW> NRBM_COURTVIEW { get; set; }
         public DbSet<NRBM_LITVIEW> NRBM_LITVIEW { get; set; }
         public DbSet<NRBM_SETSVIEW> NRBM_SETSVIEW { get; set; }
         public DbSet<NRBM_WORKSVIEW> NRBM_WORKSVIEW { get; set; }
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
     
         public virtual int NRBM_PROC_DELETEADVERSELAWYER(Nullable<decimal> aDLAW_ID)
         {
