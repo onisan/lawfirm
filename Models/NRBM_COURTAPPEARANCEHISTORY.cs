@@ -15,10 +15,10 @@ namespace MvcLawFirm.Models
     public partial class NRBM_COURTAPPEARANCEHISTORY
     {
         public int CAID { get; set; }
-        public int CASEID { get; set; }
-        public int CLIENTID { get; set; }
-        public int LAWID { get; set; }
-        public int ADLAWID { get; set; }
+        public Nullable<int> CASEID { get; set; }
+        public Nullable<int> CLIENTID { get; set; }
+        public Nullable<int> LAWID { get; set; }
+        public Nullable<int> ADLAWID { get; set; }
         public Nullable<System.DateTime> DATEON { get; set; }
         public string RESULTS { get; set; }
         public Nullable<System.DateTime> DATEDELETED { get; set; }

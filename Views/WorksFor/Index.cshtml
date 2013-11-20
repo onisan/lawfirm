@@ -53,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.HOURS)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |<br />
-            @Html.ActionLink("Details", "Details", new { id=item.WORKID }) |<br />
-            @Html.ActionLink("Delete", "Delete", new { id=item.WORKID })
+            @Html.ActionLink("Edit", "Edit", new { wid=item.WORKID, sid=item.STAFFID, lid=item.LAWID }) |<br />
+            @Html.ActionLink("Details", "Details", new { wid=item.WORKID, sid=item.STAFFID, lid=item.LAWID }) |<br />
+            @Html.ActionLink("Delete", "Delete", new { wid=item.WORKID, sid=item.STAFFID, lid=item.LAWID })
         </td>
     </tr>
 }

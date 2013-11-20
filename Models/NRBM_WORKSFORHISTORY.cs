@@ -15,8 +15,8 @@ namespace MvcLawFirm.Models
     public partial class NRBM_WORKSFORHISTORY
     {
         public int WORKID { get; set; }
-        public int STAFFID { get; set; }
-        public int LAWID { get; set; }
+        public Nullable<int> STAFFID { get; set; }
+        public Nullable<int> LAWID { get; set; }
         public Nullable<System.DateTime> SDATE { get; set; }
         public Nullable<System.DateTime> EDATE { get; set; }
         public Nullable<decimal> SALARY { get; set; }

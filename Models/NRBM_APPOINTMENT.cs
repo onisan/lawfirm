@@ -15,9 +15,9 @@ namespace MvcLawFirm.Models
     public partial class NRBM_APPOINTMENT
     {
         public int APTID { get; set; }
-        public int LAWID { get; set; }
-        public int CASEID { get; set; }
-        public int CLIENTID { get; set; }
+        public Nullable<int> LAWID { get; set; }
+        public Nullable<int> CASEID { get; set; }
+        public Nullable<int> CLIENTID { get; set; }
         public Nullable<System.DateTime> DATEON { get; set; }
         public string LOCATION { get; set; }
         public string DESCRIPTION { get; set; }

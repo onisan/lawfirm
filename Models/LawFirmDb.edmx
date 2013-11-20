@@ -58,8 +58,6 @@
       "NRBM_COUNSELSVIEW"."FEES" AS "FEES"
       FROM "CS342"."NRBM_COUNSELSVIEW" "NRBM_COUNSELSVIEW"</DefiningQuery>
           </EntitySet>
-<<<<<<< HEAD
-=======
           <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.Store.NRBM_COURTVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COURTVIEW">
             <DefiningQuery>SELECT 
       "NRBM_COURTVIEW"."CAID" AS "CAID", 
@@ -113,7 +111,6 @@
       "NRBM_WORKSVIEW"."HOURS" AS "HOURS"
       FROM "CS342"."NRBM_WORKSVIEW" "NRBM_WORKSVIEW"</DefiningQuery>
           </EntitySet>
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -422,8 +419,6 @@
           <Property Name="HOURS" Type="number" />
           <Property Name="FEES" Type="varchar2" MaxLength="100" />
         </EntityType>
-<<<<<<< HEAD
-=======
         <!--Errors Found During Generation:
       warning 6002: The table/view 'CS342.NRBM_COURTVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
@@ -502,7 +497,6 @@
           <Property Name="SALARY" Type="number" />
           <Property Name="HOURS" Type="number" />
         </EntityType>
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
         <Function Name="NRBM_PROC_DELETEADVERSELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
           <Parameter Name="ADLAW_ID" Type="number" Mode="In" />
         </Function>
@@ -554,13 +548,12 @@
           </FunctionImport>
           <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.NRBM_APTVIEW" />
           <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.NRBM_COUNSELSVIEW" />
-<<<<<<< HEAD
-=======
+
           <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.NRBM_COURTVIEW" />
           <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.NRBM_LITVIEW" />
           <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.NRBM_SETSVIEW" />
           <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.NRBM_WORKSVIEW" />
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
+
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -851,15 +844,11 @@
             <PropertyRef Name="LAWID" />
             <PropertyRef Name="CLIENTID" />
           </Key>
-<<<<<<< HEAD
-          <Property Type="Decimal" Name="COUNSELSID" Nullable="false" Precision="38" Scale="0" />
-          <Property Type="Decimal" Name="LAWID" Nullable="false" Precision="38" Scale="0" />
-          <Property Type="Decimal" Name="CLIENTID" Nullable="false" Precision="38" Scale="0" />
-=======
+
           <Property Type="Int32" Name="COUNSELSID" Nullable="false" />
           <Property Type="Int32" Name="LAWID" Nullable="false" />
           <Property Type="Int32" Name="CLIENTID" Nullable="false" />
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
+
           <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -869,8 +858,7 @@
           <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
           <Property Type="String" Name="FEES" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
-<<<<<<< HEAD
-=======
+
         <EntityType Name="NRBM_COURTVIEW">
           <Key>
             <PropertyRef Name="CAID" />
@@ -937,7 +925,7 @@
           <Property Type="Decimal" Name="SALARY" Precision="38" Scale="0" />
           <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
         </EntityType>
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
+
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1268,8 +1256,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-<<<<<<< HEAD
-=======
+
           <EntitySetMapping Name="NRBM_COURTVIEW">
             <EntityTypeMapping TypeName="LawFirm.NRBM_COURTVIEW">
               <MappingFragment StoreEntitySet="NRBM_COURTVIEW">
@@ -1331,7 +1318,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
->>>>>>> ffad48317b23aeb169691393fa401940bd853526
+
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

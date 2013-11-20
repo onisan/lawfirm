@@ -15,8 +15,8 @@ namespace MvcLawFirm.Models
     public partial class NRBM_COUNSELSHISTORY
     {
         public int COUNSELSID { get; set; }
-        public decimal LAWID { get; set; }
-        public int CLIENTID { get; set; }
+        public Nullable<decimal> LAWID { get; set; }
+        public Nullable<int> CLIENTID { get; set; }
         public string SDATE { get; set; }
         public string EDATE { get; set; }
         public Nullable<decimal> HOURS { get; set; }
