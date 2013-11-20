@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_CASE>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_CASEVIEW>
 
 @{
     ViewBag.Title = "Index";
@@ -14,11 +14,12 @@
        <!-- <th>
             @Html.DisplayNameFor(model => model.CLIENTID)
         </th>-->
+        <th>CLIENT</th>
         <th>
-            @Html.DisplayNameFor(model => model.SDATE)
+            STARTDATE
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EDATE)
+            ENDDATE
         </th>
         <th>
             @Html.DisplayNameFor(model => model.EVIDENCE)
@@ -40,11 +41,14 @@
        <!-- <td>
             @Html.DisplayFor(modelItem => item.CLIENTID)
         </td>-->
+        <td>           
+             @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
+    </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SDATE)
+            @Html.DisplayFor(modelItem => item.STARTDATE)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EDATE)
+            @Html.DisplayFor(modelItem => item.ENDDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EVIDENCE)
