@@ -14,28 +14,28 @@ namespace MvcLawFirm.Controllers
         private LawFirmDbContext db = new LawFirmDbContext();
 
         //
-        // GET: /WorksFor/
+        // GET: /WORKSVIEW/
 
         public ActionResult Index()
         {
-            return View(db.NRBM_WORKSFOR.ToList());
+            return View(db.NRBM_WORKSVIEW.ToList());
         }
 
         //
-        // GET: /WorksFor/Details/5
+        // GET: /WORKSVIEW/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(id);
-            if (nrbm_worksfor == null)
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            if (nrbm_worksview == null)
             {
                 return HttpNotFound();
             }
-            return View(nrbm_worksfor);
+            return View(nrbm_worksview);
         }
 
         //
-        // GET: /WorksFor/Create
+        // GET: /WORKSVIEW/Create
 
         public ActionResult Create()
         {
@@ -43,70 +43,70 @@ namespace MvcLawFirm.Controllers
         }
 
         //
-        // POST: /WorksFor/Create
+        // POST: /WORKSVIEW/Create
 
         [HttpPost]
-        public ActionResult Create(NRBM_WORKSFOR nrbm_worksfor)
+        public ActionResult Create(NRBM_WORKSVIEW nrbm_worksview)
         {
             if (ModelState.IsValid)
             {
-                db.NRBM_WORKSFOR.Add(nrbm_worksfor);
+                db.NRBM_WORKSVIEW.Add(nrbm_worksview);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nrbm_worksfor);
+            return View(nrbm_worksview);
         }
 
         //
-        // GET: /WorksFor/Edit/5
+        // GET: /WORKSVIEW/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(id);
-            if (nrbm_worksfor == null)
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            if (nrbm_worksview == null)
             {
                 return HttpNotFound();
             }
-            return View(nrbm_worksfor);
+            return View(nrbm_worksview);
         }
 
         //
-        // POST: /WorksFor/Edit/5
+        // POST: /WORKSVIEW/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(NRBM_WORKSFOR nrbm_worksfor)
+        public ActionResult Edit(NRBM_WORKSVIEW nrbm_worksview)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nrbm_worksfor).State = EntityState.Modified;
+                db.Entry(nrbm_worksview).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nrbm_worksfor);
+            return View(nrbm_worksview);
         }
 
         //
-        // GET: /WorksFor/Delete/5
+        // GET: /WORKSVIEW/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(id);
-            if (nrbm_worksfor == null)
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            if (nrbm_worksview == null)
             {
                 return HttpNotFound();
             }
-            return View(nrbm_worksfor);
+            return View(nrbm_worksview);
         }
 
         //
-        // POST: /WorksFor/Delete/5
+        // POST: /WORKSVIEW/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(id);
-            db.NRBM_WORKSFOR.Remove(nrbm_worksfor);
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            db.NRBM_WORKSVIEW.Remove(nrbm_worksview);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
