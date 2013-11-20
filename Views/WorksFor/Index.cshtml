@@ -1,27 +1,27 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_WORKSFOR>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_WORKSVIEW>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Works For Relation</h2>
+<h2>Staff Salaries</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
-       <!-- <th>
-            @Html.DisplayNameFor(model => model.STAFFID)
+       <th>
+            STAFF
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LAWID)
-        </th>-->
-        <th>
-            @Html.DisplayNameFor(model => model.SDATE)
+            LAWYER
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EDATE)
+            @Html.DisplayNameFor(model => model.STARTDATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENDDATE)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SALARY)
@@ -34,17 +34,17 @@
 
 @foreach (var item in Model) {
     <tr>
-        <!--<td>
-            @Html.DisplayFor(modelItem => item.STAFFID)
+        <td>
+            @Html.DisplayFor(modelItem => item.SFNAME) @Html.DisplayFor(modelItem => item.SLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LAWID)
-        </td>-->
-        <td>
-            @Html.DisplayFor(modelItem => item.SDATE)
+           @Html.DisplayFor(modelItem => item.LFNAME) @Html.DisplayFor(modelItem => item.LLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EDATE)
+            @Html.DisplayFor(modelItem => item.STARTDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENDDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SALARY)
@@ -53,8 +53,8 @@
             @Html.DisplayFor(modelItem => item.HOURS)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WORKID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |<br />
+            @Html.ActionLink("Details", "Details", new { id=item.WORKID }) |<br />
             @Html.ActionLink("Delete", "Delete", new { id=item.WORKID })
         </td>
     </tr>

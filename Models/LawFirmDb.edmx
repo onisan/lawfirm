@@ -58,6 +58,62 @@
       "NRBM_COUNSELSVIEW"."FEES" AS "FEES"
       FROM "CS342"."NRBM_COUNSELSVIEW" "NRBM_COUNSELSVIEW"</DefiningQuery>
           </EntitySet>
+<<<<<<< HEAD
+=======
+          <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.Store.NRBM_COURTVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COURTVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_COURTVIEW"."CAID" AS "CAID", 
+      "NRBM_COURTVIEW"."LAWID" AS "LAWID", 
+      "NRBM_COURTVIEW"."CLIENTID" AS "CLIENTID", 
+      "NRBM_COURTVIEW"."CASEID" AS "CASEID", 
+      "NRBM_COURTVIEW"."LFNAME" AS "LFNAME", 
+      "NRBM_COURTVIEW"."LLNAME" AS "LLNAME", 
+      "NRBM_COURTVIEW"."ALFNAME" AS "ALFNAME", 
+      "NRBM_COURTVIEW"."ALLNAME" AS "ALLNAME", 
+      "NRBM_COURTVIEW"."CFNAME" AS "CFNAME", 
+      "NRBM_COURTVIEW"."CLNAME" AS "CLNAME", 
+      "NRBM_COURTVIEW"."COURTDATE" AS "COURTDATE", 
+      "NRBM_COURTVIEW"."RESULTS" AS "RESULTS"
+      FROM "CS342"."NRBM_COURTVIEW" "NRBM_COURTVIEW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.Store.NRBM_LITVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_LITVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_LITVIEW"."LITID" AS "LITID", 
+      "NRBM_LITVIEW"."ADLAWID" AS "ADLAWID", 
+      "NRBM_LITVIEW"."CASEID" AS "CASEID", 
+      "NRBM_LITVIEW"."ALFNAME" AS "ALFNAME", 
+      "NRBM_LITVIEW"."ALLNAME" AS "ALLNAME", 
+      "NRBM_LITVIEW"."STARTDATE" AS "STARTDATE", 
+      "NRBM_LITVIEW"."ENDDATE" AS "ENDDATE", 
+      "NRBM_LITVIEW"."RESULTS" AS "RESULTS"
+      FROM "CS342"."NRBM_LITVIEW" "NRBM_LITVIEW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.Store.NRBM_SETSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_SETSVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_SETSVIEW"."SETSID" AS "SETSID", 
+      "NRBM_SETSVIEW"."STAFFID" AS "STAFFID", 
+      "NRBM_SETSVIEW"."APTID" AS "APTID", 
+      "NRBM_SETSVIEW"."SFNAME" AS "SFNAME", 
+      "NRBM_SETSVIEW"."SLNAME" AS "SLNAME", 
+      "NRBM_SETSVIEW"."SETDATE" AS "SETDATE"
+      FROM "CS342"."NRBM_SETSVIEW" "NRBM_SETSVIEW"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.Store.NRBM_WORKSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_WORKSVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_WORKSVIEW"."WORKID" AS "WORKID", 
+      "NRBM_WORKSVIEW"."STAFFID" AS "STAFFID", 
+      "NRBM_WORKSVIEW"."LAWID" AS "LAWID", 
+      "NRBM_WORKSVIEW"."SFNAME" AS "SFNAME", 
+      "NRBM_WORKSVIEW"."SLNAME" AS "SLNAME", 
+      "NRBM_WORKSVIEW"."LFNAME" AS "LFNAME", 
+      "NRBM_WORKSVIEW"."LLNAME" AS "LLNAME", 
+      "NRBM_WORKSVIEW"."STARTDATE" AS "STARTDATE", 
+      "NRBM_WORKSVIEW"."ENDDATE" AS "ENDDATE", 
+      "NRBM_WORKSVIEW"."SALARY" AS "SALARY", 
+      "NRBM_WORKSVIEW"."HOURS" AS "HOURS"
+      FROM "CS342"."NRBM_WORKSVIEW" "NRBM_WORKSVIEW"</DefiningQuery>
+          </EntitySet>
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -366,6 +422,87 @@
           <Property Name="HOURS" Type="number" />
           <Property Name="FEES" Type="varchar2" MaxLength="100" />
         </EntityType>
+<<<<<<< HEAD
+=======
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_COURTVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_COURTVIEW">
+          <Key>
+            <PropertyRef Name="CAID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+            <PropertyRef Name="CASEID" />
+          </Key>
+          <Property Name="CAID" Type="number" Nullable="false" />
+          <Property Name="LAWID" Type="number" Nullable="false" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
+          <Property Name="CASEID" Type="number" Nullable="false" />
+          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="ALFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="ALLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="COURTDATE" Type="date" />
+          <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_LITVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_LITVIEW">
+          <Key>
+            <PropertyRef Name="LITID" />
+            <PropertyRef Name="ADLAWID" />
+            <PropertyRef Name="CASEID" />
+          </Key>
+          <Property Name="LITID" Type="number" Nullable="false" />
+          <Property Name="ADLAWID" Type="number" Nullable="false" />
+          <Property Name="CASEID" Type="number" Nullable="false" />
+          <Property Name="ALFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="ALLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_SETSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_SETSVIEW">
+          <Key>
+            <PropertyRef Name="SETSID" />
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="APTID" />
+          </Key>
+          <Property Name="SETSID" Type="number" Nullable="false" />
+          <Property Name="STAFFID" Type="number" Nullable="false" />
+          <Property Name="APTID" Type="number" Nullable="false" />
+          <Property Name="SFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="SLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="SETDATE" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_WORKSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_WORKSVIEW">
+          <Key>
+            <PropertyRef Name="WORKID" />
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="LAWID" />
+          </Key>
+          <Property Name="WORKID" Type="number" Nullable="false" />
+          <Property Name="STAFFID" Type="number" Nullable="false" />
+          <Property Name="LAWID" Type="number" Nullable="false" />
+          <Property Name="SFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="SLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="SALARY" Type="number" />
+          <Property Name="HOURS" Type="number" />
+        </EntityType>
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
         <Function Name="NRBM_PROC_DELETEADVERSELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
           <Parameter Name="ADLAW_ID" Type="number" Mode="In" />
         </Function>
@@ -417,6 +554,13 @@
           </FunctionImport>
           <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.NRBM_APTVIEW" />
           <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.NRBM_COUNSELSVIEW" />
+<<<<<<< HEAD
+=======
+          <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.NRBM_COURTVIEW" />
+          <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.NRBM_LITVIEW" />
+          <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.NRBM_SETSVIEW" />
+          <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.NRBM_WORKSVIEW" />
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -707,9 +851,15 @@
             <PropertyRef Name="LAWID" />
             <PropertyRef Name="CLIENTID" />
           </Key>
+<<<<<<< HEAD
           <Property Type="Decimal" Name="COUNSELSID" Nullable="false" Precision="38" Scale="0" />
           <Property Type="Decimal" Name="LAWID" Nullable="false" Precision="38" Scale="0" />
           <Property Type="Decimal" Name="CLIENTID" Nullable="false" Precision="38" Scale="0" />
+=======
+          <Property Type="Int32" Name="COUNSELSID" Nullable="false" />
+          <Property Type="Int32" Name="LAWID" Nullable="false" />
+          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
           <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
@@ -719,6 +869,75 @@
           <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
           <Property Type="String" Name="FEES" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
+<<<<<<< HEAD
+=======
+        <EntityType Name="NRBM_COURTVIEW">
+          <Key>
+            <PropertyRef Name="CAID" />
+            <PropertyRef Name="LAWID" />
+            <PropertyRef Name="CLIENTID" />
+            <PropertyRef Name="CASEID" />
+          </Key>
+          <Property Type="Int32" Name="CAID" Nullable="false" />
+          <Property Type="Int32" Name="LAWID" Nullable="false" />
+          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
+          <Property Type="Int32" Name="CASEID" Nullable="false" />
+          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ALFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ALLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="COURTDATE" />
+          <Property Type="String" Name="RESULTS" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NRBM_LITVIEW">
+          <Key>
+            <PropertyRef Name="LITID" />
+            <PropertyRef Name="ADLAWID" />
+            <PropertyRef Name="CASEID" />
+          </Key>
+          <Property Type="Int32" Name="LITID" Nullable="false" />
+          <Property Type="Int32" Name="ADLAWID" Nullable="false" />
+          <Property Type="Int32" Name="CASEID" Nullable="false" />
+          <Property Type="String" Name="ALFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ALLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="STARTDATE" />
+          <Property Type="DateTime" Name="ENDDATE" />
+          <Property Type="String" Name="RESULTS" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NRBM_SETSVIEW">
+          <Key>
+            <PropertyRef Name="SETSID" />
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="APTID" />
+          </Key>
+          <Property Type="Int32" Name="SETSID" Nullable="false" />
+          <Property Type="Int32" Name="STAFFID" Nullable="false" />
+          <Property Type="Int32" Name="APTID" Nullable="false" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="String" Name="SFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="SETDATE" />
+        </EntityType>
+        <EntityType Name="NRBM_WORKSVIEW">
+          <Key>
+            <PropertyRef Name="WORKID" />
+            <PropertyRef Name="STAFFID" />
+            <PropertyRef Name="LAWID" />
+          </Key>
+          <Property Type="Int32" Name="WORKID" Nullable="false" />
+          <Property Type="Int32" Name="STAFFID" Nullable="false" />
+          <Property Type="Int32" Name="LAWID" Nullable="false" />
+          <Property Type="String" Name="SFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="STARTDATE" />
+          <Property Type="DateTime" Name="ENDDATE" />
+          <Property Type="Decimal" Name="SALARY" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
+        </EntityType>
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1049,6 +1268,70 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
+=======
+          <EntitySetMapping Name="NRBM_COURTVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_COURTVIEW">
+              <MappingFragment StoreEntitySet="NRBM_COURTVIEW">
+                <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
+                <ScalarProperty Name="COURTDATE" ColumnName="COURTDATE" />
+                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
+                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
+                <ScalarProperty Name="ALLNAME" ColumnName="ALLNAME" />
+                <ScalarProperty Name="ALFNAME" ColumnName="ALFNAME" />
+                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
+                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
+                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="CAID" ColumnName="CAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NRBM_LITVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_LITVIEW">
+              <MappingFragment StoreEntitySet="NRBM_LITVIEW">
+                <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="ALLNAME" ColumnName="ALLNAME" />
+                <ScalarProperty Name="ALFNAME" ColumnName="ALFNAME" />
+                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
+                <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
+                <ScalarProperty Name="LITID" ColumnName="LITID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NRBM_SETSVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_SETSVIEW">
+              <MappingFragment StoreEntitySet="NRBM_SETSVIEW">
+                <ScalarProperty Name="SETDATE" ColumnName="SETDATE" />
+                <ScalarProperty Name="SLNAME" ColumnName="SLNAME" />
+                <ScalarProperty Name="SFNAME" ColumnName="SFNAME" />
+                <ScalarProperty Name="APTID" ColumnName="APTID" />
+                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+                <ScalarProperty Name="SETSID" ColumnName="SETSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NRBM_WORKSVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_WORKSVIEW">
+              <MappingFragment StoreEntitySet="NRBM_WORKSVIEW">
+                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
+                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
+                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
+                <ScalarProperty Name="SLNAME" ColumnName="SLNAME" />
+                <ScalarProperty Name="SFNAME" ColumnName="SFNAME" />
+                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
+                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
+                <ScalarProperty Name="WORKID" ColumnName="WORKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+>>>>>>> ffad48317b23aeb169691393fa401940bd853526
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
