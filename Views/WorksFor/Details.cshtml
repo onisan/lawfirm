@@ -1,4 +1,4 @@
-﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
+﻿@model MvcLawFirm.Models.NRBM_WORKSVIEW
 
 @{
     ViewBag.Title = "Details";
@@ -10,31 +10,31 @@
     <legend>NRBM_WORKSFOR</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.STAFFID)
+         STAFF
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.STAFFID)
+        @Html.DisplayFor(model => model.SFNAME) @Html.DisplayFor(model => model.SLNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.LFNAME) @Html.DisplayFor(model => model.LLNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SDATE)
+         @Html.DisplayNameFor(model => model.STARTDATE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SDATE)
+        @Html.DisplayFor(model => model.STARTDATE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.EDATE)
+         @Html.DisplayNameFor(model => model.ENDDATE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.EDATE)
+        @Html.DisplayFor(model => model.ENDDATE)
     </div>
 
     <div class="display-label">
@@ -52,6 +52,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.WORKID }) |
+    @Html.ActionLink("Edit", "Edit", new { wid=Model.WORKID, sid=Model.STAFFID, lid=Model.LAWID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
