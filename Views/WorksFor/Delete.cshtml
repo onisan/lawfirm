@@ -1,4 +1,4 @@
-﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
+﻿@model MvcLawFirm.Models.NRBM_WORKSVIEW
 
 @{
     ViewBag.Title = "Delete";
@@ -11,31 +11,31 @@
     <legend>NRBM_WORKSFOR</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.STAFFID)
+         STAFF
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.STAFFID)
+        @Html.DisplayFor(model => model.SFNAME) @Html.DisplayFor(model => model.SLNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.LFNAME) @Html.DisplayFor(model => model.LLNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SDATE)
+         @Html.DisplayNameFor(model => model.STARTDATE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SDATE)
+        @Html.DisplayFor(model => model.STARTDATE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.EDATE)
+         @Html.DisplayNameFor(model => model.ENDDATE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.EDATE)
+        @Html.DisplayFor(model => model.ENDDATE)
     </div>
 
     <div class="display-label">

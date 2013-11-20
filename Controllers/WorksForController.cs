@@ -61,9 +61,9 @@ namespace MvcLawFirm.Controllers
         //
         // GET: /WORKSVIEW/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(int wid = 0, int sid = 0, int lid = 0)
         {
-            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(wid,sid,lid);
             if (nrbm_worksview == null)
             {
                 return HttpNotFound();
@@ -79,7 +79,8 @@ namespace MvcLawFirm.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nrbm_worksview).State = EntityState.Modified;
+                NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(nrbm_worksview.WORKID);
+                db.Entry(nrbm_worksfor).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -89,9 +90,10 @@ namespace MvcLawFirm.Controllers
         //
         // GET: /WORKSVIEW/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Delete(int wid = 0, int sid = 0, int lid = 0)
         {
-            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(wid,sid,lid);
+            
             if (nrbm_worksview == null)
             {
                 return HttpNotFound();
@@ -103,10 +105,12 @@ namespace MvcLawFirm.Controllers
         // POST: /WORKSVIEW/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int wid, int sid, int lid)
         {
-            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            NRBM_WORKSFOR nrbm_worksfor = db.NRBM_WORKSFOR.Find(wid);
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(wid, sid, lid);
             db.NRBM_WORKSVIEW.Remove(nrbm_worksview);
+            db.NRBM_WORKSFOR.Remove(nrbm_worksfor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
