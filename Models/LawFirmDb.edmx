@@ -43,6 +43,20 @@
       "NRBM_APTVIEW"."DESCRIPTION" AS "DESCRIPTION"
       FROM "CS342"."NRBM_APTVIEW" "NRBM_APTVIEW"</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="NRBM_CASEVIEW" EntityType="LawFirm.Store.NRBM_CASEVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_CASEVIEW">
+            <DefiningQuery>SELECT 
+      "NRBM_CASEVIEW"."CASEID" AS "CASEID", 
+      "NRBM_CASEVIEW"."CLIENTID" AS "CLIENTID", 
+      "NRBM_CASEVIEW"."CFNAME" AS "CFNAME", 
+      "NRBM_CASEVIEW"."CLNAME" AS "CLNAME", 
+      "NRBM_CASEVIEW"."STARTDATE" AS "STARTDATE", 
+      "NRBM_CASEVIEW"."ENDDATE" AS "ENDDATE", 
+      "NRBM_CASEVIEW"."EVIDENCE" AS "EVIDENCE", 
+      "NRBM_CASEVIEW"."CATEGORY" AS "CATEGORY", 
+      "NRBM_CASEVIEW"."LITIGATION" AS "LITIGATION", 
+      "NRBM_CASEVIEW"."NOTES" AS "NOTES"
+      FROM "CS342"."NRBM_CASEVIEW" "NRBM_CASEVIEW"</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.Store.NRBM_COUNSELSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COUNSELSVIEW">
             <DefiningQuery>SELECT 
       "NRBM_COUNSELSVIEW"."COUNSELSID" AS "COUNSELSID", 
@@ -399,6 +413,25 @@
           <Property Name="DESCRIPTION" Type="varchar2" MaxLength="510" />
         </EntityType>
         <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS342.NRBM_CASEVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="NRBM_CASEVIEW">
+          <Key>
+            <PropertyRef Name="CASEID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Name="CASEID" Type="number" Nullable="false" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
+          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
+          <Property Name="STARTDATE" Type="date" />
+          <Property Name="ENDDATE" Type="date" />
+          <Property Name="EVIDENCE" Type="varchar2" MaxLength="255" />
+          <Property Name="CATEGORY" Type="varchar2" />
+          <Property Name="LITIGATION" Type="varchar2" />
+          <Property Name="NOTES" Type="varchar2" />
+        </EntityType>
+        <!--Errors Found During Generation:
       warning 6002: The table/view 'CS342.NRBM_COUNSELSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="NRBM_COUNSELSVIEW">
@@ -553,6 +586,7 @@
           <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.NRBM_LITVIEW" />
           <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.NRBM_SETSVIEW" />
           <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.NRBM_WORKSVIEW" />
+          <EntitySet Name="NRBM_CASEVIEW" EntityType="LawFirm.NRBM_CASEVIEW" />
 
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
@@ -924,6 +958,22 @@
           <Property Type="DateTime" Name="ENDDATE" />
           <Property Type="Decimal" Name="SALARY" Precision="38" Scale="0" />
           <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="NRBM_CASEVIEW">
+          <Key>
+            <PropertyRef Name="CASEID" />
+            <PropertyRef Name="CLIENTID" />
+          </Key>
+          <Property Type="Int32" Name="CASEID" Nullable="false" />
+          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
+          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="STARTDATE" />
+          <Property Type="DateTime" Name="ENDDATE" />
+          <Property Type="String" Name="EVIDENCE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CATEGORY" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LITIGATION" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOTES" MaxLength="4000" FixedLength="false" Unicode="false" />
         </EntityType>
 
       </Schema>
@@ -1315,6 +1365,22 @@
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
                 <ScalarProperty Name="WORKID" ColumnName="WORKID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NRBM_CASEVIEW">
+            <EntityTypeMapping TypeName="LawFirm.NRBM_CASEVIEW">
+              <MappingFragment StoreEntitySet="NRBM_CASEVIEW">
+                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
+                <ScalarProperty Name="LITIGATION" ColumnName="LITIGATION" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="EVIDENCE" ColumnName="EVIDENCE" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
+                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
+                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
+                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

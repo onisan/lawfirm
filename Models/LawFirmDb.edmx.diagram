@@ -27,7 +27,7 @@
         <EntityTypeShape EntityType="LawFirm.NRBM_STAFF" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LawFirm.NRBM_STAFFHISTORY" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFOR" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFORHISTORY" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFORHISTORY" Width="1.5" PointX="0.5" PointY="12.5" IsExpanded="true" />
 
         <EntityTypeShape EntityType="LawFirm.NRBM_APTVIEW" Width="1.5" PointX="5.625" PointY="14.375" />
         <EntityTypeShape EntityType="LawFirm.NRBM_COUNSELSVIEW" Width="1.5" PointX="7.25" PointY="14.375" />
@@ -38,6 +38,7 @@
         <EntityTypeShape EntityType="LawFirm.NRBM_LITVIEW" Width="1.5" PointX="11" PointY="14.375" />
         <EntityTypeShape EntityType="LawFirm.NRBM_SETSVIEW" Width="1.5" PointX="12.75" PointY="14.375" />
         <EntityTypeShape EntityType="LawFirm.NRBM_WORKSVIEW" Width="1.5" PointX="3.875" PointY="14.375" />
+        <EntityTypeShape EntityType="LawFirm.NRBM_CASEVIEW" Width="1.5" PointX="2.125" PointY="14.375" />
 
       </Diagram>
     </edmx:Diagrams>

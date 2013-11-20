@@ -57,6 +57,7 @@ namespace MvcLawFirm.Models
         public DbSet<NRBM_LITVIEW> NRBM_LITVIEW { get; set; }
         public DbSet<NRBM_SETSVIEW> NRBM_SETSVIEW { get; set; }
         public DbSet<NRBM_WORKSVIEW> NRBM_WORKSVIEW { get; set; }
+        public DbSet<NRBM_CASEVIEW> NRBM_CASEVIEW { get; set; }
     
         public virtual int NRBM_PROC_DELETEADVERSELAWYER(Nullable<decimal> aDLAW_ID)
         {
