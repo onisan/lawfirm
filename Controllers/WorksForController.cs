@@ -24,9 +24,9 @@ namespace MvcLawFirm.Controllers
         //
         // GET: /WORKSVIEW/Details/5
 
-        public ActionResult Details(int wid = 0, int sid = 0, int lid = 0
+        public ActionResult Details(int wid = 0, int sid = 0, int lid = 0)
         {
-            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(id);
+            NRBM_WORKSVIEW nrbm_worksview = db.NRBM_WORKSVIEW.Find(wid, sid, lid);
             if (nrbm_worksview == null)
             {
                 return HttpNotFound();
