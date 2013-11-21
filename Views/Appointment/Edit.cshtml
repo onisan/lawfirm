@@ -2,18 +2,17 @@
 
 @{
     ViewBag.Title = "Edit";
-    var locations = new string[] { "CSUB", "Downtown Office", "Law Firm", "Police Dept.", "Starbucks" };
-    //Model.LOCATION.Distinct
 }
 
-<h2>Edit Appointment</h2>
+<h2>Edit</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>NRBM_APPOINTMENT</legend>
-        <!--
+
         <div class="editor-label">
             @Html.LabelFor(model => model.APTID)
         </div>
@@ -23,28 +22,28 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID)
+            @Html.LabelFor(model => model.LAWID, "NRBM_LAWYER")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LAWID)
+            @Html.DropDownList("LAWID", String.Empty)
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CASEID)
+            @Html.LabelFor(model => model.CASEID, "NRBM_CASE")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CASEID)
+            @Html.DropDownList("CASEID", String.Empty)
             @Html.ValidationMessageFor(model => model.CASEID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID)
+            @Html.LabelFor(model => model.CLIENTID, "NRBM_CLIENT")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CLIENTID)
+            @Html.DropDownList("CLIENTID", String.Empty)
             @Html.ValidationMessageFor(model => model.CLIENTID)
-        </div>-->
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.DATEON)
@@ -57,7 +56,6 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.LOCATION)
         </div>
-        
         <div class="editor-field">
             @Html.EditorFor(model => model.LOCATION)
             @Html.ValidationMessageFor(model => model.LOCATION)
@@ -82,6 +80,5 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
-    @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
+    @Scripts.Render("~/bundles/jqueryval")
 }

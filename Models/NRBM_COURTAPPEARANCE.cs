@@ -21,5 +21,10 @@ namespace MvcLawFirm.Models
         public Nullable<int> ADLAWID { get; set; }
         public Nullable<System.DateTime> DATEON { get; set; }
         public string RESULTS { get; set; }
+    
+        public virtual NRBM_ADVERSELAWYER NRBM_ADVERSELAWYER { get; set; }
+        public virtual NRBM_CASE NRBM_CASE { get; set; }
+        public virtual NRBM_CLIENT NRBM_CLIENT { get; set; }
+        public virtual NRBM_LAWYER NRBM_LAWYER { get; set; }
     }
 }

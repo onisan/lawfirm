@@ -14,6 +14,11 @@ namespace MvcLawFirm.Models
     
     public partial class NRBM_APPOINTMENT
     {
+        public NRBM_APPOINTMENT()
+        {
+            this.NRBM_SETS = new HashSet<NRBM_SETS>();
+        }
+    
         public int APTID { get; set; }
         public Nullable<int> LAWID { get; set; }
         public Nullable<int> CASEID { get; set; }
@@ -21,5 +26,10 @@ namespace MvcLawFirm.Models
         public Nullable<System.DateTime> DATEON { get; set; }
         public string LOCATION { get; set; }
         public string DESCRIPTION { get; set; }
+    
+        public virtual NRBM_CASE NRBM_CASE { get; set; }
+        public virtual NRBM_CLIENT NRBM_CLIENT { get; set; }
+        public virtual NRBM_LAWYER NRBM_LAWYER { get; set; }
+        public virtual ICollection<NRBM_SETS> NRBM_SETS { get; set; }
     }
 }

@@ -4,11 +4,11 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details of the Appointment</h2>
+<h2>Details</h2>
 
 <fieldset>
     <legend>NRBM_APPOINTMENT</legend>
-    <!--
+
     <div class="display-label">
          @Html.DisplayNameFor(model => model.APTID)
     </div>
@@ -17,26 +17,26 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CASEID)
+         @Html.DisplayNameFor(model => model.NRBM_CASE.EVIDENCE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CASEID)
+        @Html.DisplayFor(model => model.NRBM_CASE.EVIDENCE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLIENTID)
+         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
     </div>
-        -->
+
     <div class="display-label">
          @Html.DisplayNameFor(model => model.DATEON)
     </div>
@@ -59,6 +59,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.APTID }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -14,6 +14,14 @@ namespace MvcLawFirm.Models
     
     public partial class NRBM_CLIENT
     {
+        public NRBM_CLIENT()
+        {
+            this.NRBM_APPOINTMENT = new HashSet<NRBM_APPOINTMENT>();
+            this.NRBM_CASE = new HashSet<NRBM_CASE>();
+            this.NRBM_COUNSELS = new HashSet<NRBM_COUNSELS>();
+            this.NRBM_COURTAPPEARANCE = new HashSet<NRBM_COURTAPPEARANCE>();
+        }
+    
         public int CLIENTID { get; set; }
         public string FNAME { get; set; }
         public string LNAME { get; set; }
@@ -21,5 +29,10 @@ namespace MvcLawFirm.Models
         public string EMAIL { get; set; }
         public string ADDRESS { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
+    
+        public virtual ICollection<NRBM_APPOINTMENT> NRBM_APPOINTMENT { get; set; }
+        public virtual ICollection<NRBM_CASE> NRBM_CASE { get; set; }
+        public virtual ICollection<NRBM_COUNSELS> NRBM_COUNSELS { get; set; }
+        public virtual ICollection<NRBM_COURTAPPEARANCE> NRBM_COURTAPPEARANCE { get; set; }
     }
 }

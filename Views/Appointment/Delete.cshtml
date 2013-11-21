@@ -4,12 +4,12 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete Appointment</h2>
+<h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
     <legend>NRBM_APPOINTMENT</legend>
-    <!--
+
     <div class="display-label">
          @Html.DisplayNameFor(model => model.APTID)
     </div>
@@ -18,26 +18,26 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CASEID)
+         @Html.DisplayNameFor(model => model.NRBM_CASE.EVIDENCE)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CASEID)
+        @Html.DisplayFor(model => model.NRBM_CASE.EVIDENCE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLIENTID)
+         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
     </div>
-        -->
+
     <div class="display-label">
          @Html.DisplayNameFor(model => model.DATEON)
     </div>
@@ -60,6 +60,7 @@
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")
