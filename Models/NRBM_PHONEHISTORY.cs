@@ -15,7 +15,7 @@ namespace MvcLawFirm.Models
     public partial class NRBM_PHONEHISTORY
     {
         public int PHONEID { get; set; }
-        public Nullable<int> CLIENTID { get; set; }
+        public int CLIENTID { get; set; }
         public string HOME { get; set; }
         public string CELL { get; set; }
         public string BUSINESS { get; set; }

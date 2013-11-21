@@ -40,7 +40,6 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE");
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME");
             ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME");
             return View();
@@ -60,7 +59,6 @@ namespace MvcLawFirm.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE", nrbm_appointment.CASEID);
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_appointment.CLIENTID);
             ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_appointment.LAWID);
             return View(nrbm_appointment);
@@ -95,7 +93,6 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE", nrbm_appointment.CASEID);
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_appointment.CLIENTID);
             ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_appointment.LAWID);
             return View(nrbm_appointment);

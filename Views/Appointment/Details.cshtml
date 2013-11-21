@@ -10,35 +10,21 @@
     <legend>NRBM_APPOINTMENT</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.APTID)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.APTID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME)
+         CLIENT
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CASE.EVIDENCE)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CASE.EVIDENCE)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DATEON)
+         DATE
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
@@ -59,6 +45,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.APTID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

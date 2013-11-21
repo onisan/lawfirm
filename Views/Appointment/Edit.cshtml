@@ -14,31 +14,14 @@
         <legend>NRBM_APPOINTMENT</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.APTID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.APTID)
-            @Html.ValidationMessageFor(model => model.APTID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID, "NRBM_LAWYER")
+            @Html.LabelFor(model => model.LAWID, "LAWYER")
         </div>
         <div class="editor-field">
             @Html.DropDownList("LAWID", String.Empty)
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.CASEID, "NRBM_CASE")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("CASEID", String.Empty)
-            @Html.ValidationMessageFor(model => model.CASEID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID, "NRBM_CLIENT")
+            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
         </div>
         <div class="editor-field">
             @Html.DropDownList("CLIENTID", String.Empty)

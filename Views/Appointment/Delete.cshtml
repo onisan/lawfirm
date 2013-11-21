@@ -11,35 +11,21 @@
     <legend>NRBM_APPOINTMENT</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.APTID)
+         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME, "LAWYER")
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.APTID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME)
+         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME, "CLIENT")
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CASE.EVIDENCE)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CASE.EVIDENCE)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DATEON)
+         @Html.DisplayNameFor(model => model.DATEON, "DATE")
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)

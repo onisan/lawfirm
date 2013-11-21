@@ -301,7 +301,7 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
           <Property Name="HOME" Type="varchar2" MaxLength="100" />
           <Property Name="CELL" Type="varchar2" MaxLength="100" />
           <Property Name="BUSINESS" Type="varchar2" MaxLength="100" />
@@ -878,7 +878,7 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
           <Property Name="HOME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CELL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="BUSINESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
