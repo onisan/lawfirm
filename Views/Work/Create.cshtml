@@ -1,4 +1,4 @@
-﻿@model MvcLawFirm.Models.NRBM_APPOINTMENT
+﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
 
 @{
     ViewBag.Title = "Create";
@@ -11,7 +11,15 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>APPOINTMENT</legend>
+        <legend>NRBM_WORKSFOR</legend>
+
+        <div class="editor-label">
+            <label for="STAFFID">STAFF</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("STAFFID", String.Empty)
+            @Html.ValidationMessageFor(model => model.STAFFID)
+        </div>
 
         <div class="editor-label">
             <label for="LAWID">LAWYER</label>
@@ -22,35 +30,35 @@
         </div>
 
         <div class="editor-label">
-            <label for="CLIENTID">CLIENT</label>
+            <label for="SDATE">START DATE</label>
         </div>
         <div class="editor-field">
-            @Html.DropDownList("CLIENTID", String.Empty)
-            @Html.ValidationMessageFor(model => model.CLIENTID)
+            @Html.EditorFor(model => model.SDATE)
+            @Html.ValidationMessageFor(model => model.SDATE)
         </div>
 
         <div class="editor-label">
-            <label for="DATEON">Date</label>
+            <label for="EDATE">END DATE</label>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DATEON)
-            @Html.ValidationMessageFor(model => model.DATEON)
+            @Html.EditorFor(model => model.EDATE)
+            @Html.ValidationMessageFor(model => model.EDATE)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LOCATION)
+            @Html.LabelFor(model => model.SALARY)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LOCATION)
-            @Html.ValidationMessageFor(model => model.LOCATION)
+            @Html.EditorFor(model => model.SALARY)
+            @Html.ValidationMessageFor(model => model.SALARY)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DESCRIPTION)
+            @Html.LabelFor(model => model.HOURS)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DESCRIPTION)
-            @Html.ValidationMessageFor(model => model.DESCRIPTION)
+            @Html.EditorFor(model => model.HOURS)
+            @Html.ValidationMessageFor(model => model.HOURS)
         </div>
 
         <p>

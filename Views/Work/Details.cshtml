@@ -1,0 +1,57 @@
+﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>WORK</legend>
+
+    <div class="display-label">
+         FIRST NAME
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_STAFF.FNAME) @Html.DisplayFor(model => model.NRBM_STAFF.LNAME)
+    </div>
+
+    <div class="display-label">
+         LAST NAME
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
+    </div>
+
+    <div class="display-label">
+         START DATE
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SDATE)
+    </div>
+
+    <div class="display-label">
+         END DATE
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SALARY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SALARY)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HOURS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HOURS)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.WORKID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
