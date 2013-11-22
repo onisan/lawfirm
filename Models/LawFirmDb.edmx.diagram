@@ -4,42 +4,46 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="41e48d85704c438aa22d27c912ac61d7" Name="Diagram1">
-        <EntityTypeShape EntityType="LawFirm.NRBM_ADVERSELAWYER" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_ADVERSELAWYERHISTORY" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_APPOINTMENT" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_APPOINTMENTHISTORY" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_CASE" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_CASEHISTORY" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_CLIENT" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_CLIENTHISTORY" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_COUNSELS" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_COUNSELSHISTORY" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_COURTAPPEARANCE" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_COURTAPPEARANCEHISTORY" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_LAWYER" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_LAWYERHISTORY" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_LITIGATES" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_LITIGATESHISTORY" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_PHONE" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_PHONEHISTORY" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_SETS" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_STAFF" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_STAFFHISTORY" Width="1.5" PointX="6.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFOR" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_WORKSFORHISTORY" Width="1.5" PointX="0.5" PointY="12.5" IsExpanded="true" />
-
-        <EntityTypeShape EntityType="LawFirm.NRBM_APTVIEW" Width="1.5" PointX="5.625" PointY="14.375" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_COUNSELSVIEW" Width="1.5" PointX="7.25" PointY="14.375" />
-
-        
-        
-        <EntityTypeShape EntityType="LawFirm.NRBM_COURTVIEW" Width="1.5" PointX="9.25" PointY="14.375" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_LITVIEW" Width="1.5" PointX="11" PointY="14.375" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_SETSVIEW" Width="1.5" PointX="12.75" PointY="14.375" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_WORKSVIEW" Width="1.5" PointX="3.875" PointY="14.375" />
-        <EntityTypeShape EntityType="LawFirm.NRBM_CASEVIEW" Width="1.5" PointX="2.125" PointY="14.375" />
-
+      <Diagram DiagramId="65f9474253fa4a828e76f684ec2ca116" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.NRBM_ADVERSELAWYER" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_ADVERSELAWYERHISTORY" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_APPOINTMENT" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_APPOINTMENTHISTORY" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_CASE" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_CASEHISTORY" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_CLIENT" Width="1.5" PointX="1.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_CLIENTHISTORY" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_COUNSELS" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_COUNSELSHISTORY" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_COURTAPPEARANCE" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_COURTAPPEARANCEHISTORY" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_LAWYER" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_LAWYERHISTORY" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_LITIGATES" Width="1.5" PointX="6" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_LITIGATESHISTORY" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_PHONE" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_PHONEHISTORY" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_SETS" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_STAFF" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_STAFFHISTORY" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_WORKSFOR" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NRBM_WORKSFORHISTORY" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_COURT_ADLAWID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LIT_ADLAWID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_APT_CASEID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_APT_CLIENTID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_APT_LAWID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SETS_APTID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CASE_CLIENTID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_COURT_CASEID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_LIT_CASEID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_COUNSELS_CLIENTID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_COURT_CLIENTID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_COUNSELS_LAWID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_COURT_LAWYERID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_WORK_LAWID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_SETS_STAFFID" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_WORK_STAFFID" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

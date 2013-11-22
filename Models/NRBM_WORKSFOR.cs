@@ -21,5 +21,8 @@ namespace MvcLawFirm.Models
         public Nullable<System.DateTime> EDATE { get; set; }
         public Nullable<decimal> SALARY { get; set; }
         public Nullable<decimal> HOURS { get; set; }
+    
+        public virtual NRBM_LAWYER NRBM_LAWYER { get; set; }
+        public virtual NRBM_STAFF NRBM_STAFF { get; set; }
     }
 }

@@ -14,9 +14,22 @@ namespace MvcLawFirm.Models
     
     public partial class NRBM_LAWYER
     {
+        public NRBM_LAWYER()
+        {
+            this.NRBM_APPOINTMENT = new HashSet<NRBM_APPOINTMENT>();
+            this.NRBM_COUNSELS = new HashSet<NRBM_COUNSELS>();
+            this.NRBM_COURTAPPEARANCE = new HashSet<NRBM_COURTAPPEARANCE>();
+            this.NRBM_WORKSFOR = new HashSet<NRBM_WORKSFOR>();
+        }
+    
         public int LAWID { get; set; }
         public string FNAME { get; set; }
         public string LNAME { get; set; }
         public string POSITION { get; set; }
+    
+        public virtual ICollection<NRBM_APPOINTMENT> NRBM_APPOINTMENT { get; set; }
+        public virtual ICollection<NRBM_COUNSELS> NRBM_COUNSELS { get; set; }
+        public virtual ICollection<NRBM_COURTAPPEARANCE> NRBM_COURTAPPEARANCE { get; set; }
+        public virtual ICollection<NRBM_WORKSFOR> NRBM_WORKSFOR { get; set; }
     }
 }

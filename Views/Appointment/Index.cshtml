@@ -1,11 +1,15 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_APTVIEW>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_APPOINTMENT>
 
 @{
     ViewBag.Title = "Index";
 }
 
+<<<<<<< HEAD
 
 <h2>Appointment</h2>
+=======
+<h2>Index</h2>
+>>>>>>> 8af61a382d12021d5a852c06805fa9c5a9902edc
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -23,13 +27,13 @@
             CLIENT
         </th>
         <th>
-            DATE
+            @Html.DisplayNameFor(model => model.DATEON)
         </th>
         <th>
-            LOCATION
+            @Html.DisplayNameFor(model => model.LOCATION)
         </th>
         <th>
-            DESCRIPTION
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
         </th>
         <th></th>
     </tr>
@@ -37,13 +41,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.LFNAME) @Html.DisplayFor(modelItem => item.LLNAME)
+            @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FNAME) @Html.DisplayFor(modelItem => item.NRBM_LAWYER.LNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
+            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.APTDATE)
+            @Html.DisplayFor(modelItem => item.DATEON)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LOCATION)
@@ -52,9 +56,9 @@
             @Html.DisplayFor(modelItem => item.DESCRIPTION)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.APTID}) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.APTID }) |
             @Html.ActionLink("Details", "Details", new { id=item.APTID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.APTID })
+            @Html.ActionLink("Delete", "Delete", new {  id=item.APTID })
         </td>
     </tr>
 }

@@ -4,17 +4,23 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Staff Details</h2>
+<h2>Details</h2>
 
 <fieldset>
-    <legend>NRBM_STAFF</legend>
-    
+    <legend>STAFF</legend>
+
     <div class="display-label">
-        NAME
+         FIRST NAME
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.FNAME) @Html.DisplayFor(model => model.LNAME)
+        @Html.DisplayFor(model => model.FNAME)
     </div>
+
+    <div class="display-label">
+         LAST NAME
+    </div>
+    <div class="display-field">
+         @Html.DisplayFor(model => model.LNAME)
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.TITLE)
@@ -24,6 +30,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.STAFFID }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

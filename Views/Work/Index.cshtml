@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_WORKSFOR>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            STAFF
+        </th>
+        <th>
+            LAWYER
+        </th>
+        <th>
+            START DATE
+        </th>
+        <th>
+            END DATE
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SALARY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HOURS)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NRBM_STAFF.FNAME) @Html.DisplayFor(modelItem => item.NRBM_STAFF.LNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FNAME) @Html.DisplayFor(modelItem => item.NRBM_LAWYER.LNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SALARY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WORKID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WORKID })
+        </td>
+    </tr>
+}
+
+</table>

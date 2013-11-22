@@ -4,127 +4,95 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LawFirm.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="LawFirmStoreContainer">
-          <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="LawFirm.Store.NRBM_ADVERSELAWYER" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_ADVERSELAWYERHISTORY" EntityType="LawFirm.Store.NRBM_ADVERSELAWYERHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_APPOINTMENT" EntityType="LawFirm.Store.NRBM_APPOINTMENT" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_APPOINTMENTHISTORY" EntityType="LawFirm.Store.NRBM_APPOINTMENTHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_CASE" EntityType="LawFirm.Store.NRBM_CASE" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_CASEHISTORY" EntityType="LawFirm.Store.NRBM_CASEHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_CLIENT" EntityType="LawFirm.Store.NRBM_CLIENT" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_CLIENTHISTORY" EntityType="LawFirm.Store.NRBM_CLIENTHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_COUNSELS" EntityType="LawFirm.Store.NRBM_COUNSELS" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_COUNSELSHISTORY" EntityType="LawFirm.Store.NRBM_COUNSELSHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_COURTAPPEARANCE" EntityType="LawFirm.Store.NRBM_COURTAPPEARANCE" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_COURTAPPEARANCEHISTORY" EntityType="LawFirm.Store.NRBM_COURTAPPEARANCEHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_LAWYER" EntityType="LawFirm.Store.NRBM_LAWYER" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_LAWYERHISTORY" EntityType="LawFirm.Store.NRBM_LAWYERHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_LITIGATES" EntityType="LawFirm.Store.NRBM_LITIGATES" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_LITIGATESHISTORY" EntityType="LawFirm.Store.NRBM_LITIGATESHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_PHONE" EntityType="LawFirm.Store.NRBM_PHONE" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_PHONEHISTORY" EntityType="LawFirm.Store.NRBM_PHONEHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_SETS" EntityType="LawFirm.Store.NRBM_SETS" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_STAFF" EntityType="LawFirm.Store.NRBM_STAFF" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_STAFFHISTORY" EntityType="LawFirm.Store.NRBM_STAFFHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_WORKSFOR" EntityType="LawFirm.Store.NRBM_WORKSFOR" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="LawFirm.Store.NRBM_WORKSFORHISTORY" store:Type="Tables" Schema="CS342" />
-          <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.Store.NRBM_APTVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_APTVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_APTVIEW"."APTID" AS "APTID", 
-      "NRBM_APTVIEW"."LAWID" AS "LAWID", 
-      "NRBM_APTVIEW"."CLIENTID" AS "CLIENTID", 
-      "NRBM_APTVIEW"."LFNAME" AS "LFNAME", 
-      "NRBM_APTVIEW"."LLNAME" AS "LLNAME", 
-      "NRBM_APTVIEW"."CFNAME" AS "CFNAME", 
-      "NRBM_APTVIEW"."CLNAME" AS "CLNAME", 
-      "NRBM_APTVIEW"."APTDATE" AS "APTDATE", 
-      "NRBM_APTVIEW"."LOCATION" AS "LOCATION", 
-      "NRBM_APTVIEW"."DESCRIPTION" AS "DESCRIPTION"
-      FROM "CS342"."NRBM_APTVIEW" "NRBM_APTVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_CASEVIEW" EntityType="LawFirm.Store.NRBM_CASEVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_CASEVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_CASEVIEW"."CASEID" AS "CASEID", 
-      "NRBM_CASEVIEW"."CLIENTID" AS "CLIENTID", 
-      "NRBM_CASEVIEW"."CFNAME" AS "CFNAME", 
-      "NRBM_CASEVIEW"."CLNAME" AS "CLNAME", 
-      "NRBM_CASEVIEW"."STARTDATE" AS "STARTDATE", 
-      "NRBM_CASEVIEW"."ENDDATE" AS "ENDDATE", 
-      "NRBM_CASEVIEW"."EVIDENCE" AS "EVIDENCE", 
-      "NRBM_CASEVIEW"."CATEGORY" AS "CATEGORY", 
-      "NRBM_CASEVIEW"."LITIGATION" AS "LITIGATION", 
-      "NRBM_CASEVIEW"."NOTES" AS "NOTES"
-      FROM "CS342"."NRBM_CASEVIEW" "NRBM_CASEVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.Store.NRBM_COUNSELSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COUNSELSVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_COUNSELSVIEW"."COUNSELSID" AS "COUNSELSID", 
-      "NRBM_COUNSELSVIEW"."LAWID" AS "LAWID", 
-      "NRBM_COUNSELSVIEW"."CLIENTID" AS "CLIENTID", 
-      "NRBM_COUNSELSVIEW"."LFNAME" AS "LFNAME", 
-      "NRBM_COUNSELSVIEW"."LLNAME" AS "LLNAME", 
-      "NRBM_COUNSELSVIEW"."CFNAME" AS "CFNAME", 
-      "NRBM_COUNSELSVIEW"."CLNAME" AS "CLNAME", 
-      "NRBM_COUNSELSVIEW"."STARTDATE" AS "STARTDATE", 
-      "NRBM_COUNSELSVIEW"."ENDDATE" AS "ENDDATE", 
-      "NRBM_COUNSELSVIEW"."HOURS" AS "HOURS", 
-      "NRBM_COUNSELSVIEW"."FEES" AS "FEES"
-      FROM "CS342"."NRBM_COUNSELSVIEW" "NRBM_COUNSELSVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.Store.NRBM_COURTVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_COURTVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_COURTVIEW"."CAID" AS "CAID", 
-      "NRBM_COURTVIEW"."LAWID" AS "LAWID", 
-      "NRBM_COURTVIEW"."CLIENTID" AS "CLIENTID", 
-      "NRBM_COURTVIEW"."CASEID" AS "CASEID", 
-      "NRBM_COURTVIEW"."LFNAME" AS "LFNAME", 
-      "NRBM_COURTVIEW"."LLNAME" AS "LLNAME", 
-      "NRBM_COURTVIEW"."ALFNAME" AS "ALFNAME", 
-      "NRBM_COURTVIEW"."ALLNAME" AS "ALLNAME", 
-      "NRBM_COURTVIEW"."CFNAME" AS "CFNAME", 
-      "NRBM_COURTVIEW"."CLNAME" AS "CLNAME", 
-      "NRBM_COURTVIEW"."COURTDATE" AS "COURTDATE", 
-      "NRBM_COURTVIEW"."RESULTS" AS "RESULTS"
-      FROM "CS342"."NRBM_COURTVIEW" "NRBM_COURTVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.Store.NRBM_LITVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_LITVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_LITVIEW"."LITID" AS "LITID", 
-      "NRBM_LITVIEW"."ADLAWID" AS "ADLAWID", 
-      "NRBM_LITVIEW"."CASEID" AS "CASEID", 
-      "NRBM_LITVIEW"."ALFNAME" AS "ALFNAME", 
-      "NRBM_LITVIEW"."ALLNAME" AS "ALLNAME", 
-      "NRBM_LITVIEW"."STARTDATE" AS "STARTDATE", 
-      "NRBM_LITVIEW"."ENDDATE" AS "ENDDATE", 
-      "NRBM_LITVIEW"."RESULTS" AS "RESULTS"
-      FROM "CS342"."NRBM_LITVIEW" "NRBM_LITVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.Store.NRBM_SETSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_SETSVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_SETSVIEW"."SETSID" AS "SETSID", 
-      "NRBM_SETSVIEW"."STAFFID" AS "STAFFID", 
-      "NRBM_SETSVIEW"."APTID" AS "APTID", 
-      "NRBM_SETSVIEW"."SFNAME" AS "SFNAME", 
-      "NRBM_SETSVIEW"."SLNAME" AS "SLNAME", 
-      "NRBM_SETSVIEW"."SETDATE" AS "SETDATE"
-      FROM "CS342"."NRBM_SETSVIEW" "NRBM_SETSVIEW"</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.Store.NRBM_WORKSVIEW" store:Type="Views" store:Schema="CS342" store:Name="NRBM_WORKSVIEW">
-            <DefiningQuery>SELECT 
-      "NRBM_WORKSVIEW"."WORKID" AS "WORKID", 
-      "NRBM_WORKSVIEW"."STAFFID" AS "STAFFID", 
-      "NRBM_WORKSVIEW"."LAWID" AS "LAWID", 
-      "NRBM_WORKSVIEW"."SFNAME" AS "SFNAME", 
-      "NRBM_WORKSVIEW"."SLNAME" AS "SLNAME", 
-      "NRBM_WORKSVIEW"."LFNAME" AS "LFNAME", 
-      "NRBM_WORKSVIEW"."LLNAME" AS "LLNAME", 
-      "NRBM_WORKSVIEW"."STARTDATE" AS "STARTDATE", 
-      "NRBM_WORKSVIEW"."ENDDATE" AS "ENDDATE", 
-      "NRBM_WORKSVIEW"."SALARY" AS "SALARY", 
-      "NRBM_WORKSVIEW"."HOURS" AS "HOURS"
-      FROM "CS342"."NRBM_WORKSVIEW" "NRBM_WORKSVIEW"</DefiningQuery>
-          </EntitySet>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="Model.Store.NRBM_ADVERSELAWYER" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_ADVERSELAWYERHISTORY" EntityType="Model.Store.NRBM_ADVERSELAWYERHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_APPOINTMENT" EntityType="Model.Store.NRBM_APPOINTMENT" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_APPOINTMENTHISTORY" EntityType="Model.Store.NRBM_APPOINTMENTHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_CASE" EntityType="Model.Store.NRBM_CASE" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_CASEHISTORY" EntityType="Model.Store.NRBM_CASEHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_CLIENT" EntityType="Model.Store.NRBM_CLIENT" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_CLIENTHISTORY" EntityType="Model.Store.NRBM_CLIENTHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_COUNSELS" EntityType="Model.Store.NRBM_COUNSELS" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_COUNSELSHISTORY" EntityType="Model.Store.NRBM_COUNSELSHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_COURTAPPEARANCE" EntityType="Model.Store.NRBM_COURTAPPEARANCE" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_COURTAPPEARANCEHISTORY" EntityType="Model.Store.NRBM_COURTAPPEARANCEHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_LAWYER" EntityType="Model.Store.NRBM_LAWYER" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_LAWYERHISTORY" EntityType="Model.Store.NRBM_LAWYERHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_LITIGATES" EntityType="Model.Store.NRBM_LITIGATES" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_LITIGATESHISTORY" EntityType="Model.Store.NRBM_LITIGATESHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_PHONE" EntityType="Model.Store.NRBM_PHONE" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_PHONEHISTORY" EntityType="Model.Store.NRBM_PHONEHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_SETS" EntityType="Model.Store.NRBM_SETS" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_STAFF" EntityType="Model.Store.NRBM_STAFF" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_STAFFHISTORY" EntityType="Model.Store.NRBM_STAFFHISTORY" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_WORKSFOR" EntityType="Model.Store.NRBM_WORKSFOR" store:Type="Tables" Schema="CS342" />
+          <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="Model.Store.NRBM_WORKSFORHISTORY" store:Type="Tables" Schema="CS342" />
+          <AssociationSet Name="FK_APT_CASEID" Association="Model.Store.FK_APT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APT_CLIENTID" Association="Model.Store.FK_APT_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APT_LAWID" Association="Model.Store.FK_APT_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CASE_CLIENTID" Association="Model.Store.FK_CASE_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNSELS_CLIENTID" Association="Model.Store.FK_COUNSELS_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_COUNSELS" EntitySet="NRBM_COUNSELS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNSELS_LAWID" Association="Model.Store.FK_COUNSELS_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_COUNSELS" EntitySet="NRBM_COUNSELS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_ADLAWID" Association="Model.Store.FK_COURT_ADLAWID">
+            <End Role="NRBM_ADVERSELAWYER" EntitySet="NRBM_ADVERSELAWYER" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_CASEID" Association="Model.Store.FK_COURT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_CLIENTID" Association="Model.Store.FK_COURT_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_LAWYERID" Association="Model.Store.FK_COURT_LAWYERID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LIT_ADLAWID" Association="Model.Store.FK_LIT_ADLAWID">
+            <End Role="NRBM_ADVERSELAWYER" EntitySet="NRBM_ADVERSELAWYER" />
+            <End Role="NRBM_LITIGATES" EntitySet="NRBM_LITIGATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LIT_CASEID" Association="Model.Store.FK_LIT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_LITIGATES" EntitySet="NRBM_LITIGATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SETS_APTID" Association="Model.Store.FK_SETS_APTID">
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+            <End Role="NRBM_SETS" EntitySet="NRBM_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SETS_STAFFID" Association="Model.Store.FK_SETS_STAFFID">
+            <End Role="NRBM_STAFF" EntitySet="NRBM_STAFF" />
+            <End Role="NRBM_SETS" EntitySet="NRBM_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WORK_LAWID" Association="Model.Store.FK_WORK_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_WORKSFOR" EntitySet="NRBM_WORKSFOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WORK_STAFFID" Association="Model.Store.FK_WORK_STAFFID">
+            <End Role="NRBM_STAFF" EntitySet="NRBM_STAFF" />
+            <End Role="NRBM_WORKSFOR" EntitySet="NRBM_WORKSFOR" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -333,7 +301,7 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" />
+          <Property Name="CLIENTID" Type="number" Nullable="false" />
           <Property Name="HOME" Type="varchar2" MaxLength="100" />
           <Property Name="CELL" Type="varchar2" MaxLength="100" />
           <Property Name="BUSINESS" Type="varchar2" MaxLength="100" />
@@ -392,202 +360,290 @@
           <Property Name="HOURS" Type="number" />
           <Property Name="DATEDELETED" Type="date" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_APTVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_APTVIEW">
-          <Key>
-            <PropertyRef Name="APTID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-          <Property Name="APTID" Type="number" Nullable="false" />
-          <Property Name="LAWID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" Nullable="false" />
-          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="APTDATE" Type="date" />
-          <Property Name="LOCATION" Type="varchar2" MaxLength="255" />
-          <Property Name="DESCRIPTION" Type="varchar2" MaxLength="510" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_CASEVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_CASEVIEW">
-          <Key>
-            <PropertyRef Name="CASEID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-          <Property Name="CASEID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" Nullable="false" />
-          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="STARTDATE" Type="date" />
-          <Property Name="ENDDATE" Type="date" />
-          <Property Name="EVIDENCE" Type="varchar2" MaxLength="255" />
-          <Property Name="CATEGORY" Type="varchar2" />
-          <Property Name="LITIGATION" Type="varchar2" />
-          <Property Name="NOTES" Type="varchar2" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_COUNSELSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_COUNSELSVIEW">
-          <Key>
-            <PropertyRef Name="COUNSELSID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-          <Property Name="COUNSELSID" Type="number" Nullable="false" />
-          <Property Name="LAWID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" Nullable="false" />
-          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="STARTDATE" Type="varchar2" MaxLength="100" />
-          <Property Name="ENDDATE" Type="varchar2" MaxLength="100" />
-          <Property Name="HOURS" Type="number" />
-          <Property Name="FEES" Type="varchar2" MaxLength="100" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_COURTVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_COURTVIEW">
-          <Key>
-            <PropertyRef Name="CAID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-            <PropertyRef Name="CASEID" />
-          </Key>
-          <Property Name="CAID" Type="number" Nullable="false" />
-          <Property Name="LAWID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" Nullable="false" />
-          <Property Name="CASEID" Type="number" Nullable="false" />
-          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="ALFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="ALLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="CLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="COURTDATE" Type="date" />
-          <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_LITVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_LITVIEW">
-          <Key>
-            <PropertyRef Name="LITID" />
-            <PropertyRef Name="ADLAWID" />
-            <PropertyRef Name="CASEID" />
-          </Key>
-          <Property Name="LITID" Type="number" Nullable="false" />
-          <Property Name="ADLAWID" Type="number" Nullable="false" />
-          <Property Name="CASEID" Type="number" Nullable="false" />
-          <Property Name="ALFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="ALLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="STARTDATE" Type="date" />
-          <Property Name="ENDDATE" Type="date" />
-          <Property Name="RESULTS" Type="varchar2" MaxLength="255" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_SETSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_SETSVIEW">
-          <Key>
-            <PropertyRef Name="SETSID" />
-            <PropertyRef Name="STAFFID" />
-            <PropertyRef Name="APTID" />
-          </Key>
-          <Property Name="SETSID" Type="number" Nullable="false" />
-          <Property Name="STAFFID" Type="number" Nullable="false" />
-          <Property Name="APTID" Type="number" Nullable="false" />
-          <Property Name="SFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="SLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="SETDATE" Type="date" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'CS342.NRBM_WORKSVIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="NRBM_WORKSVIEW">
-          <Key>
-            <PropertyRef Name="WORKID" />
-            <PropertyRef Name="STAFFID" />
-            <PropertyRef Name="LAWID" />
-          </Key>
-          <Property Name="WORKID" Type="number" Nullable="false" />
-          <Property Name="STAFFID" Type="number" Nullable="false" />
-          <Property Name="LAWID" Type="number" Nullable="false" />
-          <Property Name="SFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="SLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="LFNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="LLNAME" Type="varchar2" MaxLength="255" />
-          <Property Name="STARTDATE" Type="date" />
-          <Property Name="ENDDATE" Type="date" />
-          <Property Name="SALARY" Type="number" />
-          <Property Name="HOURS" Type="number" />
-        </EntityType>
-        <Function Name="NRBM_PROC_DELETEADVERSELAWYER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
-          <Parameter Name="ADLAW_ID" Type="number" Mode="In" />
-        </Function>
-        <Function Name="NRBM_PROC_DELETECASE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="CS342">
-          <Parameter Name="CASE_CASEID" Type="number" Mode="In" />
-        </Function>
+        <Association Name="FK_APT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.Store.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.Store.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APT_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.Store.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.Store.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APT_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.Store.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.Store.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CASE_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.Store.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_CASE" Type="Model.Store.NRBM_CASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_CASE">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNSELS_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.Store.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_COUNSELS" Type="Model.Store.NRBM_COUNSELS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_COUNSELS">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNSELS_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.Store.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COUNSELS" Type="Model.Store.NRBM_COUNSELS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COUNSELS">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_ADLAWID">
+          <End Role="NRBM_ADVERSELAWYER" Type="Model.Store.NRBM_ADVERSELAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.Store.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_ADVERSELAWYER">
+              <PropertyRef Name="ADLAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="ADLAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.Store.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.Store.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.Store.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.Store.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_LAWYERID">
+          <End Role="NRBM_LAWYER" Type="Model.Store.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.Store.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LIT_ADLAWID">
+          <End Role="NRBM_ADVERSELAWYER" Type="Model.Store.NRBM_ADVERSELAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_LITIGATES" Type="Model.Store.NRBM_LITIGATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_ADVERSELAWYER">
+              <PropertyRef Name="ADLAWID" />
+            </Principal>
+            <Dependent Role="NRBM_LITIGATES">
+              <PropertyRef Name="ADLAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LIT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.Store.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_LITIGATES" Type="Model.Store.NRBM_LITIGATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_LITIGATES">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SETS_APTID">
+          <End Role="NRBM_APPOINTMENT" Type="Model.Store.NRBM_APPOINTMENT" Multiplicity="0..1" />
+          <End Role="NRBM_SETS" Type="Model.Store.NRBM_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="APTID" />
+            </Principal>
+            <Dependent Role="NRBM_SETS">
+              <PropertyRef Name="APTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SETS_STAFFID">
+          <End Role="NRBM_STAFF" Type="Model.Store.NRBM_STAFF" Multiplicity="0..1" />
+          <End Role="NRBM_SETS" Type="Model.Store.NRBM_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_STAFF">
+              <PropertyRef Name="STAFFID" />
+            </Principal>
+            <Dependent Role="NRBM_SETS">
+              <PropertyRef Name="STAFFID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WORK_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.Store.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_WORKSFOR" Type="Model.Store.NRBM_WORKSFOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_WORKSFOR">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WORK_STAFFID">
+          <End Role="NRBM_STAFF" Type="Model.Store.NRBM_STAFF" Multiplicity="0..1" />
+          <End Role="NRBM_WORKSFOR" Type="Model.Store.NRBM_WORKSFOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_STAFF">
+              <PropertyRef Name="STAFFID" />
+            </Principal>
+            <Dependent Role="NRBM_WORKSFOR">
+              <PropertyRef Name="STAFFID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LawFirm" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="LawFirmDbContext" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="LawFirm.NRBM_ADVERSELAWYER" />
-          <EntitySet Name="NRBM_ADVERSELAWYERHISTORY" EntityType="LawFirm.NRBM_ADVERSELAWYERHISTORY" />
-          <EntitySet Name="NRBM_APPOINTMENT" EntityType="LawFirm.NRBM_APPOINTMENT" />
-          <EntitySet Name="NRBM_APPOINTMENTHISTORY" EntityType="LawFirm.NRBM_APPOINTMENTHISTORY" />
-          <EntitySet Name="NRBM_CASE" EntityType="LawFirm.NRBM_CASE" />
-          <EntitySet Name="NRBM_CASEHISTORY" EntityType="LawFirm.NRBM_CASEHISTORY" />
-          <EntitySet Name="NRBM_CLIENT" EntityType="LawFirm.NRBM_CLIENT" />
-          <EntitySet Name="NRBM_CLIENTHISTORY" EntityType="LawFirm.NRBM_CLIENTHISTORY" />
-          <EntitySet Name="NRBM_COUNSELS" EntityType="LawFirm.NRBM_COUNSELS" />
-          <EntitySet Name="NRBM_COUNSELSHISTORY" EntityType="LawFirm.NRBM_COUNSELSHISTORY" />
-          <EntitySet Name="NRBM_COURTAPPEARANCE" EntityType="LawFirm.NRBM_COURTAPPEARANCE" />
-          <EntitySet Name="NRBM_COURTAPPEARANCEHISTORY" EntityType="LawFirm.NRBM_COURTAPPEARANCEHISTORY" />
-          <EntitySet Name="NRBM_LAWYER" EntityType="LawFirm.NRBM_LAWYER" />
-          <EntitySet Name="NRBM_LAWYERHISTORY" EntityType="LawFirm.NRBM_LAWYERHISTORY" />
-          <EntitySet Name="NRBM_LITIGATES" EntityType="LawFirm.NRBM_LITIGATES" />
-          <EntitySet Name="NRBM_LITIGATESHISTORY" EntityType="LawFirm.NRBM_LITIGATESHISTORY" />
-          <EntitySet Name="NRBM_PHONE" EntityType="LawFirm.NRBM_PHONE" />
-          <EntitySet Name="NRBM_PHONEHISTORY" EntityType="LawFirm.NRBM_PHONEHISTORY" />
-          <EntitySet Name="NRBM_SETS" EntityType="LawFirm.NRBM_SETS" />
-          <EntitySet Name="NRBM_STAFF" EntityType="LawFirm.NRBM_STAFF" />
-          <EntitySet Name="NRBM_STAFFHISTORY" EntityType="LawFirm.NRBM_STAFFHISTORY" />
-          <EntitySet Name="NRBM_WORKSFOR" EntityType="LawFirm.NRBM_WORKSFOR" />
-          <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="LawFirm.NRBM_WORKSFORHISTORY" />
-          <FunctionImport Name="NRBM_PROC_DELETEADVERSELAWYER">
-          <Parameter Name="ADLAW_ID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="NRBM_PROC_DELETECASE">
-          <Parameter Name="CASE_CASEID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="NRBM_PROC_DELETECLIENT">
-            <Parameter Name="CLIENT_CID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="NRBM_PROC_DELETELAWYER">
-            <Parameter Name="LAWYER_LAWID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="NRBM_PROC_DELETESTAFF">
-            <Parameter Name="STAFF_SID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <EntitySet Name="NRBM_APTVIEW" EntityType="LawFirm.NRBM_APTVIEW" />
-          <EntitySet Name="NRBM_COUNSELSVIEW" EntityType="LawFirm.NRBM_COUNSELSVIEW" />
-
-          <EntitySet Name="NRBM_COURTVIEW" EntityType="LawFirm.NRBM_COURTVIEW" />
-          <EntitySet Name="NRBM_LITVIEW" EntityType="LawFirm.NRBM_LITVIEW" />
-          <EntitySet Name="NRBM_SETSVIEW" EntityType="LawFirm.NRBM_SETSVIEW" />
-          <EntitySet Name="NRBM_WORKSVIEW" EntityType="LawFirm.NRBM_WORKSVIEW" />
-          <EntitySet Name="NRBM_CASEVIEW" EntityType="LawFirm.NRBM_CASEVIEW" />
-
+          <EntitySet Name="NRBM_ADVERSELAWYER" EntityType="Model.NRBM_ADVERSELAWYER" />
+          <EntitySet Name="NRBM_ADVERSELAWYERHISTORY" EntityType="Model.NRBM_ADVERSELAWYERHISTORY" />
+          <EntitySet Name="NRBM_APPOINTMENT" EntityType="Model.NRBM_APPOINTMENT" />
+          <EntitySet Name="NRBM_APPOINTMENTHISTORY" EntityType="Model.NRBM_APPOINTMENTHISTORY" />
+          <EntitySet Name="NRBM_CASE" EntityType="Model.NRBM_CASE" />
+          <EntitySet Name="NRBM_CASEHISTORY" EntityType="Model.NRBM_CASEHISTORY" />
+          <EntitySet Name="NRBM_CLIENT" EntityType="Model.NRBM_CLIENT" />
+          <EntitySet Name="NRBM_CLIENTHISTORY" EntityType="Model.NRBM_CLIENTHISTORY" />
+          <EntitySet Name="NRBM_COUNSELS" EntityType="Model.NRBM_COUNSELS" />
+          <EntitySet Name="NRBM_COUNSELSHISTORY" EntityType="Model.NRBM_COUNSELSHISTORY" />
+          <EntitySet Name="NRBM_COURTAPPEARANCE" EntityType="Model.NRBM_COURTAPPEARANCE" />
+          <EntitySet Name="NRBM_COURTAPPEARANCEHISTORY" EntityType="Model.NRBM_COURTAPPEARANCEHISTORY" />
+          <EntitySet Name="NRBM_LAWYER" EntityType="Model.NRBM_LAWYER" />
+          <EntitySet Name="NRBM_LAWYERHISTORY" EntityType="Model.NRBM_LAWYERHISTORY" />
+          <EntitySet Name="NRBM_LITIGATES" EntityType="Model.NRBM_LITIGATES" />
+          <EntitySet Name="NRBM_LITIGATESHISTORY" EntityType="Model.NRBM_LITIGATESHISTORY" />
+          <EntitySet Name="NRBM_PHONE" EntityType="Model.NRBM_PHONE" />
+          <EntitySet Name="NRBM_PHONEHISTORY" EntityType="Model.NRBM_PHONEHISTORY" />
+          <EntitySet Name="NRBM_SETS" EntityType="Model.NRBM_SETS" />
+          <EntitySet Name="NRBM_STAFF" EntityType="Model.NRBM_STAFF" />
+          <EntitySet Name="NRBM_STAFFHISTORY" EntityType="Model.NRBM_STAFFHISTORY" />
+          <EntitySet Name="NRBM_WORKSFOR" EntityType="Model.NRBM_WORKSFOR" />
+          <EntitySet Name="NRBM_WORKSFORHISTORY" EntityType="Model.NRBM_WORKSFORHISTORY" />
+          <AssociationSet Name="FK_COURT_ADLAWID" Association="Model.FK_COURT_ADLAWID">
+            <End Role="NRBM_ADVERSELAWYER" EntitySet="NRBM_ADVERSELAWYER" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LIT_ADLAWID" Association="Model.FK_LIT_ADLAWID">
+            <End Role="NRBM_ADVERSELAWYER" EntitySet="NRBM_ADVERSELAWYER" />
+            <End Role="NRBM_LITIGATES" EntitySet="NRBM_LITIGATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APT_CASEID" Association="Model.FK_APT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APT_CLIENTID" Association="Model.FK_APT_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APT_LAWID" Association="Model.FK_APT_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SETS_APTID" Association="Model.FK_SETS_APTID">
+            <End Role="NRBM_APPOINTMENT" EntitySet="NRBM_APPOINTMENT" />
+            <End Role="NRBM_SETS" EntitySet="NRBM_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CASE_CLIENTID" Association="Model.FK_CASE_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_CASEID" Association="Model.FK_COURT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LIT_CASEID" Association="Model.FK_LIT_CASEID">
+            <End Role="NRBM_CASE" EntitySet="NRBM_CASE" />
+            <End Role="NRBM_LITIGATES" EntitySet="NRBM_LITIGATES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNSELS_CLIENTID" Association="Model.FK_COUNSELS_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_COUNSELS" EntitySet="NRBM_COUNSELS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_CLIENTID" Association="Model.FK_COURT_CLIENTID">
+            <End Role="NRBM_CLIENT" EntitySet="NRBM_CLIENT" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COUNSELS_LAWID" Association="Model.FK_COUNSELS_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_COUNSELS" EntitySet="NRBM_COUNSELS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COURT_LAWYERID" Association="Model.FK_COURT_LAWYERID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_COURTAPPEARANCE" EntitySet="NRBM_COURTAPPEARANCE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WORK_LAWID" Association="Model.FK_WORK_LAWID">
+            <End Role="NRBM_LAWYER" EntitySet="NRBM_LAWYER" />
+            <End Role="NRBM_WORKSFOR" EntitySet="NRBM_WORKSFOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SETS_STAFFID" Association="Model.FK_SETS_STAFFID">
+            <End Role="NRBM_STAFF" EntitySet="NRBM_STAFF" />
+            <End Role="NRBM_SETS" EntitySet="NRBM_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WORK_STAFFID" Association="Model.FK_WORK_STAFFID">
+            <End Role="NRBM_STAFF" EntitySet="NRBM_STAFF" />
+            <End Role="NRBM_WORKSFOR" EntitySet="NRBM_WORKSFOR" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="NRBM_ADVERSELAWYER">
           <Key>
@@ -599,6 +655,8 @@
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="PHONE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_COURTAPPEARANCE" Relationship="Model.FK_COURT_ADLAWID" FromRole="NRBM_ADVERSELAWYER" ToRole="NRBM_COURTAPPEARANCE" />
+          <NavigationProperty Name="NRBM_LITIGATES" Relationship="Model.FK_LIT_ADLAWID" FromRole="NRBM_ADVERSELAWYER" ToRole="NRBM_LITIGATES" />
         </EntityType>
         <EntityType Name="NRBM_ADVERSELAWYERHISTORY">
           <Key>
@@ -610,7 +668,7 @@
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="PHONE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_APPOINTMENT">
           <Key>
@@ -620,9 +678,13 @@
           <Property Name="LAWID" Type="Int32" />
           <Property Name="CASEID" Type="Int32" />
           <Property Name="CLIENTID" Type="Int32" />
-          <Property Name="DATEON" Type="DateTime" Precision="0" />
+          <Property Name="DATEON" Type="DateTime" />
           <Property Name="LOCATION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="510" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_CASE" Relationship="Model.FK_APT_CASEID" FromRole="NRBM_APPOINTMENT" ToRole="NRBM_CASE" />
+          <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_APT_CLIENTID" FromRole="NRBM_APPOINTMENT" ToRole="NRBM_CLIENT" />
+          <NavigationProperty Name="NRBM_LAWYER" Relationship="Model.FK_APT_LAWID" FromRole="NRBM_APPOINTMENT" ToRole="NRBM_LAWYER" />
+          <NavigationProperty Name="NRBM_SETS" Relationship="Model.FK_SETS_APTID" FromRole="NRBM_APPOINTMENT" ToRole="NRBM_SETS" />
         </EntityType>
         <EntityType Name="NRBM_APPOINTMENTHISTORY">
           <Key>
@@ -632,10 +694,10 @@
           <Property Name="LAWID" Type="Int32" />
           <Property Name="CASEID" Type="Int32" />
           <Property Name="CLIENTID" Type="Int32" />
-          <Property Name="DATEON" Type="DateTime" Precision="0" />
+          <Property Name="DATEON" Type="DateTime" />
           <Property Name="LOCATION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="DESCRIPTION" Type="String" MaxLength="510" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_CASE">
           <Key>
@@ -643,12 +705,16 @@
           </Key>
           <Property Name="CASEID" Type="Int32" Nullable="false" />
           <Property Name="CLIENTID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="EVIDENCE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="CATEGORY" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="LITIGATION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="NOTES" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_APPOINTMENT" Relationship="Model.FK_APT_CASEID" FromRole="NRBM_CASE" ToRole="NRBM_APPOINTMENT" />
+          <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_CASE_CLIENTID" FromRole="NRBM_CASE" ToRole="NRBM_CLIENT" />
+          <NavigationProperty Name="NRBM_COURTAPPEARANCE" Relationship="Model.FK_COURT_CASEID" FromRole="NRBM_CASE" ToRole="NRBM_COURTAPPEARANCE" />
+          <NavigationProperty Name="NRBM_LITIGATES" Relationship="Model.FK_LIT_CASEID" FromRole="NRBM_CASE" ToRole="NRBM_LITIGATES" />
         </EntityType>
         <EntityType Name="NRBM_CASEHISTORY">
           <Key>
@@ -656,13 +722,13 @@
           </Key>
           <Property Name="CASEID" Type="Int32" Nullable="false" />
           <Property Name="CLIENTID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="EVIDENCE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="CATEGORY" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="LITIGATION" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
           <Property Name="NOTES" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_CLIENT">
           <Key>
@@ -674,7 +740,11 @@
           <Property Name="BUSNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="DOB" Type="DateTime" />
+          <NavigationProperty Name="NRBM_APPOINTMENT" Relationship="Model.FK_APT_CLIENTID" FromRole="NRBM_CLIENT" ToRole="NRBM_APPOINTMENT" />
+          <NavigationProperty Name="NRBM_CASE" Relationship="Model.FK_CASE_CLIENTID" FromRole="NRBM_CLIENT" ToRole="NRBM_CASE" />
+          <NavigationProperty Name="NRBM_COUNSELS" Relationship="Model.FK_COUNSELS_CLIENTID" FromRole="NRBM_CLIENT" ToRole="NRBM_COUNSELS" />
+          <NavigationProperty Name="NRBM_COURTAPPEARANCE" Relationship="Model.FK_COURT_CLIENTID" FromRole="NRBM_CLIENT" ToRole="NRBM_COURTAPPEARANCE" />
         </EntityType>
         <EntityType Name="NRBM_CLIENTHISTORY">
           <Key>
@@ -686,8 +756,8 @@
           <Property Name="BUSNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DOB" Type="DateTime" Precision="0" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_COUNSELS">
           <Key>
@@ -700,19 +770,21 @@
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FEES" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_COUNSELS_CLIENTID" FromRole="NRBM_COUNSELS" ToRole="NRBM_CLIENT" />
+          <NavigationProperty Name="NRBM_LAWYER" Relationship="Model.FK_COUNSELS_LAWID" FromRole="NRBM_COUNSELS" ToRole="NRBM_LAWYER" />
         </EntityType>
         <EntityType Name="NRBM_COUNSELSHISTORY">
           <Key>
             <PropertyRef Name="COUNSELSID" />
           </Key>
           <Property Name="COUNSELSID" Type="Int32" Nullable="false" />
-          <Property Name="LAWID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="LAWID" Type="Int32" />
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FEES" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCE">
           <Key>
@@ -723,8 +795,12 @@
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="LAWID" Type="Int32" />
           <Property Name="ADLAWID" Type="Int32" />
-          <Property Name="DATEON" Type="DateTime" Precision="0" />
+          <Property Name="DATEON" Type="DateTime" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_ADVERSELAWYER" Relationship="Model.FK_COURT_ADLAWID" FromRole="NRBM_COURTAPPEARANCE" ToRole="NRBM_ADVERSELAWYER" />
+          <NavigationProperty Name="NRBM_CASE" Relationship="Model.FK_COURT_CASEID" FromRole="NRBM_COURTAPPEARANCE" ToRole="NRBM_CASE" />
+          <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_COURT_CLIENTID" FromRole="NRBM_COURTAPPEARANCE" ToRole="NRBM_CLIENT" />
+          <NavigationProperty Name="NRBM_LAWYER" Relationship="Model.FK_COURT_LAWYERID" FromRole="NRBM_COURTAPPEARANCE" ToRole="NRBM_LAWYER" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCEHISTORY">
           <Key>
@@ -735,9 +811,9 @@
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="LAWID" Type="Int32" />
           <Property Name="ADLAWID" Type="Int32" />
-          <Property Name="DATEON" Type="DateTime" Precision="0" />
+          <Property Name="DATEON" Type="DateTime" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_LAWYER">
           <Key>
@@ -747,6 +823,10 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="POSITION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_APPOINTMENT" Relationship="Model.FK_APT_LAWID" FromRole="NRBM_LAWYER" ToRole="NRBM_APPOINTMENT" />
+          <NavigationProperty Name="NRBM_COUNSELS" Relationship="Model.FK_COUNSELS_LAWID" FromRole="NRBM_LAWYER" ToRole="NRBM_COUNSELS" />
+          <NavigationProperty Name="NRBM_COURTAPPEARANCE" Relationship="Model.FK_COURT_LAWYERID" FromRole="NRBM_LAWYER" ToRole="NRBM_COURTAPPEARANCE" />
+          <NavigationProperty Name="NRBM_WORKSFOR" Relationship="Model.FK_WORK_LAWID" FromRole="NRBM_LAWYER" ToRole="NRBM_WORKSFOR" />
         </EntityType>
         <EntityType Name="NRBM_LAWYERHISTORY">
           <Key>
@@ -756,7 +836,7 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="POSITION" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_LITIGATES">
           <Key>
@@ -765,9 +845,11 @@
           <Property Name="LITID" Type="Int32" Nullable="false" />
           <Property Name="ADLAWID" Type="Int32" />
           <Property Name="CASEID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_ADVERSELAWYER" Relationship="Model.FK_LIT_ADLAWID" FromRole="NRBM_LITIGATES" ToRole="NRBM_ADVERSELAWYER" />
+          <NavigationProperty Name="NRBM_CASE" Relationship="Model.FK_LIT_CASEID" FromRole="NRBM_LITIGATES" ToRole="NRBM_CASE" />
         </EntityType>
         <EntityType Name="NRBM_LITIGATESHISTORY">
           <Key>
@@ -776,10 +858,10 @@
           <Property Name="LITID" Type="Int32" Nullable="false" />
           <Property Name="ADLAWID" Type="Int32" />
           <Property Name="CASEID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="RESULTS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_PHONE">
           <Key>
@@ -796,11 +878,11 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="Int32" Nullable="false" />
-          <Property Name="CLIENTID" Type="Int32" />
+          <Property Name="CLIENTID" Type="Int32" Nullable="false" />
           <Property Name="HOME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="CELL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="BUSINESS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_SETS">
           <Key>
@@ -809,7 +891,9 @@
           <Property Name="SETSID" Type="Int32" Nullable="false" />
           <Property Name="STAFFID" Type="Int32" />
           <Property Name="APTID" Type="Int32" />
-          <Property Name="DATESET" Type="DateTime" Precision="0" />
+          <Property Name="DATESET" Type="DateTime" />
+          <NavigationProperty Name="NRBM_APPOINTMENT" Relationship="Model.FK_SETS_APTID" FromRole="NRBM_SETS" ToRole="NRBM_APPOINTMENT" />
+          <NavigationProperty Name="NRBM_STAFF" Relationship="Model.FK_SETS_STAFFID" FromRole="NRBM_SETS" ToRole="NRBM_STAFF" />
         </EntityType>
         <EntityType Name="NRBM_STAFF">
           <Key>
@@ -819,6 +903,8 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="TITLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NRBM_SETS" Relationship="Model.FK_SETS_STAFFID" FromRole="NRBM_STAFF" ToRole="NRBM_SETS" />
+          <NavigationProperty Name="NRBM_WORKSFOR" Relationship="Model.FK_WORK_STAFFID" FromRole="NRBM_STAFF" ToRole="NRBM_WORKSFOR" />
         </EntityType>
         <EntityType Name="NRBM_STAFFHISTORY">
           <Key>
@@ -828,7 +914,7 @@
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="TITLE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_WORKSFOR">
           <Key>
@@ -837,10 +923,12 @@
           <Property Name="WORKID" Type="Int32" Nullable="false" />
           <Property Name="STAFFID" Type="Int32" />
           <Property Name="LAWID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="SALARY" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="NRBM_LAWYER" Relationship="Model.FK_WORK_LAWID" FromRole="NRBM_WORKSFOR" ToRole="NRBM_LAWYER" />
+          <NavigationProperty Name="NRBM_STAFF" Relationship="Model.FK_WORK_STAFFID" FromRole="NRBM_WORKSFOR" ToRole="NRBM_STAFF" />
         </EntityType>
         <EntityType Name="NRBM_WORKSFORHISTORY">
           <Key>
@@ -849,141 +937,212 @@
           <Property Name="WORKID" Type="Int32" Nullable="false" />
           <Property Name="STAFFID" Type="Int32" />
           <Property Name="LAWID" Type="Int32" />
-          <Property Name="SDATE" Type="DateTime" Precision="0" />
-          <Property Name="EDATE" Type="DateTime" Precision="0" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="SALARY" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="DATEDELETED" Type="DateTime" Precision="0" />
+          <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
-        <EntityType Name="NRBM_APTVIEW">
-          <Key>
-            <PropertyRef Name="APTID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-          <Property Type="Int32" Name="APTID" Nullable="false" />
-          <Property Type="Int32" Name="LAWID" Nullable="false" />
-          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
-          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="APTDATE" Precision="0" />
-          <Property Type="String" Name="LOCATION" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="DESCRIPTION" MaxLength="510" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="NRBM_COUNSELSVIEW">
-          <Key>
-            <PropertyRef Name="COUNSELSID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-
-          <Property Type="Int32" Name="COUNSELSID" Nullable="false" />
-          <Property Type="Int32" Name="LAWID" Nullable="false" />
-          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
-
-          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="STARTDATE" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ENDDATE" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
-          <Property Type="String" Name="FEES" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
-
-        <EntityType Name="NRBM_COURTVIEW">
-          <Key>
-            <PropertyRef Name="CAID" />
-            <PropertyRef Name="LAWID" />
-            <PropertyRef Name="CLIENTID" />
-            <PropertyRef Name="CASEID" />
-          </Key>
-          <Property Type="Int32" Name="CAID" Nullable="false" />
-          <Property Type="Int32" Name="LAWID" Nullable="false" />
-          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
-          <Property Type="Int32" Name="CASEID" Nullable="false" />
-          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ALFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ALLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="COURTDATE" />
-          <Property Type="String" Name="RESULTS" MaxLength="255" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="NRBM_LITVIEW">
-          <Key>
-            <PropertyRef Name="LITID" />
-            <PropertyRef Name="ADLAWID" />
-            <PropertyRef Name="CASEID" />
-          </Key>
-          <Property Type="Int32" Name="LITID" Nullable="false" />
-          <Property Type="Int32" Name="ADLAWID" Nullable="false" />
-          <Property Type="Int32" Name="CASEID" Nullable="false" />
-          <Property Type="String" Name="ALFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ALLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="STARTDATE" />
-          <Property Type="DateTime" Name="ENDDATE" />
-          <Property Type="String" Name="RESULTS" MaxLength="255" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="NRBM_SETSVIEW">
-          <Key>
-            <PropertyRef Name="SETSID" />
-            <PropertyRef Name="STAFFID" />
-            <PropertyRef Name="APTID" />
-          </Key>
-          <Property Type="Int32" Name="SETSID" Nullable="false" />
-          <Property Type="Int32" Name="STAFFID" Nullable="false" />
-          <Property Type="Int32" Name="APTID" Nullable="false" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
-          <Property Type="String" Name="SFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="SLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="SETDATE" />
-        </EntityType>
-        <EntityType Name="NRBM_WORKSVIEW">
-          <Key>
-            <PropertyRef Name="WORKID" />
-            <PropertyRef Name="STAFFID" />
-            <PropertyRef Name="LAWID" />
-          </Key>
-          <Property Type="Int32" Name="WORKID" Nullable="false" />
-          <Property Type="Int32" Name="STAFFID" Nullable="false" />
-          <Property Type="Int32" Name="LAWID" Nullable="false" />
-          <Property Type="String" Name="SFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="SLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="STARTDATE" />
-          <Property Type="DateTime" Name="ENDDATE" />
-          <Property Type="Decimal" Name="SALARY" Precision="38" Scale="0" />
-          <Property Type="Decimal" Name="HOURS" Precision="38" Scale="0" />
-        </EntityType>
-        <EntityType Name="NRBM_CASEVIEW">
-          <Key>
-            <PropertyRef Name="CASEID" />
-            <PropertyRef Name="CLIENTID" />
-          </Key>
-          <Property Type="Int32" Name="CASEID" Nullable="false" />
-          <Property Type="Int32" Name="CLIENTID" Nullable="false" />
-          <Property Type="String" Name="CFNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CLNAME" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="STARTDATE" />
-          <Property Type="DateTime" Name="ENDDATE" />
-          <Property Type="String" Name="EVIDENCE" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="CATEGORY" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="LITIGATION" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="NOTES" MaxLength="4000" FixedLength="false" Unicode="false" />
-        </EntityType>
-
+        <Association Name="FK_COURT_ADLAWID">
+          <End Role="NRBM_ADVERSELAWYER" Type="Model.NRBM_ADVERSELAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_ADVERSELAWYER">
+              <PropertyRef Name="ADLAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="ADLAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LIT_ADLAWID">
+          <End Role="NRBM_ADVERSELAWYER" Type="Model.NRBM_ADVERSELAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_LITIGATES" Type="Model.NRBM_LITIGATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_ADVERSELAWYER">
+              <PropertyRef Name="ADLAWID" />
+            </Principal>
+            <Dependent Role="NRBM_LITIGATES">
+              <PropertyRef Name="ADLAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APT_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APT_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_APPOINTMENT" Type="Model.NRBM_APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SETS_APTID">
+          <End Role="NRBM_APPOINTMENT" Type="Model.NRBM_APPOINTMENT" Multiplicity="0..1" />
+          <End Role="NRBM_SETS" Type="Model.NRBM_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_APPOINTMENT">
+              <PropertyRef Name="APTID" />
+            </Principal>
+            <Dependent Role="NRBM_SETS">
+              <PropertyRef Name="APTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CASE_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_CASE" Type="Model.NRBM_CASE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_CASE">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LIT_CASEID">
+          <End Role="NRBM_CASE" Type="Model.NRBM_CASE" Multiplicity="0..1" />
+          <End Role="NRBM_LITIGATES" Type="Model.NRBM_LITIGATES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CASE">
+              <PropertyRef Name="CASEID" />
+            </Principal>
+            <Dependent Role="NRBM_LITIGATES">
+              <PropertyRef Name="CASEID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNSELS_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_COUNSELS" Type="Model.NRBM_COUNSELS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_COUNSELS">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_CLIENTID">
+          <End Role="NRBM_CLIENT" Type="Model.NRBM_CLIENT" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_CLIENT">
+              <PropertyRef Name="CLIENTID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="CLIENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COUNSELS_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COUNSELS" Type="Model.NRBM_COUNSELS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COUNSELS">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COURT_LAWYERID">
+          <End Role="NRBM_LAWYER" Type="Model.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_COURTAPPEARANCE" Type="Model.NRBM_COURTAPPEARANCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_COURTAPPEARANCE">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WORK_LAWID">
+          <End Role="NRBM_LAWYER" Type="Model.NRBM_LAWYER" Multiplicity="0..1" />
+          <End Role="NRBM_WORKSFOR" Type="Model.NRBM_WORKSFOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_LAWYER">
+              <PropertyRef Name="LAWID" />
+            </Principal>
+            <Dependent Role="NRBM_WORKSFOR">
+              <PropertyRef Name="LAWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SETS_STAFFID">
+          <End Role="NRBM_STAFF" Type="Model.NRBM_STAFF" Multiplicity="0..1" />
+          <End Role="NRBM_SETS" Type="Model.NRBM_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_STAFF">
+              <PropertyRef Name="STAFFID" />
+            </Principal>
+            <Dependent Role="NRBM_SETS">
+              <PropertyRef Name="STAFFID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WORK_STAFFID">
+          <End Role="NRBM_STAFF" Type="Model.NRBM_STAFF" Multiplicity="0..1" />
+          <End Role="NRBM_WORKSFOR" Type="Model.NRBM_WORKSFOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NRBM_STAFF">
+              <PropertyRef Name="STAFFID" />
+            </Principal>
+            <Dependent Role="NRBM_WORKSFOR">
+              <PropertyRef Name="STAFFID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LawFirmStoreContainer" CdmEntityContainer="LawFirmDbContext">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="LawFirmDbContext">
           <EntitySetMapping Name="NRBM_ADVERSELAWYER">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_ADVERSELAWYER">
+            <EntityTypeMapping TypeName="Model.NRBM_ADVERSELAWYER">
               <MappingFragment StoreEntitySet="NRBM_ADVERSELAWYER">
                 <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -995,7 +1154,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_ADVERSELAWYERHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_ADVERSELAWYERHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_ADVERSELAWYERHISTORY">
               <MappingFragment StoreEntitySet="NRBM_ADVERSELAWYERHISTORY">
                 <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1008,7 +1167,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_APPOINTMENT">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_APPOINTMENT">
+            <EntityTypeMapping TypeName="Model.NRBM_APPOINTMENT">
               <MappingFragment StoreEntitySet="NRBM_APPOINTMENT">
                 <ScalarProperty Name="APTID" ColumnName="APTID" />
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
@@ -1021,7 +1180,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_APPOINTMENTHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_APPOINTMENTHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_APPOINTMENTHISTORY">
               <MappingFragment StoreEntitySet="NRBM_APPOINTMENTHISTORY">
                 <ScalarProperty Name="APTID" ColumnName="APTID" />
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
@@ -1035,7 +1194,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_CASE">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_CASE">
+            <EntityTypeMapping TypeName="Model.NRBM_CASE">
               <MappingFragment StoreEntitySet="NRBM_CASE">
                 <ScalarProperty Name="CASEID" ColumnName="CASEID" />
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
@@ -1049,7 +1208,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_CASEHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_CASEHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_CASEHISTORY">
               <MappingFragment StoreEntitySet="NRBM_CASEHISTORY">
                 <ScalarProperty Name="CASEID" ColumnName="CASEID" />
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
@@ -1064,7 +1223,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_CLIENT">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_CLIENT">
+            <EntityTypeMapping TypeName="Model.NRBM_CLIENT">
               <MappingFragment StoreEntitySet="NRBM_CLIENT">
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1077,7 +1236,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_CLIENTHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_CLIENTHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_CLIENTHISTORY">
               <MappingFragment StoreEntitySet="NRBM_CLIENTHISTORY">
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1091,7 +1250,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_COUNSELS">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COUNSELS">
+            <EntityTypeMapping TypeName="Model.NRBM_COUNSELS">
               <MappingFragment StoreEntitySet="NRBM_COUNSELS">
                 <ScalarProperty Name="COUNSELSID" ColumnName="COUNSELSID" />
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
@@ -1104,7 +1263,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_COUNSELSHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COUNSELSHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_COUNSELSHISTORY">
               <MappingFragment StoreEntitySet="NRBM_COUNSELSHISTORY">
                 <ScalarProperty Name="COUNSELSID" ColumnName="COUNSELSID" />
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
@@ -1118,7 +1277,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_COURTAPPEARANCE">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COURTAPPEARANCE">
+            <EntityTypeMapping TypeName="Model.NRBM_COURTAPPEARANCE">
               <MappingFragment StoreEntitySet="NRBM_COURTAPPEARANCE">
                 <ScalarProperty Name="CAID" ColumnName="CAID" />
                 <ScalarProperty Name="CASEID" ColumnName="CASEID" />
@@ -1131,7 +1290,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_COURTAPPEARANCEHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COURTAPPEARANCEHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_COURTAPPEARANCEHISTORY">
               <MappingFragment StoreEntitySet="NRBM_COURTAPPEARANCEHISTORY">
                 <ScalarProperty Name="CAID" ColumnName="CAID" />
                 <ScalarProperty Name="CASEID" ColumnName="CASEID" />
@@ -1145,7 +1304,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_LAWYER">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_LAWYER">
+            <EntityTypeMapping TypeName="Model.NRBM_LAWYER">
               <MappingFragment StoreEntitySet="NRBM_LAWYER">
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1155,7 +1314,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_LAWYERHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_LAWYERHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_LAWYERHISTORY">
               <MappingFragment StoreEntitySet="NRBM_LAWYERHISTORY">
                 <ScalarProperty Name="LAWID" ColumnName="LAWID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1166,7 +1325,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_LITIGATES">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_LITIGATES">
+            <EntityTypeMapping TypeName="Model.NRBM_LITIGATES">
               <MappingFragment StoreEntitySet="NRBM_LITIGATES">
                 <ScalarProperty Name="LITID" ColumnName="LITID" />
                 <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
@@ -1178,7 +1337,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_LITIGATESHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_LITIGATESHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_LITIGATESHISTORY">
               <MappingFragment StoreEntitySet="NRBM_LITIGATESHISTORY">
                 <ScalarProperty Name="LITID" ColumnName="LITID" />
                 <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
@@ -1191,7 +1350,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_PHONE">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_PHONE">
+            <EntityTypeMapping TypeName="Model.NRBM_PHONE">
               <MappingFragment StoreEntitySet="NRBM_PHONE">
                 <ScalarProperty Name="PHONEID" ColumnName="PHONEID" />
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
@@ -1202,7 +1361,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_PHONEHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_PHONEHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_PHONEHISTORY">
               <MappingFragment StoreEntitySet="NRBM_PHONEHISTORY">
                 <ScalarProperty Name="PHONEID" ColumnName="PHONEID" />
                 <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
@@ -1214,7 +1373,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_SETS">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_SETS">
+            <EntityTypeMapping TypeName="Model.NRBM_SETS">
               <MappingFragment StoreEntitySet="NRBM_SETS">
                 <ScalarProperty Name="SETSID" ColumnName="SETSID" />
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
@@ -1224,7 +1383,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_STAFF">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_STAFF">
+            <EntityTypeMapping TypeName="Model.NRBM_STAFF">
               <MappingFragment StoreEntitySet="NRBM_STAFF">
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1234,7 +1393,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_STAFFHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_STAFFHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_STAFFHISTORY">
               <MappingFragment StoreEntitySet="NRBM_STAFFHISTORY">
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
                 <ScalarProperty Name="FNAME" ColumnName="FNAME" />
@@ -1245,7 +1404,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_WORKSFOR">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_WORKSFOR">
+            <EntityTypeMapping TypeName="Model.NRBM_WORKSFOR">
               <MappingFragment StoreEntitySet="NRBM_WORKSFOR">
                 <ScalarProperty Name="WORKID" ColumnName="WORKID" />
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
@@ -1258,7 +1417,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NRBM_WORKSFORHISTORY">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_WORKSFORHISTORY">
+            <EntityTypeMapping TypeName="Model.NRBM_WORKSFORHISTORY">
               <MappingFragment StoreEntitySet="NRBM_WORKSFORHISTORY">
                 <ScalarProperty Name="WORKID" ColumnName="WORKID" />
                 <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
@@ -1271,121 +1430,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETEADVERSELAWYER" FunctionName="LawFirm.Store.NRBM_PROC_DELETEADVERSELAWYER" />
-          <FunctionImportMapping FunctionImportName="NRBM_PROC_DELETECASE" FunctionName="LawFirm.Store.NRBM_PROC_DELETECASE" />
-          <EntitySetMapping Name="NRBM_APTVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_APTVIEW">
-              <MappingFragment StoreEntitySet="NRBM_APTVIEW">
-                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
-                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-                <ScalarProperty Name="APTDATE" ColumnName="APTDATE" />
-                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
-                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
-                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
-                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
-                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
-                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
-                <ScalarProperty Name="APTID" ColumnName="APTID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NRBM_COUNSELSVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COUNSELSVIEW">
-              <MappingFragment StoreEntitySet="NRBM_COUNSELSVIEW">
-                <ScalarProperty Name="FEES" ColumnName="FEES" />
-                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
-                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
-                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
-                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
-                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
-                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
-                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
-                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
-                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
-                <ScalarProperty Name="COUNSELSID" ColumnName="COUNSELSID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-
-          <EntitySetMapping Name="NRBM_COURTVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_COURTVIEW">
-              <MappingFragment StoreEntitySet="NRBM_COURTVIEW">
-                <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
-                <ScalarProperty Name="COURTDATE" ColumnName="COURTDATE" />
-                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
-                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
-                <ScalarProperty Name="ALLNAME" ColumnName="ALLNAME" />
-                <ScalarProperty Name="ALFNAME" ColumnName="ALFNAME" />
-                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
-                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
-                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
-                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
-                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
-                <ScalarProperty Name="CAID" ColumnName="CAID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NRBM_LITVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_LITVIEW">
-              <MappingFragment StoreEntitySet="NRBM_LITVIEW">
-                <ScalarProperty Name="RESULTS" ColumnName="RESULTS" />
-                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
-                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
-                <ScalarProperty Name="ALLNAME" ColumnName="ALLNAME" />
-                <ScalarProperty Name="ALFNAME" ColumnName="ALFNAME" />
-                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
-                <ScalarProperty Name="ADLAWID" ColumnName="ADLAWID" />
-                <ScalarProperty Name="LITID" ColumnName="LITID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NRBM_SETSVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_SETSVIEW">
-              <MappingFragment StoreEntitySet="NRBM_SETSVIEW">
-                <ScalarProperty Name="SETDATE" ColumnName="SETDATE" />
-                <ScalarProperty Name="SLNAME" ColumnName="SLNAME" />
-                <ScalarProperty Name="SFNAME" ColumnName="SFNAME" />
-                <ScalarProperty Name="APTID" ColumnName="APTID" />
-                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
-                <ScalarProperty Name="SETSID" ColumnName="SETSID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NRBM_WORKSVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_WORKSVIEW">
-              <MappingFragment StoreEntitySet="NRBM_WORKSVIEW">
-                <ScalarProperty Name="HOURS" ColumnName="HOURS" />
-                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
-                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
-                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
-                <ScalarProperty Name="LLNAME" ColumnName="LLNAME" />
-                <ScalarProperty Name="LFNAME" ColumnName="LFNAME" />
-                <ScalarProperty Name="SLNAME" ColumnName="SLNAME" />
-                <ScalarProperty Name="SFNAME" ColumnName="SFNAME" />
-                <ScalarProperty Name="LAWID" ColumnName="LAWID" />
-                <ScalarProperty Name="STAFFID" ColumnName="STAFFID" />
-                <ScalarProperty Name="WORKID" ColumnName="WORKID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NRBM_CASEVIEW">
-            <EntityTypeMapping TypeName="LawFirm.NRBM_CASEVIEW">
-              <MappingFragment StoreEntitySet="NRBM_CASEVIEW">
-                <ScalarProperty Name="NOTES" ColumnName="NOTES" />
-                <ScalarProperty Name="LITIGATION" ColumnName="LITIGATION" />
-                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
-                <ScalarProperty Name="EVIDENCE" ColumnName="EVIDENCE" />
-                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
-                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
-                <ScalarProperty Name="CLNAME" ColumnName="CLNAME" />
-                <ScalarProperty Name="CFNAME" ColumnName="CFNAME" />
-                <ScalarProperty Name="CLIENTID" ColumnName="CLIENTID" />
-                <ScalarProperty Name="CASEID" ColumnName="CASEID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-
-          </EntityContainerMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

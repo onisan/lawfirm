@@ -8,31 +8,31 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>NRBM_COUNSELS</legend>
+    <legend>COUNSELS</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLIENTID)
+         CLIENT
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SDATE)
+         START DATE
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SDATE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.EDATE)
+         END DATE
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.EDATE)

@@ -7,33 +7,33 @@
 <h2>Counsels Relation Details</h2>
 
 <fieldset>
-    <legend>NRBM_COUNSELS</legend>
+    <legend>COUNSELS</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LAWID)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLIENTID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SDATE)
+         CLIENT
     </div>
     <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
+    </div>
+
+    <div class="editor-label">
+        START DATE
+    </div>
+    <div class="editor-field">
         @Html.DisplayFor(model => model.SDATE)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.EDATE)
+    <div class="editor-label">
+        END DATE
     </div>
-    <div class="display-field">
+    <div class="editor-field">
         @Html.DisplayFor(model => model.EDATE)
     </div>
 

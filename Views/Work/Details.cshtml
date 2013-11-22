@@ -1,4 +1,4 @@
-﻿@model MvcLawFirm.Models.NRBM_APPOINTMENT
+﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
 
 @{
     ViewBag.Title = "Details";
@@ -7,44 +7,51 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>NRBM_APPOINTMENT</legend>
+    <legend>WORK</legend>
 
     <div class="display-label">
-         LAWYER
+         FIRST NAME
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_STAFF.FNAME) @Html.DisplayFor(model => model.NRBM_STAFF.LNAME)
+    </div>
+
+    <div class="display-label">
+         LAST NAME
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         CLIENT
+         START DATE
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
+        @Html.DisplayFor(model => model.SDATE)
     </div>
 
     <div class="display-label">
-         DATE
+         END DATE
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DATEON)
+        @Html.DisplayFor(model => model.EDATE)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LOCATION)
+         @Html.DisplayNameFor(model => model.SALARY)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LOCATION)
+        @Html.DisplayFor(model => model.SALARY)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DESCRIPTION)
+         @Html.DisplayNameFor(model => model.HOURS)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DESCRIPTION)
+        @Html.DisplayFor(model => model.HOURS)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.APTID }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.WORKID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

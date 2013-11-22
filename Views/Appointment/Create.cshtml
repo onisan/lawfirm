@@ -4,48 +4,33 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create Appointment</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_APPOINTMENT</legend>
-        <!--
-        <div class="editor-label">
-            @Html.LabelFor(model => model.APTID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.APTID)
-            @Html.ValidationMessageFor(model => model.APTID)
-        </div>
+        <legend>APPOINTMENT</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID)
+            <label for="LAWID">LAWYER</label>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LAWID)
+            @Html.DropDownList("LAWID", String.Empty)
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CASEID)
+            <label for="CLIENTID">CLIENT</label>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CASEID)
-            @Html.ValidationMessageFor(model => model.CASEID)
+            @Html.DropDownList("CLIENTID", String.Empty)
+            @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CLIENTID)
-            @Html.ValidationMessageFor(model => model.CLIENTID)
-        </div>
-            -->
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DATEON)
+            <label for="DATEON">Date</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DATEON)
@@ -77,7 +62,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
-    @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
+    @Scripts.Render("~/bundles/jqueryval")
 }

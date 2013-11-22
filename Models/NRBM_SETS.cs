@@ -18,5 +18,8 @@ namespace MvcLawFirm.Models
         public Nullable<int> STAFFID { get; set; }
         public Nullable<int> APTID { get; set; }
         public Nullable<System.DateTime> DATESET { get; set; }
+    
+        public virtual NRBM_APPOINTMENT NRBM_APPOINTMENT { get; set; }
+        public virtual NRBM_STAFF NRBM_STAFF { get; set; }
     }
 }

@@ -46,6 +46,7 @@ namespace MvcLawFirm.Controllers
         // POST: /Staff/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(NRBM_STAFF nrbm_staff)
         {
             if (ModelState.IsValid)
@@ -75,6 +76,7 @@ namespace MvcLawFirm.Controllers
         // POST: /Staff/Edit/5
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(NRBM_STAFF nrbm_staff)
         {
             if (ModelState.IsValid)
@@ -103,6 +105,7 @@ namespace MvcLawFirm.Controllers
         // POST: /Staff/Delete/5
 
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             NRBM_STAFF nrbm_staff = db.NRBM_STAFF.Find(id);

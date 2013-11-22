@@ -1,31 +1,32 @@
-﻿@model MvcLawFirm.Models.NRBM_COUNSELS
+﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
-<h2>Edit Counsels Relation</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>COUNSELS</legend>
+        <legend>WORK</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID, "LAWYER")
+            <label for="STAFFID">STAFF</label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("STAFFID", String.Empty)
+            @Html.ValidationMessageFor(model => model.STAFFID)
+        </div>
+
+        <div class="editor-label">
+            <label for="LAWID">LAWYER</label>
         </div>
         <div class="editor-field">
             @Html.DropDownList("LAWID", String.Empty)
             @Html.ValidationMessageFor(model => model.LAWID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("CLIENTID", String.Empty)
-            @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 
         <div class="editor-label">
@@ -45,6 +46,14 @@
         </div>
 
         <div class="editor-label">
+            @Html.LabelFor(model => model.SALARY)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SALARY)
+            @Html.ValidationMessageFor(model => model.SALARY)
+        </div>
+
+        <div class="editor-label">
             @Html.LabelFor(model => model.HOURS)
         </div>
         <div class="editor-field">
@@ -52,16 +61,8 @@
             @Html.ValidationMessageFor(model => model.HOURS)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FEES)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FEES)
-            @Html.ValidationMessageFor(model => model.FEES)
-        </div>
-
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }
@@ -71,6 +72,5 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
-    @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
+    @Scripts.Render("~/bundles/jqueryval")
 }

@@ -1,0 +1,63 @@
+﻿@model MvcLawFirm.Models.NRBM_WORKSFOR
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>WORK</legend>
+
+    <div class="display-label">
+         STAFF
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_STAFF.FNAME) @Html.DisplayFor(model => model.NRBM_STAFF.LNAME)
+    </div>
+
+    <div class="display-label">
+         LAWYER
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
+    </div>
+
+    <div class="editor-label">
+        START DATE
+     </div>
+     <div class="editor-field">
+         @Html.EditorFor(model => model.SDATE)
+         @Html.ValidationMessageFor(model => model.SDATE)
+     </div>
+    
+    <div class="editor-label">
+        <label for="EDATE">END DATE</label>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.EDATE)
+        @Html.ValidationMessageFor(model => model.EDATE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SALARY)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SALARY)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HOURS)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HOURS)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
