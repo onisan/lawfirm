@@ -13,13 +13,6 @@
     <fieldset>
         <legend>CASE</legend>
         @Html.HiddenFor(model=> model.CASEID)
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CASEID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CASEID)
-            @Html.ValidationMessageFor(model => model.CASEID)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")
