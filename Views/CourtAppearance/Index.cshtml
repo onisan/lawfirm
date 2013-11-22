@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_COURTAPPEARANCE>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_COURTVIEW>
 
 @{
     ViewBag.Title = "Index";
@@ -11,43 +11,27 @@
 </p>
 <table>
     <tr>
-       <!-- <th>
-            @Html.DisplayNameFor(model => model.CASEID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CLIENTID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LAWID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ADLAWID)
-        </th>-->
-        <th>
-            @Html.DisplayNameFor(model => model.DATEON)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RESULTS)
-        </th>
+        <th> LAWYER </th>
+        <th> CLIENT </th>
+        <th> ADVERSELAWYER </th>
+        <th> COURTDATE </th>
+        <th> RESULTS </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-      <!--  <td>
-            @Html.DisplayFor(modelItem => item.CASEID)
+        <td>
+            @Html.DisplayFor(modelItem => item.LFNAME) @Html.DisplayFor(modelItem => item.LLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CLIENTID)
+            @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LAWID)
+            @Html.DisplayFor(modelItem => item.ALFNAME) @Html.DisplayFor(modelItem => item.ALLNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ADLAWID)
-        </td>-->
-        <td>
-            @Html.DisplayFor(modelItem => item.DATEON)
+            @Html.DisplayFor(modelItem => item.COURTDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RESULTS)
