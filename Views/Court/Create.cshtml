@@ -11,34 +11,11 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-<<<<<<< HEAD
-        <legend>NRBM_COURTAPPEARANCE</legend>
-
-        <!--<div class="editor-label">
-            @Html.LabelFor(model => model.CAID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CAID)
-            @Html.ValidationMessageFor(model => model.CAID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CASEID, "NRBM_CASE")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("CASEID", String.Empty)
-            @Html.ValidationMessageFor(model => model.CASEID)
-        </div>-->
-
-        <div class="editor-label">
-            CLIENT
-=======
         <legend>COURT APPEARANCE</legend>
         @Html.HiddenFor(model=> model.CAID)
         @Html.HiddenFor(model=> model.CASEID)
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         </div>
         <div class="editor-field">
             @Html.DropDownList("CLIENTID", String.Empty)
@@ -46,11 +23,8 @@
         </div>
 
         <div class="editor-label">
-<<<<<<< HEAD
             LAWYER
-=======
             @Html.LabelFor(model => model.LAWID, "LAWYER")
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         </div>
         <div class="editor-field">
             @Html.DropDownList("LAWID", String.Empty)
@@ -58,11 +32,8 @@
         </div>
 
         <div class="editor-label">
-<<<<<<< HEAD
             ADVERSE LAWYER
-=======
             @Html.LabelFor(model => model.ADLAWID, "ADVERSE LAWYER")
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         </div>
         <div class="editor-field">
             @Html.DropDownList("ADLAWID", String.Empty)

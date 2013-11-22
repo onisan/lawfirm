@@ -11,23 +11,9 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-<<<<<<< HEAD
-        <legend>COURTAPPEARANCE</legend>
-
-        <!--<div class="editor-label">
-            @Html.LabelFor(model => model.CASEID, "NRBM_CASE")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("CASEID", String.Empty)
-            @Html.ValidationMessageFor(model => model.CASEID)
-        </div>-->
-
-=======
         <legend>COURT APPEARANCE</legend>
         @Html.HiddenFor(model=> model.CAID)
         @Html.HiddenFor(model=> model.CASEID)
-
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")
         </div>

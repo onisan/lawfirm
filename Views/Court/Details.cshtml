@@ -7,41 +7,9 @@
 <h2>Court Details</h2>
 
 <fieldset>
-<<<<<<< HEAD
-    <legend>COURTAPPEARANCE</legend>
-
-    <!--<div class="display-label">
-         @Html.DisplayNameFor(model => model.CAID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CAID)
-    </div>-->
-
-    <div class="display-label">
-         CLIENT
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
-    </div>
-
-    <div class="display-label">
-         LAWYER
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
-    </div>
-
-    <div class="display-label">
-         ADVERSE LAWYER
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.LNAME)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DATEON)
-=======
     <legend>COURT APPEARANCE</legend>
+        @Html.HiddenFor(model=> model.CAID)
+        @Html.HiddenFor(model=> model.CASEID)
 
     <div class="display-label">
          CLIENT
@@ -66,7 +34,6 @@
 
     <div class="display-label">
          DATE
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)

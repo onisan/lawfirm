@@ -15,10 +15,7 @@
      } 
 <table>
     <tr>
-<<<<<<< HEAD
         <th>CLIENT</th>
-=======
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         <th>
             CLIENT
         </th>
@@ -36,22 +33,19 @@
 
 @foreach (var item in Model) {
     <tr>
-<<<<<<< HEAD
         <td>           
-             @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
+             @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EDATE)
-=======
         <td>
-            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
+            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SDATE)
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EDATE)

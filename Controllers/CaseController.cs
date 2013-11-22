@@ -47,22 +47,8 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Create()
         {
-<<<<<<< HEAD
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME");
-=======
-            /*
-            var select = new List<SelectListItem>();
-            var clients = db.NRBM_CASE.ToList();
-            foreach (var mem in clients)
-            {
-                select.Add(new SelectListItem {
-                    Text = mem.NRBM_CLIENT.FNAME + " " + mem.NRBM_CLIENT.LNAME,
-                    Value = mem.NRBM_CLIENT.CLIENTID.ToString()
-                });
-            }
-            */
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName");
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
             return View();
         }
 
@@ -79,12 +65,9 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-<<<<<<< HEAD
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_case.CLIENTID);
-=======
 
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
             return View(nrbm_case);
         }
 
@@ -98,11 +81,8 @@ namespace MvcLawFirm.Controllers
             {
                 return HttpNotFound();
             }
-<<<<<<< HEAD
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_case.CLIENTID);
-=======
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
             return View(nrbm_case);
         }
 
@@ -119,11 +99,8 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-<<<<<<< HEAD
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_case.CLIENTID);
-=======
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
->>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
             return View(nrbm_case);
         }
 

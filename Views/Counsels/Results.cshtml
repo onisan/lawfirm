@@ -22,10 +22,10 @@
             CLIENT
         </th>
         <th>
-            STARTDATE
+            START DATE
         </th>
         <th>
-            ENDDATE
+            END DATE
         </th>
         <th></th>
     </tr>
@@ -33,10 +33,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FNAME) @Html.DisplayFor(modelItem => item.NRBM_LAWYER.LNAME)
+            @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
+            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SDATE)
