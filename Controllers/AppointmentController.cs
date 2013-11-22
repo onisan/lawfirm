@@ -37,7 +37,21 @@ namespace MvcLawFirm.Controllers
 
         //
         // GET: /TestApt/Create
-
+        public ActionResult Results (string searchString)
+        {
+            var apt = from m in db.NRBM_APPOINTMENT
+                     where ((string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.FNAME.Contains(searchString)) ||
+                     (string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.LNAME.Contains(searchString)) ||
+                     (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.FNAME.Contains(searchString)) ||
+                     (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.LNAME.Contains(searchString))) /*||
+                     (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.FNAME.Contains(searchString.Split(null).First()) &&
+                                                                  m.NRBM_CLIENT.LNAME.Contains(searchString.Split(null).Last())) ||
+                     (string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.FNAME.Contains(searchString.Split(null).First()) &&
+                                                                  m.NRBM_LAWYER.LNAME.Contains(searchString.Split(null).Last())))
+                     */
+                select m;
+            return View(apt.ToList());
+        }
         public ActionResult Create()
         {
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME");

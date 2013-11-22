@@ -21,7 +21,16 @@ namespace MvcLawFirm.Controllers
             var nrbm_counsels = db.NRBM_COUNSELS.Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER);
             return View(nrbm_counsels.ToList());
         }
-
+        public ActionResult Results(string searchString)
+        {
+            var apt = from m in db.NRBM_COUNSELS
+                      where ((string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.FNAME.Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.LNAME.Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.FNAME.Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.LNAME.Contains(searchString)))
+                      select m;
+            return View(apt.ToList());
+        }
         //
         // GET: /Counsels2/Details/5
 

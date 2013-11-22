@@ -10,13 +10,13 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_CASE</legend>
+        <legend>CASE</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID)
+            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CLIENTID)
+            @Html.DropDownList("CLIENTID", String.Empty)
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 

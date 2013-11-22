@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_CASEVIEW>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_CASE>
 
 @{
     ViewBag.Title = "Index";
@@ -9,11 +9,12 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+     @using (Html.BeginForm("Results", "Case")){    
+         <p> Search: @Html.TextBox("SearchString") <br />   
+         <input type="submit" value="Filter" /></p> 
+     } 
 <table>
     <tr>
-       <!-- <th>
-            @Html.DisplayNameFor(model => model.CLIENTID)
-        </th>-->
         <th>CLIENT</th>
         <th>
             STARTDATE
@@ -38,17 +39,14 @@
 
 @foreach (var item in Model) {
     <tr>
-       <!-- <td>
-            @Html.DisplayFor(modelItem => item.CLIENTID)
-        </td>-->
         <td>           
-             @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
-    </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STARTDATE)
+             @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ENDDATE)
+            @Html.DisplayFor(modelItem => item.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EVIDENCE)

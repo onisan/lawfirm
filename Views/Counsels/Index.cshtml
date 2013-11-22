@@ -9,20 +9,12 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+     @using (Html.BeginForm("Results", "Counsels")){    
+         <p> Search: @Html.TextBox("SearchString") <br />   
+         <input type="submit" value="Filter" /></p> 
+     }
 <table>
-<<<<<<< HEAD
     <tr>
-       <!-- <th>
-            @Html.DisplayNameFor(model => model.LAWID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CLIENTID)
-        </th>-->
-        <th> LAWYER</th>
-        <th> CLIENT</th>
-=======
-    <tr>
->>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         <th>
             LAWYER
         </th>
@@ -40,34 +32,10 @@
 
 @foreach (var item in Model) {
     <tr>
-<<<<<<< HEAD
-       <!-- <td>
-            @Html.DisplayFor(modelItem => item.LAWID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLIENTID)
-        </td>-->
-        <td>
-            @Html.DisplayFor(modelItem => item.LFNAME) @Html.DisplayFor(modelItem => item.LLNAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
-        </td>
-=======
->>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         <td>
             @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FNAME) @Html.DisplayFor(modelItem => item.NRBM_LAWYER.LNAME)
         </td>
         <td>
-<<<<<<< HEAD
-            @Html.DisplayFor(modelItem => item.ENDDATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LFNAME) @Html.DisplayFor(modelItem => item.LLNAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
-=======
             @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
         </td>
         <td>
@@ -75,7 +43,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EDATE)
->>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.COUNSELSID }) |

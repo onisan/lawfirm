@@ -4,11 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Works For</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+     @using (Html.BeginForm("Results", "Work")){    
+         <p> Search: @Html.TextBox("SearchString") <br />   
+         <input type="submit" value="Filter" /></p> 
+     }
 <table>
     <tr>
         <th>
@@ -48,6 +52,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SALARY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOURS)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.WORKID }) |

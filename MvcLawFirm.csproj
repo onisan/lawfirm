@@ -203,103 +203,61 @@
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CounselsController.cs" />
-    <Compile Include="Controllers\CourtAppearanceController.cs" />
+    <Compile Include="Controllers\CourtController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LawyerController.cs" />
     <Compile Include="Controllers\LitigatesController.cs" />
     <Compile Include="Controllers\PhoneController.cs" />
     <Compile Include="Controllers\SetsController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
-    <Compile Include="Controllers\WorksForController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LawFirmDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LawFirmDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LawFirmDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\LawFirmDb.Context.cs" />
+    <Compile Include="Models\LawFirmDb.cs" />
     <Compile Include="Models\LawFirmDb.Designer.cs">
+      <DependentUpon>LawFirmDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LawFirmDb1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LawFirmDb.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\NRBM_ADVERSELAWYER.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_ADVERSELAWYERHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_APPOINTMENT.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_APPOINTMENTHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_CASE.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_CASEHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_CLIENT.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_CLIENTHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_COUNSELS.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_COUNSELSHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_COURTAPPEARANCE.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_COURTAPPEARANCEHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_LAWYER.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_LAWYERHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_LITIGATES.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_LITIGATESHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_PHONE.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_PHONEHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_SETS.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_STAFF.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_STAFFHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_WORKSFOR.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\NRBM_WORKSFORHISTORY.cs">
-      <DependentUpon>LawFirmDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\MvcLawFirmContext.cs" />
+    <Compile Include="Models\NRBM_ADVERSELAWYER.cs" />
+    <Compile Include="Models\NRBM_ADVERSELAWYERHISTORY.cs" />
+    <Compile Include="Models\NRBM_APPOINTMENT.cs" />
+    <Compile Include="Models\NRBM_APPOINTMENTHISTORY.cs" />
+    <Compile Include="Models\NRBM_APTVIEW.cs" />
+    <Compile Include="Models\NRBM_CASE.cs" />
+    <Compile Include="Models\NRBM_CASEHISTORY.cs" />
+    <Compile Include="Models\NRBM_CASEVIEW.cs" />
+    <Compile Include="Models\NRBM_CLIENT.cs" />
+    <Compile Include="Models\NRBM_CLIENTHISTORY.cs" />
+    <Compile Include="Models\NRBM_COUNSELS.cs" />
+    <Compile Include="Models\NRBM_COUNSELSHISTORY.cs" />
+    <Compile Include="Models\NRBM_COUNSELSVIEW.cs" />
+    <Compile Include="Models\NRBM_COURTAPPEARANCE.cs" />
+    <Compile Include="Models\NRBM_COURTAPPEARANCEHISTORY.cs" />
+    <Compile Include="Models\NRBM_COURTVIEW.cs" />
+    <Compile Include="Models\NRBM_LAWYER.cs" />
+    <Compile Include="Models\NRBM_LAWYERHISTORY.cs" />
+    <Compile Include="Models\NRBM_LITIGATES.cs" />
+    <Compile Include="Models\NRBM_LITIGATESHISTORY.cs" />
+    <Compile Include="Models\NRBM_LITVIEW.cs" />
+    <Compile Include="Models\NRBM_PHONE.cs" />
+    <Compile Include="Models\NRBM_PHONEHISTORY.cs" />
+    <Compile Include="Models\NRBM_SETS.cs" />
+    <Compile Include="Models\NRBM_SETSVIEW.cs" />
+    <Compile Include="Models\NRBM_STAFF.cs" />
+    <Compile Include="Models\NRBM_STAFFHISTORY.cs" />
+    <Compile Include="Models\NRBM_WORKSFOR.cs" />
+    <Compile Include="Models\NRBM_WORKSFORHISTORY.cs" />
+    <Compile Include="Models\NRBM_WORKSVIEW.cs" />
+    <Compile Include="Models\T.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ROOT.CIMV2.Win32_OperatingSystem.cs">
       <SubType>Component</SubType>
@@ -362,29 +320,35 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\LawFirmDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LawFirmDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Models\LawFirmDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LawFirmDb.edmx</DependentUpon>
-      <LastGenOutput>LawFirmDb.Context.cs</LastGenOutput>
+      <LastGenOutput>LawFirmDb.Context1.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\LawFirmDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LawFirmDb1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <Content Include="Models\LawFirmDb.edmx.diagram">
       <DependentUpon>LawFirmDb.edmx</DependentUpon>
     </Content>
     <Content Include="Models\LawFirmDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LawFirmDb.edmx</DependentUpon>
-      <LastGenOutput>LawFirmDb.cs</LastGenOutput>
+      <LastGenOutput>LawFirmDb1.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <None Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\DatePickerReady.js" />
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.core.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -464,11 +428,6 @@
     <Content Include="Views\Counsels\Details.cshtml" />
     <Content Include="Views\Counsels\Edit.cshtml" />
     <Content Include="Views\Counsels\Index.cshtml" />
-    <Content Include="Views\CourtAppearance\Create.cshtml" />
-    <Content Include="Views\CourtAppearance\Delete.cshtml" />
-    <Content Include="Views\CourtAppearance\Details.cshtml" />
-    <Content Include="Views\CourtAppearance\Edit.cshtml" />
-    <Content Include="Views\CourtAppearance\Index.cshtml" />
     <Content Include="Views\Litigates\Create.cshtml" />
     <Content Include="Views\Litigates\Delete.cshtml" />
     <Content Include="Views\Litigates\Details.cshtml" />
@@ -489,11 +448,23 @@
     <Content Include="Views\Staff\Details.cshtml" />
     <Content Include="Views\Staff\Edit.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
-    <Content Include="Views\WorksFor\Create.cshtml" />
-    <Content Include="Views\WorksFor\Delete.cshtml" />
-    <Content Include="Views\WorksFor\Details.cshtml" />
-    <Content Include="Views\WorksFor\Edit.cshtml" />
-    <Content Include="Views\WorksFor\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Appointment\Results.cshtml" />
+    <Content Include="Views\Court\Create.cshtml" />
+    <Content Include="Views\Court\Delete.cshtml" />
+    <Content Include="Views\Court\Details.cshtml" />
+    <Content Include="Views\Court\Edit.cshtml" />
+    <Content Include="Views\Court\Index.cshtml" />
+    <Content Include="Views\Work\Create.cshtml" />
+    <Content Include="Views\Work\Delete.cshtml" />
+    <Content Include="Views\Work\Details.cshtml" />
+    <Content Include="Views\Work\Edit.cshtml" />
+    <Content Include="Views\Work\Index.cshtml" />
+    <Content Include="Views\Case\Results.cshtml" />
+    <Content Include="Views\Counsels\Results.cshtml" />
+    <Content Include="Views\Work\Results.cshtml" />
+    <Content Include="Views\Court\Results.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
