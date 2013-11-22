@@ -11,44 +11,49 @@
     <legend>WORK</legend>
 
     <div class="display-label">
-         STAFF
+         Staff
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_STAFF.FullName)
     </div>
 
     <div class="display-label">
-         LAWYER
+         Lawyer
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
     </div>
 
     <div class="editor-label">
-        START DATE
+        Start Date
      </div>
-     <div class="editor-field">
+     <!--<div class="editor-field">
          @Html.EditorFor(model => model.SDATE)
          @Html.ValidationMessageFor(model => model.SDATE)
-     </div>
+     </div>-->
+    <div class ="display-field">
+        @Html.DisplayFor(model => model.SDATE)
+    </div>
     
     <div class="editor-label">
-        <label for="EDATE">END DATE</label>
+        End Date
     </div>
-    <div class="editor-field">
+    <!--<div class="editor-field">
         @Html.EditorFor(model => model.EDATE)
         @Html.ValidationMessageFor(model => model.EDATE)
+    </div>-->
+    <div class ="display-field">
+        @Html.DisplayFor(model => model.EDATE)
     </div>
-
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SALARY)
+         Salary
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SALARY)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.HOURS)
+         Hours
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.HOURS)

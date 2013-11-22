@@ -4,42 +4,42 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete Appointment</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>APPOINTMENT</legend>
+    <legend>Appointment</legend>
 
     <div class="display-label">
-         LAWYER
+         Lawyer
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
     </div>
 
     <div class="display-label">
-         CLIENT
+         Client
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
     </div>
 
     <div class="display-label">
-        DATE
+        Date
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LOCATION)
+         Location
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LOCATION)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DESCRIPTION)
+         Description
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DESCRIPTION)

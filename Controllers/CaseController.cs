@@ -25,7 +25,8 @@ namespace MvcLawFirm.Controllers
         {
             var apt = from m in db.NRBM_CASE
                       where ((string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.FNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.LNAME.Contains(searchString)))
+                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_CLIENT.LNAME.Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : (m.NRBM_CLIENT.FNAME + " " + m.NRBM_CLIENT.LNAME).Contains(searchString)))
                       select m;
             return View(apt.ToList());
         }

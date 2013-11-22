@@ -27,7 +27,9 @@ namespace MvcLawFirm.Controllers
                       where ((string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.FNAME.Contains(searchString)) ||
                       (string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.LNAME.Contains(searchString)) ||
                       (string.IsNullOrEmpty(searchString) ? true : m.NRBM_STAFF.FNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_STAFF.LNAME.Contains(searchString)))
+                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_STAFF.LNAME.Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : (m.NRBM_LAWYER.FNAME + " " + m.NRBM_LAWYER.LNAME).Contains(searchString)) ||
+                      (string.IsNullOrEmpty(searchString) ? true : (m.NRBM_STAFF.FNAME + " " + m.NRBM_STAFF.LNAME).Contains(searchString)))
                       select m;
             return View(apt.ToList());
         }

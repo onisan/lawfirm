@@ -7,40 +7,40 @@
 <h2>Court Details</h2>
 
 <fieldset>
-    <legend>COURT APPEARANCE</legend>
+    <legend>Court Appearance</legend>
         @Html.HiddenFor(model=> model.CAID)
         @Html.HiddenFor(model=> model.CASEID)
 
     <div class="display-label">
-         CLIENT
+         Client
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
     </div>
 
     <div class="display-label">
-         LAWYER
+         Lawyer
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
     </div>
 
     <div class="display-label">
-         ADVERSE LAWYER
+         Adverse Lawyer
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.FullName)
     </div>
 
     <div class="display-label">
-         DATE
+         Court Date
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.RESULTS)
+         Results
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.RESULTS)
