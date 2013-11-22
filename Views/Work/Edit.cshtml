@@ -12,7 +12,7 @@
 
     <fieldset>
         <legend>WORK</legend>
-
+        @Html.HiddenFor(model=>model.WORKID)
         <div class="editor-label">
             @Html.LabelFor(model => model.STAFFID, "STAFF")
         </div>
@@ -72,5 +72,6 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
+    @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
 }

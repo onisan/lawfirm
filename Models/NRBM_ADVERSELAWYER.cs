@@ -20,12 +20,13 @@ namespace MvcLawFirm.Models
             this.NRBM_LITIGATES = new HashSet<NRBM_LITIGATES>();
         }
     
-        public int ADLAWID { get; set; }
+        public int ADLAWID { get; private set; }
         public string FNAME { get; set; }
         public string LNAME { get; set; }
         public string ADDRESS { get; set; }
         public string EMAIL { get; set; }
         public string PHONE { get; set; }
+        public string FullName { get { return FNAME + " " + LNAME; } set { FNAME = FNAME; } }
     
         public virtual ICollection<NRBM_COURTAPPEARANCE> NRBM_COURTAPPEARANCE { get; set; }
         public virtual ICollection<NRBM_LITIGATES> NRBM_LITIGATES { get; set; }

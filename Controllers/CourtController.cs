@@ -40,10 +40,10 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FNAME");
+            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FullName");
             ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE");
-            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME");
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME");
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName");
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName");
             return View();
         }
 
@@ -61,10 +61,10 @@ namespace MvcLawFirm.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FNAME", nrbm_courtappearance.ADLAWID);
+            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FullName", nrbm_courtappearance.ADLAWID);
             ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE", nrbm_courtappearance.CASEID);
-            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_courtappearance.CLIENTID);
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_courtappearance.LAWID);
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_courtappearance.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_courtappearance.LAWID);
             return View(nrbm_courtappearance);
         }
 
@@ -78,10 +78,10 @@ namespace MvcLawFirm.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FNAME", nrbm_courtappearance.ADLAWID);
-            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE", nrbm_courtappearance.CASEID);
-            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_courtappearance.CLIENTID);
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_courtappearance.LAWID);
+            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FullName", nrbm_courtappearance.ADLAWID);
+            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "CATEGORY", nrbm_courtappearance.CASEID);
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_courtappearance.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_courtappearance.LAWID);
             return View(nrbm_courtappearance);
         }
 
@@ -98,10 +98,10 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FNAME", nrbm_courtappearance.ADLAWID);
-            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "EVIDENCE", nrbm_courtappearance.CASEID);
-            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_courtappearance.CLIENTID);
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_courtappearance.LAWID);
+            ViewBag.ADLAWID = new SelectList(db.NRBM_ADVERSELAWYER, "ADLAWID", "FullName", nrbm_courtappearance.ADLAWID);
+            ViewBag.CASEID = new SelectList(db.NRBM_CASE, "CASEID", "CATEGORY", nrbm_courtappearance.CASEID);
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_courtappearance.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_courtappearance.LAWID);
             return View(nrbm_courtappearance);
         }
 

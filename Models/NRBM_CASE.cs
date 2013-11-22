@@ -21,7 +21,7 @@ namespace MvcLawFirm.Models
             this.NRBM_LITIGATES = new HashSet<NRBM_LITIGATES>();
         }
     
-        public int CASEID { get; set; }
+        public int CASEID { get; private set; }
         public Nullable<int> CLIENTID { get; set; }
         public Nullable<System.DateTime> SDATE { get; set; }
         public Nullable<System.DateTime> EDATE { get; set; }
