@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MvcLawFirm.Models.NRBM_COUNSELSVIEW>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_COUNSELS>
 
 @{
     ViewBag.Title = "Index";
@@ -10,6 +10,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
+<<<<<<< HEAD
     <tr>
        <!-- <th>
             @Html.DisplayNameFor(model => model.LAWID)
@@ -19,23 +20,27 @@
         </th>-->
         <th> LAWYER</th>
         <th> CLIENT</th>
-        <th>
-            STARTDATE
-        </th>
-        <th>
-            ENDDATE
-        </th>
+=======
+    <tr>
+>>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         <th>
             LAWYER
         </th>
         <th>
             CLIENT
         </th>
+        <th>
+            STARTDATE
+        </th>
+        <th>
+            ENDDATE
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+<<<<<<< HEAD
        <!-- <td>
             @Html.DisplayFor(modelItem => item.LAWID)
         </td>
@@ -48,10 +53,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
         </td>
+=======
+>>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         <td>
-            @Html.DisplayFor(modelItem => item.STARTDATE)
+            @Html.DisplayFor(modelItem => item.NRBM_LAWYER.FNAME) @Html.DisplayFor(modelItem => item.NRBM_LAWYER.LNAME)
         </td>
         <td>
+<<<<<<< HEAD
             @Html.DisplayFor(modelItem => item.ENDDATE)
         </td>
         <td>
@@ -59,6 +67,15 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CFNAME) @Html.DisplayFor(modelItem => item.CLNAME)
+=======
+            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
+>>>>>>> 423b946461d5299c973146e69c9724536f4b0425
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.COUNSELSID }) |
