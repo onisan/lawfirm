@@ -7,36 +7,34 @@
 <h2>Counsels Relation Details</h2>
 
 <fieldset>
-    <legend>NRBM_COUNSELS</legend>
+    <legend>COUNSELS</legend>
 
     <div class="display-label">
-         LAWIYER
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.LAWID)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         CLIENTID
+         CLIENT
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
     </div>
 
     <div class="editor-label">
-        <label for="SDATE">START DATE</label>
+        START DATE
     </div>
     <div class="editor-field">
-        @Html.EditorFor(model => model.SDATE)
-        @Html.ValidationMessageFor(model => model.SDATE)
+        @Html.DisplayFor(model => model.SDATE)
     </div>
 
     <div class="editor-label">
-        <label for="EDATE">END DATE</label>)
+        END DATE
     </div>
     <div class="editor-field">
-        @Html.EditorFor(model => model.EDATE)
-        @Html.ValidationMessageFor(model => model.EDATE)
+        @Html.DisplayFor(model => model.EDATE)
     </div>
 
     <div class="display-label">

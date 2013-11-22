@@ -18,11 +18,12 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            return View(db.NRBM_COUNSELS.ToList());
+            var nrbm_counsels = db.NRBM_COUNSELS.Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER);
+            return View(nrbm_counsels.ToList());
         }
 
         //
-        // GET: /Counsels/Details/5
+        // GET: /Counsels2/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -35,17 +36,20 @@ namespace MvcLawFirm.Controllers
         }
 
         //
-        // GET: /Counsels/Create
+        // GET: /Counsels2/Create
 
         public ActionResult Create()
         {
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME");
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME");
             return View();
         }
 
         //
-        // POST: /Counsels/Create
+        // POST: /Counsels2/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(NRBM_COUNSELS nrbm_counsels)
         {
             if (ModelState.IsValid)
@@ -55,11 +59,13 @@ namespace MvcLawFirm.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_counsels.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_counsels.LAWID);
             return View(nrbm_counsels);
         }
 
         //
-        // GET: /Counsels/Edit/5
+        // GET: /Counsels2/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -68,13 +74,16 @@ namespace MvcLawFirm.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_counsels.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_counsels.LAWID);
             return View(nrbm_counsels);
         }
 
         //
-        // POST: /Counsels/Edit/5
+        // POST: /Counsels2/Edit/5
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(NRBM_COUNSELS nrbm_counsels)
         {
             if (ModelState.IsValid)
@@ -83,11 +92,13 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FNAME", nrbm_counsels.CLIENTID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_counsels.LAWID);
             return View(nrbm_counsels);
         }
 
         //
-        // GET: /Counsels/Delete/5
+        // GET: /Counsels2/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -100,9 +111,10 @@ namespace MvcLawFirm.Controllers
         }
 
         //
-        // POST: /Counsels/Delete/5
+        // POST: /Counsels2/Delete/5
 
         [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             NRBM_COUNSELS nrbm_counsels = db.NRBM_COUNSELS.Find(id);

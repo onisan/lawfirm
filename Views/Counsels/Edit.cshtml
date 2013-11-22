@@ -10,21 +10,21 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_COUNSELS</legend>
+        <legend>COUNSELS</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID)
+            @Html.LabelFor(model => model.LAWID, "LAWYER")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LAWID)
+            @Html.DropDownList("LAWID", String.Empty)
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID)
+            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CLIENTID)
+            @Html.DropDownList("CLIENTID", String.Empty)
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 
@@ -37,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            <label for="EDATE">END DATE</label>)
+            <label for="EDATE">END DATE</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.EDATE)
