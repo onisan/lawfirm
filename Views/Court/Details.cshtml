@@ -7,6 +7,7 @@
 <h2>Court Details</h2>
 
 <fieldset>
+<<<<<<< HEAD
     <legend>COURTAPPEARANCE</legend>
 
     <!--<div class="display-label">
@@ -39,6 +40,33 @@
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.DATEON)
+=======
+    <legend>COURT APPEARANCE</legend>
+
+    <div class="display-label">
+         CLIENT
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
+    </div>
+
+    <div class="display-label">
+         LAWYER
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
+    </div>
+
+    <div class="display-label">
+         ADVERSE LAWYER
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.FullName)
+    </div>
+
+    <div class="display-label">
+         DATE
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
@@ -52,6 +80,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CAID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

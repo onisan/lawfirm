@@ -98,7 +98,7 @@
           <Key>
             <PropertyRef Name="ADLAWID" />
           </Key>
-          <Property Name="ADLAWID" Type="number" Nullable="false" />
+          <Property Name="ADLAWID" Type="number" Nullable="false" StoreGeneratedPattern="Computed" />
           <Property Name="FNAME" Type="varchar2" MaxLength="255" />
           <Property Name="LNAME" Type="varchar2" MaxLength="255" />
           <Property Name="ADDRESS" Type="varchar2" MaxLength="255" />
@@ -146,7 +146,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="number" Nullable="false" />
+          <Property Name="CASEID" Type="number" Nullable="false" StoreGeneratedPattern="Computed" />
           <Property Name="CLIENTID" Type="number" />
           <Property Name="SDATE" Type="date" />
           <Property Name="EDATE" Type="date" />
@@ -649,7 +649,7 @@
           <Key>
             <PropertyRef Name="ADLAWID" />
           </Key>
-          <Property Name="ADLAWID" Type="Int32" Nullable="false" />
+          <Property Name="ADLAWID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
           <Property Name="FNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="LNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="ADDRESS" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
@@ -703,7 +703,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="Int32" Nullable="false" />
+          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="DateTime" />
           <Property Name="EDATE" Type="DateTime" />

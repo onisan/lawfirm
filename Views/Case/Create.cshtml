@@ -4,13 +4,18 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create a Case</h2>
+<h2>Create</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>CASE</legend>
+<<<<<<< HEAD
+=======
+        @Html.HiddenFor(model=> model.CASEID)
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
 
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")
@@ -82,3 +87,4 @@
     @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
     @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
 }
+

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Cases</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,30 +15,28 @@
      } 
 <table>
     <tr>
+<<<<<<< HEAD
         <th>CLIENT</th>
+=======
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         <th>
-            STARTDATE
+            CLIENT
         </th>
         <th>
-            ENDDATE
+            START DATE
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EVIDENCE)
+            END DATE
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CATEGORY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LITIGATION)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NOTES)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+<<<<<<< HEAD
         <td>           
              @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
         </td>
@@ -47,18 +45,19 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EDATE)
+=======
+        <td>
+            @Html.DisplayFor(modelItem => item.NRBM_CLIENT.FNAME) @Html.DisplayFor(modelItem => item.NRBM_CLIENT.LNAME)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EVIDENCE)
+            @Html.DisplayFor(modelItem => item.SDATE)
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EDATE)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CATEGORY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LITIGATION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NOTES)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CASEID }) |

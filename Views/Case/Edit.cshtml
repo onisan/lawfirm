@@ -4,13 +4,25 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit Case</h2>
+<h2>Edit</h2>
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>CASE</legend>
+<<<<<<< HEAD
+=======
+        @Html.HiddenFor(model=> model.CASEID)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CASEID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CASEID)
+            @Html.ValidationMessageFor(model => model.CASEID)
+        </div>
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
 
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")

@@ -4,16 +4,23 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Case Details</h2>
+<h2>Details</h2>
 
 <fieldset>
-    <legend>NRBM_CASE</legend>
+    <legend>CASE</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CLIENTID)
+         @Html.DisplayNameFor(model => model.CASEID)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CLIENTID)
+        @Html.DisplayFor(model => model.CASEID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
     </div>
 
     <div class="display-label">
@@ -59,6 +66,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.CASEID }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

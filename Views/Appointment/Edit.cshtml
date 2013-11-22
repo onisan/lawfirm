@@ -11,8 +11,9 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_APPOINTMENT</legend>
-
+        <legend>APPOINTMENT</legend>
+        @Html.HiddenFor(model => model.APTID)
+        @Html.HiddenFor(model => model.CASEID)
         <div class="editor-label">
             @Html.LabelFor(model => model.LAWID, "LAWYER")
         </div>
@@ -65,4 +66,8 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval", "~/Scripts/jquery.ui.core.min.js", "~/Scripts/jquery.ui.datepicker.min.js", "~/Scripts/DatePickerReady.js")
     @Styles.Render("~/Content/themes/base/jquery.ui.core.css", "~/Content/themes/base/jquery.ui.datepicker.css", "~/Content/themes/base/jquery.ui.theme.css")
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e

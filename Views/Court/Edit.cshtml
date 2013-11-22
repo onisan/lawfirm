@@ -11,6 +11,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
+<<<<<<< HEAD
         <legend>COURTAPPEARANCE</legend>
 
         <!--<div class="editor-label">
@@ -21,6 +22,12 @@
             @Html.ValidationMessageFor(model => model.CASEID)
         </div>-->
 
+=======
+        <legend>COURT APPEARANCE</legend>
+        @Html.HiddenFor(model=> model.CAID)
+        @Html.HiddenFor(model=> model.CASEID)
+
+>>>>>>> 0eb27bb18fde4fb412fc7305adde719f3847945e
         <div class="editor-label">
             @Html.LabelFor(model => model.CLIENTID, "CLIENT")
         </div>
@@ -30,7 +37,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID, "NRBM_LAWYER")
+            @Html.LabelFor(model => model.LAWID, "LAWYER")
         </div>
         <div class="editor-field">
             @Html.DropDownList("LAWID", String.Empty)
@@ -38,7 +45,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ADLAWID, "NRBM_ADVERSELAWYER")
+            @Html.LabelFor(model => model.ADLAWID, "ADVERSE LAWYER")
         </div>
         <div class="editor-field">
             @Html.DropDownList("ADLAWID", String.Empty)
@@ -46,7 +53,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DATEON)
+            @Html.LabelFor(model => model.DATEON, "DATE")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DATEON)

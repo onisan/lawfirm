@@ -49,8 +49,8 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME");
-            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FNAME");
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName");
+            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FullName");
             return View();
         }
 
@@ -68,8 +68,8 @@ namespace MvcLawFirm.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_worksfor.LAWID);
-            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FNAME", nrbm_worksfor.STAFFID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_worksfor.LAWID);
+            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FullName", nrbm_worksfor.STAFFID);
             return View(nrbm_worksfor);
         }
 
@@ -83,8 +83,8 @@ namespace MvcLawFirm.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_worksfor.LAWID);
-            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FNAME", nrbm_worksfor.STAFFID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_worksfor.LAWID);
+            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FullName", nrbm_worksfor.STAFFID);
             return View(nrbm_worksfor);
         }
 
@@ -101,8 +101,8 @@ namespace MvcLawFirm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FNAME", nrbm_worksfor.LAWID);
-            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FNAME", nrbm_worksfor.STAFFID);
+            ViewBag.LAWID = new SelectList(db.NRBM_LAWYER, "LAWID", "FullName", nrbm_worksfor.LAWID);
+            ViewBag.STAFFID = new SelectList(db.NRBM_STAFF, "STAFFID", "FullName", nrbm_worksfor.STAFFID);
             return View(nrbm_worksfor);
         }
 
