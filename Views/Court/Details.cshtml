@@ -7,45 +7,31 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>NRBM_COURTAPPEARANCE</legend>
+    <legend>COURT APPEARANCE</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CAID)
+         CLIENT
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CAID)
+        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CASE.EVIDENCE)
+         LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CASE.EVIDENCE)
+        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_CLIENT.FNAME)
+         ADVERSE LAWYER
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME)
+        @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.LNAME)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_LAWYER.FNAME)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NRBM_ADVERSELAWYER.FNAME)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_ADVERSELAWYER.FNAME)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DATEON)
+         DATE
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
@@ -59,6 +45,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CAID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
