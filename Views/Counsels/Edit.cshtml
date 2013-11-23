@@ -7,13 +7,14 @@
 <h2>Edit Counsels Relation</h2>
 
 @using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>COUNSELS</legend>
+        <legend>Counsels</legend>
         @Html.HiddenFor(model=> model.COUNSELSID)
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID, "LAWYER")
+            @Html.LabelFor(model => model.LAWID, "Lawyer")
         </div>
         <div class="editor-field">
             @Html.DropDownList("LAWID", String.Empty)
@@ -21,7 +22,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
+            @Html.LabelFor(model => model.CLIENTID, "Client")
         </div>
         <div class="editor-field">
             @Html.DropDownList("CLIENTID", String.Empty)
@@ -29,7 +30,7 @@
         </div>
 
         <div class="editor-label">
-            <label for="SDATE">START DATE</label>
+            <label for="SDATE">Start Date</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.SDATE)
@@ -37,7 +38,7 @@
         </div>
 
         <div class="editor-label">
-            <label for="EDATE">END DATE</label>
+            <label for="EDATE">End Date</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.EDATE)
@@ -45,7 +46,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.HOURS)
+            @Html.LabelFor(model => model.HOURS, "Hours")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.HOURS)
@@ -53,7 +54,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FEES)
+            @Html.LabelFor(model => model.FEES, "Fees")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FEES)

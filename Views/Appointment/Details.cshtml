@@ -4,41 +4,41 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Appointment Details</h2>
 
 <fieldset>
-    <legend>APPOINTMENT</legend>
+    <legend>Appointment</legend>
 
     <div class="display-label">
-         LAWYER
+         Lawyer
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
     </div>
 
     <div class="display-label">
-         CLIENT
+         Client
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
     </div>
 
     <div class="display-label">
-         DATE
+         Date
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DATEON)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.LOCATION)
+         Location
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LOCATION)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DESCRIPTION)
+         Description
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.DESCRIPTION)

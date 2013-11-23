@@ -146,7 +146,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="number" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CASEID" Type="number" Nullable="false" StoreGeneratedPattern="None" />
           <Property Name="CLIENTID" Type="number" />
           <Property Name="SDATE" Type="date" />
           <Property Name="EDATE" Type="date" />
@@ -703,7 +703,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="Identity" a:GetterAccess="Public" />
+          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="None" a:GetterAccess="Public" />
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="DateTime" />
           <Property Name="EDATE" Type="DateTime" />

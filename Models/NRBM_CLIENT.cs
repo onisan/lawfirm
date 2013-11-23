@@ -29,6 +29,8 @@ namespace MvcLawFirm.Models
         public string EMAIL { get; set; }
         public string ADDRESS { get; set; }
         public Nullable<System.DateTime> DOB { get; set; }
+        public string FullName { get { return FNAME + " " + LNAME; } set { FNAME = FNAME; } }
+
     
         public virtual ICollection<NRBM_APPOINTMENT> NRBM_APPOINTMENT { get; set; }
         public virtual ICollection<NRBM_CASE> NRBM_CASE { get; set; }

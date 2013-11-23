@@ -4,31 +4,31 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Edit Staff Member</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
         <fieldset>
-        <legend>STAFF</legend>
+        <legend>Staff</legend>
 
         <div class="display-label">
-         FIRST NAME
+         First Name
         </div>
-        <div class="display-field">
-        @Html.DisplayFor(model => model.FNAME)
+        <div class="editor-field">
+        @Html.EditorFor(model => model.FNAME)
         </div>
 
         <div class="display-label">
-         LAST NAME
+         Last Name
         </div>
-        <div class="display-field">
-        @Html.DisplayFor(model => model.LNAME)
+        <div class="editor-field">
+        @Html.EditorFor(model => model.LNAME)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TITLE)
+            Title
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TITLE)

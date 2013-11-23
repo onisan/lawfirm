@@ -16,18 +16,23 @@
 <table>
     <tr>
         <th>
-            LAWYER
+            Lawyer
         </th>
         <th>
-            CLIENT
+            Client
         </th>
         <th>
-            START DATE
+            Start Date
         </th>
         <th>
-            END DATE
+            End Date
         </th>
-        <th></th>
+        <th>
+            Hours
+        </th>
+        <td>
+            Fees
+        </td>
     </tr>
 
 @foreach (var item in Model) {
@@ -43,6 +48,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HOURS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEES)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.COUNSELSID }) |

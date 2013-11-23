@@ -11,37 +11,35 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>COURT APPEARANCE</legend>
+        <legend>Court Appearance</legend>
         @Html.HiddenFor(model=> model.CAID)
         @Html.HiddenFor(model=> model.CASEID)
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID, "CLIENT")
+            @Html.LabelFor(model => model.CLIENTID, "Client")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("CLIENTID", String.Empty)
+            @Html.DropDownList("CLIENTID", String.Empty) @Html.ActionLink("Create New Client", "../Client/Create")
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 
         <div class="editor-label">
-            LAWYER
-            @Html.LabelFor(model => model.LAWID, "LAWYER")
+            @Html.LabelFor(model => model.LAWID, "Lawyer")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("LAWID", String.Empty)
+            @Html.DropDownList("LAWID", String.Empty) @Html.ActionLink("Create New Lawyer", "../Lawyer/Create")
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 
         <div class="editor-label">
-            ADVERSE LAWYER
-            @Html.LabelFor(model => model.ADLAWID, "ADVERSE LAWYER")
+            @Html.LabelFor(model => model.ADLAWID, "Adverse Lawyer")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("ADLAWID", String.Empty)
+            @Html.DropDownList("ADLAWID", String.Empty) @Html.ActionLink("Create New Adverse Lawyer", "../AdverseLawyer/Create")
             @Html.ValidationMessageFor(model => model.ADLAWID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DATEON, "DATE")
+            @Html.LabelFor(model => model.DATEON, "Court Date")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DATEON)
@@ -49,7 +47,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.RESULTS)
+            @Html.LabelFor(model => model.RESULTS, "Results")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.RESULTS)
