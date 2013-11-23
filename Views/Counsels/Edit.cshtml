@@ -7,7 +7,8 @@
 <h2>Edit Counsels Relation</h2>
 
 @using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Counsels</legend>

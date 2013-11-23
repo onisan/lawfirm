@@ -7,7 +7,8 @@
 <h2>Create a Counsel Relation</h2>
 
 @using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Counsels</legend>
@@ -16,7 +17,7 @@
             @Html.LabelFor(model => model.LAWID, "Lawyer")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("LAWID", String.Empty)
+            @Html.DropDownList("LAWID", String.Empty) @Html.ActionLink("Create New Lawyer", "../Lawyer/Create")
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 
@@ -24,7 +25,7 @@
             @Html.LabelFor(model => model.CLIENTID, "Client")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("CLIENTID", String.Empty)
+            @Html.DropDownList("CLIENTID", String.Empty) @Html.ActionLink("Create New Client", "../Client/Create")
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 
@@ -45,7 +46,7 @@
         </div>
 
         <div class="editor-label">
-            Hours
+            @Html.LabelFor(model => model.HOURS, "Hours")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.HOURS)
@@ -53,7 +54,7 @@
         </div>
 
         <div class="editor-label">
-            Fees
+            @Html.LabelFor(model => model.FEES, "Fees")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FEES)

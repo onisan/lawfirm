@@ -18,7 +18,7 @@
             @Html.LabelFor(model => model.CLIENTID, "Client")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("CLIENTID", String.Empty)
+            @Html.DropDownList("CLIENTID", String.Empty) @Html.ActionLink("Create New Client", "../Client/Create")
             @Html.ValidationMessageFor(model => model.CLIENTID)
         </div>
 

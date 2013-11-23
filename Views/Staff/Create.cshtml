@@ -4,31 +4,31 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Staff Member</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>STAFF</legend>
+        <legend>Staff</legend>
 
         <div class="display-label">
-            FIRST NAME
+            First Name
         </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.FNAME)
-        </div>
-
-        <div class="display-label">
-            LAST NAME
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.LNAME)
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FNAME)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TITLE)
+            Last Name
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LNAME)
+        </div>
+
+        <div class="editor-label">
+            Title
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TITLE)
@@ -43,6 +43,7 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+    <a href="javascript:void(0);" onclick="history.go(-1);">Back to Form</a>
 </div>
 
 @section Scripts {
