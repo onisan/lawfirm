@@ -27,8 +27,6 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Report(int id)
         {
-            lawRep.LAWID = id;
-            NRBM_LAWYER la = db.NRBM_LAWYER.Select(x => x.LAWID == id).Cast<NRBM_LAWYER>;
             return View();
         }
 

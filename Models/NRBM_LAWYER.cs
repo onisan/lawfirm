@@ -26,7 +26,6 @@ namespace MvcLawFirm.Models
         public string FNAME { get; set; }
         public string LNAME { get; set; }
         public string POSITION { get; set; }
-        public string FullName { get { return FNAME + " " + LNAME; } set { FNAME = FNAME; } }
     
         public virtual ICollection<NRBM_APPOINTMENT> NRBM_APPOINTMENT { get; set; }
         public virtual ICollection<NRBM_COUNSELS> NRBM_COUNSELS { get; set; }
