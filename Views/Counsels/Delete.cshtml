@@ -7,54 +7,55 @@
 <h2>Delete Counsels Relation</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Counsels</legend>
+<table>
+    <tr>
+        <th>
+            Lawyer
+        </th>
+        <th>
+            Client
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+            Hours
+        </th>
+        <th>
+            Fees
+        </th>
+    </tr>
 
-    <div class="display-label">
-         Lawyer
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FNAME) @Html.DisplayFor(model => model.NRBM_LAWYER.LNAME)
-    </div>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.HOURS)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.FEES)
+        </td>
+        <td>
+            @using (Html.BeginForm()) {
+             <p>
+                 <input type="submit" value="Delete" /> |
+                 @Html.ActionLink("Back to List", "Index")
+             </p>
+            }
+        </td>
+    </tr>
 
-    <div class="display-label">
-         Client
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FNAME) @Html.DisplayFor(model => model.NRBM_CLIENT.LNAME)
-    </div>
-
-    <div class="display-label">
-         Start Date
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.SDATE)
-    </div>
-
-    <div class="display-label">
-         End Date
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EDATE)
-    </div>
-
-    <div class="display-label">
-         Hours
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HOURS)
-    </div>
-
-    <div class="display-label">
-         Fees
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FEES)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+</table>

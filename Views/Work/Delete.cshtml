@@ -4,65 +4,60 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete Works For Relation</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>WORK</legend>
+<table>
+    <tr>
+        <th>
+            Staff
+        </th>
+        <th>
+            Lawyer
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+            Salary
+        </th>
+        <th>
+            Hours
+        </th>
+        <th></th>
+    </tr>
 
-    <div class="display-label">
-         Staff
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_STAFF.FullName)
-    </div>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.NRBM_STAFF.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.SALARY)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.HOURS)
+        </td>
+        <td>
+        @using (Html.BeginForm()) {
+         @Html.AntiForgeryToken()
+         <p>
+              <input type="submit" value="Delete" /> |
+              @Html.ActionLink("Back to List", "Index")
+         </p>
+        }
+        </td>
+    </tr>
 
-    <div class="display-label">
-         Lawyer
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_LAWYER.FullName)
-    </div>
-
-    <div class="editor-label">
-        Start Date
-     </div>
-     <!--<div class="editor-field">
-         @Html.EditorFor(model => model.SDATE)
-         @Html.ValidationMessageFor(model => model.SDATE)
-     </div>-->
-    <div class ="display-field">
-        @Html.DisplayFor(model => model.SDATE)
-    </div>
-    
-    <div class="editor-label">
-        End Date
-    </div>
-    <!--<div class="editor-field">
-        @Html.EditorFor(model => model.EDATE)
-        @Html.ValidationMessageFor(model => model.EDATE)
-    </div>-->
-    <div class ="display-field">
-        @Html.DisplayFor(model => model.EDATE)
-    </div>
-    <div class="display-label">
-         Salary
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.SALARY)
-    </div>
-
-    <div class="display-label">
-         Hours
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HOURS)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+</table>

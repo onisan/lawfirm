@@ -23,13 +23,18 @@ namespace MvcLawFirm.Controllers
         }
         public ActionResult Results(string searchString)
         {
+            string[] search = searchString.Split(null);
             var apt = from m in db.NRBM_WORKSFOR
-                      where ((string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.FNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_LAWYER.LNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_STAFF.FNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : m.NRBM_STAFF.LNAME.Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : (m.NRBM_LAWYER.FNAME + " " + m.NRBM_LAWYER.LNAME).Contains(searchString)) ||
-                      (string.IsNullOrEmpty(searchString) ? true : (m.NRBM_STAFF.FNAME + " " + m.NRBM_STAFF.LNAME).Contains(searchString)))
+                      where
+                     (
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) ||
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.LNAME))
+                     )
+                     ||
+                     (
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_STAFF.FNAME)) ||
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_STAFF.LNAME))
+                     )
                       select m;
             return View(apt.ToList());
         }

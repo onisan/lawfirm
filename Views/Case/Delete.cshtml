@@ -7,62 +7,63 @@
 <h2>Delete Case</h2>
 
 <h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Case</legend>
+<table>
+    <tr>
+        <th>
+            Client
+        </th>
+        <th>
+            Start Date
+        </th>
+        <th>
+            End Date
+        </th>
+        <th>
+            Evidence
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Litigation
+        </th>
+        <th>
+            Notes
+        </th>
+        <th></th>
+    </tr>
 
-    <div class="display-label">
-         Client
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
-    </div>
+    <tr>
+        <td>           
+            @Html.DisplayFor(model => model.NRBM_CLIENT.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.SDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EDATE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EVIDENCE)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CATEGORY)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LITIGATION)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.NOTES)
+        </td>
+        <td>
+            @using (Html.BeginForm()){
+            @Html.AntiForgeryToken()
+            <p>
+                 <input type="submit" value="Delete" /> |
+                 @Html.ActionLink("Back to List", "Index")
+            </p>
+            }
+        </td>
+    </tr>
 
-    <div class="display-label">
-         Start Date
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.SDATE)
-    </div>
-
-    <div class="display-label">
-         End Date
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EDATE)
-    </div>
-
-    <div class="display-label">
-         Evidence
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.EVIDENCE)
-    </div>
-
-    <div class="display-label">
-         Category
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CATEGORY)
-    </div>
-
-    <div class="display-label">
-         Litigation
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LITIGATION)
-    </div>
-
-    <div class="display-label">
-         Notes
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NOTES)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+</table>
