@@ -1,0 +1,7 @@
+﻿body {
+    visibility: hidden;
+}
+
+.main-content {
+    visibility: visible;
+}
