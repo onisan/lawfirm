@@ -43,12 +43,12 @@ namespace MvcLawFirm.Controllers
             var apt = from m in db.NRBM_APPOINTMENT
                      where 
                      (
-                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) &&
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.LNAME))
                      ) 
                      ||
                      (
-                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.FNAME)) &&
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.LNAME))
                      )
                 select m;

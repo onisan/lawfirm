@@ -11,6 +11,9 @@ namespace MvcLawFirm.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Metadata.Edm;
+    using System.Data.Services.Common;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class NRBM_APPOINTMENT
     {
@@ -18,7 +21,7 @@ namespace MvcLawFirm.Models
         {
             this.NRBM_SETS = new HashSet<NRBM_SETS>();
         }
-    
+        
         public int APTID { get; set; }
         public Nullable<int> LAWID { get; set; }
         public Nullable<int> CASEID { get; set; }
