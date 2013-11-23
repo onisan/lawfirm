@@ -25,16 +25,17 @@ namespace MvcLawFirm.Controllers
         {
             string[] search = searchString.Split(null);
             var apt = from m in db.NRBM_COUNSELS
-                      where 
+                      where
                      (
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.LNAME))
-                     ) 
+                     )
                      ||
                      (
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.LNAME))
                      )
+                      select m;
             return View(apt.ToList());
         }
         //
