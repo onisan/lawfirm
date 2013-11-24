@@ -9,7 +9,9 @@
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
     <legend>Lawyer</legend>
-
+    
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
     <div class="display-label">
          Name
     </div>
