@@ -101,7 +101,7 @@ namespace MvcLawFirm.Controllers
                 var odb = ((IObjectContextAdapter)db).ObjectContext;
                 try
                 {
-                db.SaveChanges();
+                    db.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
