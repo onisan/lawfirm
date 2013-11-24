@@ -27,10 +27,12 @@ namespace MvcLawFirm.Models
         public string LNAME { get; set; }
         public string POSITION { get; set; }
         public string FullName { get { return FNAME + " " + LNAME; } set { FNAME = FNAME; } }
+
         public decimal Earnings { get; set; }
         public decimal Expenses { get; set; }
         public int Appointments { get; set; }
         public int CourtAppearances { get; set; }
+        public int Cases { get; set; }
         public int Clients { get; set; }
     
         public virtual ICollection<NRBM_APPOINTMENT> NRBM_APPOINTMENT { get; set; }

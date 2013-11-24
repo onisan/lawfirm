@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLawFirm.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace MvcLawFirm.Controllers
 {
@@ -96,9 +98,15 @@ namespace MvcLawFirm.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(nrbm_case).State = EntityState.Modified;
-
-                    db.SaveChanges();
-
+                var odb = ((IObjectContextAdapter)db).ObjectContext;
+                try
+                {
+                db.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    odb.Refresh(RefreshMode.StoreWins, nrbm_case);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);

@@ -146,7 +146,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="number" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CASEID" Type="number" Nullable="false" StoreGeneratedPattern="None" />
           <Property Name="CLIENTID" Type="number" />
           <Property Name="SDATE" Type="date" />
           <Property Name="EDATE" Type="date" />
@@ -201,8 +201,8 @@
           <Property Name="COUNSELSID" Type="number" Nullable="false" />
           <Property Name="LAWID" Type="number" />
           <Property Name="CLIENTID" Type="number" />
-          <Property Name="SDATE" Type="varchar2" MaxLength="100" />
-          <Property Name="EDATE" Type="varchar2" MaxLength="100" />
+          <Property Name="SDATE" Type="date" />
+          <Property Name="EDATE" Type="date" />
           <Property Name="HOURS" Type="number" />
           <Property Name="FEES" Type="number" />
         </EntityType>
@@ -703,7 +703,7 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
-          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="None" ConcurrencyMode="None" />
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="DateTime" />
           <Property Name="EDATE" Type="DateTime" />
@@ -766,8 +766,8 @@
           <Property Name="COUNSELSID" Type="Int32" Nullable="false" />
           <Property Name="LAWID" Type="Int32" />
           <Property Name="CLIENTID" Type="Int32" />
-          <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SDATE" Type="DateTime" />
+          <Property Name="EDATE" Type="DateTime" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FEES" Type="Decimal" />
           <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_COUNSELS_CLIENTID" FromRole="NRBM_COUNSELS" ToRole="NRBM_CLIENT" />
