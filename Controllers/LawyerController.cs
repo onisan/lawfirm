@@ -125,7 +125,7 @@ namespace MvcLawFirm.Controllers
                 mem.Clients = mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Count();
                 mem.CourtAppearances = mem.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == mem.LAWID).Count();
                 mem.Earnings = mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Sum(x => x.HOURS.Value) * mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Sum(x => x.FEES.Value);
-                mem.Expenses = mem.NRBM_WORKSFOR.Where(x => x.LAWID == mem.LAWID).Sum(x => x.SALARY.Value) / 12;
+                mem.Expenses = mem.NRBM_WORKSFOR.Where(x => x.LAWID == mem.LAWID).Sum(x => x.SALARY.Value);
             }
             return View(lrep.OrderByDescending(x=>x.Earnings));
         }
@@ -137,6 +137,11 @@ namespace MvcLawFirm.Controllers
             law.NRBM_COUNSELS = law.NRBM_COUNSELS.Where(x => x.LAWID == law.LAWID).ToList();
             law.NRBM_COURTAPPEARANCE = law.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == law.LAWID).ToList();
             law.NRBM_WORKSFOR = law.NRBM_WORKSFOR.Where(x => x.LAWID == law.LAWID).ToList();
+            law.Appointments = law.NRBM_APPOINTMENT.Where(x => x.LAWID == law.LAWID).Count();
+            law.Clients = law.NRBM_COUNSELS.Where(x => x.LAWID == law.LAWID).Count();
+            law.CourtAppearances = law.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == law.LAWID).Count();
+            law.Earnings = law.NRBM_COUNSELS.Where(x => x.LAWID == law.LAWID).Sum(x => x.HOURS.Value) * law.NRBM_COUNSELS.Where(x => x.LAWID == law.LAWID).Sum(x => x.FEES.Value);
+            law.Expenses = law.NRBM_WORKSFOR.Where(x => x.LAWID == law.LAWID).Sum(x => x.SALARY.Value);
             return View(law);
         }
 
