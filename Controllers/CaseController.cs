@@ -96,7 +96,9 @@ namespace MvcLawFirm.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(nrbm_case).State = EntityState.Modified;
-                db.SaveChanges();
+
+                    db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
