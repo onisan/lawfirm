@@ -17,7 +17,7 @@
             @Html.LabelFor(model => model.STAFFID, "Staff")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("STAFFID", String.Empty)
+            @Html.DropDownList("STAFFID", String.Empty) @Html.ActionLink("Create New Staff Member", "../Staff/Create")
             @Html.ValidationMessageFor(model => model.STAFFID)
         </div>
 
@@ -25,7 +25,7 @@
             @Html.LabelFor(model => model.LAWID, "Lawyer")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("LAWID", String.Empty)
+            @Html.DropDownList("LAWID", String.Empty) @Html.ActionLink("Create New Lawyer", "../Lawyer/Create")
             @Html.ValidationMessageFor(model => model.LAWID)
         </div>
 

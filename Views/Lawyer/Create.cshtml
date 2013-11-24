@@ -4,24 +4,16 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create Lawyer</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_LAWYER</legend>
+        <legend>Lawyer</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LAWID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LAWID)
-            @Html.ValidationMessageFor(model => model.LAWID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FNAME)
+            First Name
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FNAME)
@@ -29,7 +21,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LNAME)
+            Last Name
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LNAME)
@@ -37,7 +29,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.POSITION)
+            Position
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.POSITION)
@@ -52,6 +44,7 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+    <a href="javascript:void(0);" onclick="history.go(-1);">Back to Form</a>
 </div>
 
 @section Scripts {

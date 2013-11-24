@@ -1,0 +1,144 @@
+@model IEnumerable<MvcLawFirm.Models.NRBM_LAWYER>
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Report</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="width: 100%;">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Position
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Earnings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expenses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appointments)
+        </th>
+        <th>
+            Court Dates
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clients)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSITION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Earnings)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expenses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Appointments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtAppearances)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clients)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "ReportDetails", new { id=item.LAWID })
+        </td>
+    </tr>
+}
+
+</table>
+=======
+﻿@model MvcLawFirm.Models.LawyerReport
+
+@{
+    ViewBag.Title = "Lawyer Report";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.POSITION)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Earnings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expenses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourtAppearances)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cases)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients)
+            </th>
+        </tr>
+    
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.POSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Earnings)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Expenses)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Appointments)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CourtAppearances)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Cases)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Clients)
+            </td>
+        </tr>
+    
+    </table>
+</body>
+</html>

@@ -10,18 +10,10 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>NRBM_PHONE</legend>
+        <legend>Phone Numbers</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CLIENTID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CLIENTID)
-            @Html.ValidationMessageFor(model => model.CLIENTID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HOME)
+            Home
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.HOME)
@@ -29,7 +21,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CELL)
+            Cell
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.CELL)
@@ -37,7 +29,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.BUSINESS)
+            Business
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.BUSINESS)
