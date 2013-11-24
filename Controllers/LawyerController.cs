@@ -128,6 +128,16 @@ namespace MvcLawFirm.Controllers
             return View(lrep.OrderByDescending(x=>x.Earnings));
         }
 
+        public ActionResult ReportDetails(int id)
+        {
+            NRBM_LAWYER law = db.NRBM_LAWYER.Find(id);
+            law.NRBM_APPOINTMENT = law.NRBM_APPOINTMENT.Where(x => x.LAWID == law.LAWID).ToList();
+            law.NRBM_COUNSELS = law.NRBM_COUNSELS.Where(x => x.LAWID == law.LAWID).ToList();
+            law.NRBM_COURTAPPEARANCE = law.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == law.LAWID).ToList();
+            law.NRBM_WORKSFOR = law.NRBM_WORKSFOR.Where(x => x.LAWID == law.LAWID).ToList();
+            return View(law);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
