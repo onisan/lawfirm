@@ -113,6 +113,20 @@ namespace MvcLawFirm.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult Report()
+        {
+            IEnumerable<NRBM_LAWYER> lrep = db.NRBM_LAWYER.ToList();
+            IEnumerable<NRBM_LAWYER> law = db.NRBM_LAWYER.ToList();
+
+            foreach(var mem in lrep) {
+                mem.Appointments = mem.NRBM_APPOINTMENT.Where(x=>x.LAWID == mem.LAWID).Count();
+                mem.Clients = mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Count();
+                mem.CourtAppearances = mem.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == mem.LAWID).Count();
+                mem.Earnings = mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Sum(x => x.HOURS.Value) * mem.NRBM_COUNSELS.Where(x => x.LAWID == mem.LAWID).Sum(x => x.FEES.Value);
+                mem.Expenses = mem.NRBM_WORKSFOR.Where(x => x.LAWID == mem.LAWID).Sum(x => x.SALARY.Value) / 12;
+            }
+            return View(lrep.OrderByDescending(x=>x.Earnings));
+        }
 
         protected override void Dispose(bool disposing)
         {
