@@ -204,7 +204,7 @@
           <Property Name="SDATE" Type="varchar2" MaxLength="100" />
           <Property Name="EDATE" Type="varchar2" MaxLength="100" />
           <Property Name="HOURS" Type="number" />
-          <Property Name="FEES" Type="varchar2" MaxLength="100" />
+          <Property Name="FEES" Type="number" />
         </EntityType>
         <EntityType Name="NRBM_COUNSELSHISTORY">
           <Key>
@@ -216,7 +216,7 @@
           <Property Name="SDATE" Type="varchar2" MaxLength="100" />
           <Property Name="EDATE" Type="varchar2" MaxLength="100" />
           <Property Name="HOURS" Type="number" />
-          <Property Name="FEES" Type="varchar2" MaxLength="100" />
+          <Property Name="FEES" Type="number" />
           <Property Name="DATEDELETED" Type="date" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCE">
@@ -301,7 +301,7 @@
             <PropertyRef Name="PHONEID" />
           </Key>
           <Property Name="PHONEID" Type="number" Nullable="false" />
-          <Property Name="CLIENTID" Type="number" Nullable="false" />
+          <Property Name="CLIENTID" Type="number" />
           <Property Name="HOME" Type="varchar2" MaxLength="100" />
           <Property Name="CELL" Type="varchar2" MaxLength="100" />
           <Property Name="BUSINESS" Type="varchar2" MaxLength="100" />
@@ -769,7 +769,7 @@
           <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="FEES" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FEES" Type="Decimal" />
           <NavigationProperty Name="NRBM_CLIENT" Relationship="Model.FK_COUNSELS_CLIENTID" FromRole="NRBM_COUNSELS" ToRole="NRBM_CLIENT" />
           <NavigationProperty Name="NRBM_LAWYER" Relationship="Model.FK_COUNSELS_LAWID" FromRole="NRBM_COUNSELS" ToRole="NRBM_LAWYER" />
         </EntityType>
@@ -783,7 +783,7 @@
           <Property Name="SDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="EDATE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="HOURS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="FEES" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FEES" Type="Decimal" />
           <Property Name="DATEDELETED" Type="DateTime" />
         </EntityType>
         <EntityType Name="NRBM_COURTAPPEARANCE">

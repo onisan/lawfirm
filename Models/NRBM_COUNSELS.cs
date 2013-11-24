@@ -20,7 +20,7 @@ namespace MvcLawFirm.Models
         public string SDATE { get; set; }
         public string EDATE { get; set; }
         public Nullable<decimal> HOURS { get; set; }
-        public string FEES { get; set; }
+        public Nullable<decimal> FEES { get; set; }
     
         public virtual NRBM_CLIENT NRBM_CLIENT { get; set; }
         public virtual NRBM_LAWYER NRBM_LAWYER { get; set; }
