@@ -510,6 +510,12 @@
     <Content Include="Views\Counsels\Results.cshtml" />
     <Content Include="Views\Work\Results.cshtml" />
     <Content Include="Views\Court\Results.cshtml" />
+    <Content Include="Views\Lawyer\Report.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Lawyer\ReportDetails.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
