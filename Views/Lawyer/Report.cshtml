@@ -6,62 +6,62 @@
 
 <h2>Report</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 <table style="width: 100%;">
-    <tr>
-        <th>
+        <tr>
+            <th>
             Name
-        </th>
-        <th>
+            </th>
+            <th>
             Position
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Earnings)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Expenses)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Appointments)
-        </th>
-        <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Earnings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expenses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments)
+            </th>
+            <th>
             Court Dates
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Clients)
-        </th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients)
+            </th>
         <th></th>
-    </tr>
-
+        </tr>
+    
 @foreach (var item in Model) {
-    <tr>
-        <td>
+        <tr>
+            <td>
             @Html.DisplayFor(modelItem => item.FullName)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.POSITION)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.Earnings)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.Expenses)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.Appointments)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.CourtAppearances)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.DisplayFor(modelItem => item.Clients)
-        </td>
-        <td>
+            </td>
+            <td>
             @Html.ActionLink("Details", "ReportDetails", new { id=item.LAWID })
-        </td>
-    </tr>
+            </td>
+        </tr>
 }
-
-</table>
+    
+    </table>

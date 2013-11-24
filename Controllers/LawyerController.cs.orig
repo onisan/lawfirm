@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -130,6 +130,7 @@ namespace MvcLawFirm.Controllers
             return View(lrep.OrderByDescending(x=>x.Earnings));
         }
 
+<<<<<<< HEAD
         public ActionResult ReportDetails(int id)
         {
             NRBM_LAWYER law = db.NRBM_LAWYER.Find(id);
@@ -138,6 +139,25 @@ namespace MvcLawFirm.Controllers
             law.NRBM_COURTAPPEARANCE = law.NRBM_COURTAPPEARANCE.Where(x => x.LAWID == law.LAWID).ToList();
             law.NRBM_WORKSFOR = law.NRBM_WORKSFOR.Where(x => x.LAWID == law.LAWID).ToList();
             return View(law);
+=======
+        public ActionResult Report(int id = 0)
+        {
+            NRBM_LAWYER nrbm_lawyer = db.NRBM_LAWYER.Find(id);
+            if (nrbm_lawyer == null)
+            {
+                return HttpNotFound();
+            }
+            LawyerReport lrep = new LawyerReport();
+            lrep.LAWID = nrbm_lawyer.LAWID;
+            lrep.FNAME = nrbm_lawyer.FNAME;
+            lrep.LNAME = nrbm_lawyer.LNAME;
+            lrep.POSITION = nrbm_lawyer.POSITION;
+            lrep.Appointments = nrbm_lawyer.NRBM_APPOINTMENT.Where(x => x.LAWID == id).Count();
+            lrep.Clients = nrbm_lawyer.NRBM_COUNSELS.Where(x => x.LAWID == id).Count();
+            lrep.Expenses = nrbm_lawyer.NRBM_WORKSFOR.Where(x => x.LAWID == id).Sum(x => x.SALARY.Value);
+            lrep.Earnings = nrbm_lawyer.NRBM_COUNSELS.Where(x => x.LAWID == id).Sum(x => x.HOURS.Value) * 150;
+            return View(lrep);
+>>>>>>> 1880a84cf321dda5a76482a4782fc63143cc7a3b
         }
 
         protected override void Dispose(bool disposing)
