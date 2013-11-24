@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using MvcLawFirm.Models;
 
+
 namespace MvcLawFirm.Controllers
 {
     public class LawyerController : Controller
@@ -33,6 +34,7 @@ namespace MvcLawFirm.Controllers
             }
             return View(nrbm_lawyer);
         }
+
 
         //
         // GET: /Lawyer/Create
@@ -112,6 +114,25 @@ namespace MvcLawFirm.Controllers
             db.NRBM_LAWYER.Remove(nrbm_lawyer);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Report(int id = 0)
+        {
+            NRBM_LAWYER nrbm_lawyer = db.NRBM_LAWYER.Find(id);
+            if (nrbm_lawyer == null)
+            {
+                return HttpNotFound();
+            }
+            LawyerReport lrep = new LawyerReport();
+            lrep.LAWID = nrbm_lawyer.LAWID;
+            lrep.FNAME = nrbm_lawyer.FNAME;
+            lrep.LNAME = nrbm_lawyer.LNAME;
+            lrep.POSITION = nrbm_lawyer.POSITION;
+            lrep.Appointments = nrbm_lawyer.NRBM_APPOINTMENT.Where(x => x.LAWID == id).Count();
+            lrep.Clients = nrbm_lawyer.NRBM_COUNSELS.Where(x => x.LAWID == id).Count();
+            lrep.Expenses = nrbm_lawyer.NRBM_WORKSFOR.Where(x => x.LAWID == id).Sum(x => x.SALARY.Value);
+            lrep.Earnings = nrbm_lawyer.NRBM_COUNSELS.Where(x => x.LAWID == id).Sum(x => x.HOURS.Value) * 150;
+            return View(lrep);
         }
 
         protected override void Dispose(bool disposing)

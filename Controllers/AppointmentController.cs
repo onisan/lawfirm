@@ -18,7 +18,7 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            var nrbm_appointment = db.NRBM_APPOINTMENT.Include(n => n.NRBM_CASE).Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER);
+            var nrbm_appointment = db.NRBM_APPOINTMENT.Include(n => n.NRBM_CASE).Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER).Take(20);
             return View(nrbm_appointment.ToList());
         }
 
@@ -43,12 +43,12 @@ namespace MvcLawFirm.Controllers
             var apt = from m in db.NRBM_APPOINTMENT
                      where 
                      (
-                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) &&
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_LAWYER.LNAME))
                      ) 
                      ||
                      (
-                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.FNAME)) &&
+                        (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.FNAME)) ||
                         (string.IsNullOrEmpty(searchString) ? true : search.Contains(m.NRBM_CLIENT.LNAME))
                      )
                 select m;
