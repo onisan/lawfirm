@@ -1,4 +1,4 @@
-@model MvcLawFirm.Models.NRBM_LAWYER
+﻿@model MvcLawFirm.Models.NRBM_LAWYER
 
 @{
     ViewBag.Title = "Delete Lawyer";
@@ -9,9 +9,13 @@
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
     <legend>Lawyer</legend>
+<<<<<<< HEAD
+
+=======
     
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+>>>>>>> 65fdc61ab53aca711b61ac9467e4c567d44612ff
     <div class="display-label">
          Name
     </div>

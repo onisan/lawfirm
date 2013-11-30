@@ -1,4 +1,4 @@
-@model IEnumerable<MvcLawFirm.Models.NRBM_LAWYER>
+﻿@model IEnumerable<MvcLawFirm.Models.NRBM_LAWYER>
 
 @{
     ViewBag.Title = "Index";
@@ -23,7 +23,11 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+<<<<<<< HEAD
+            @Html.DisplayFor(modelItem => item.FNAME) @Html.DisplayFor(modelItem => item.LNAME)
+=======
             @Html.DisplayFor(modelItem => item.FullName)
+>>>>>>> 65fdc61ab53aca711b61ac9467e4c567d44612ff
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.POSITION)
@@ -31,7 +35,11 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.LAWID }) |
             @Html.ActionLink("Details", "Details", new { id=item.LAWID }) |
+<<<<<<< HEAD
+            @Html.ActionLink("Report", "Report", new { id=item.LAWID }) |
+=======
             @Html.ActionLink("Report", "ReportDetails", new { id=item.LAWID }) |
+>>>>>>> 65fdc61ab53aca711b61ac9467e4c567d44612ff
             @Html.ActionLink("Delete", "Delete", new { id=item.LAWID })
         </td>
     </tr>

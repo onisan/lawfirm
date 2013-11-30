@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -703,7 +703,11 @@
           <Key>
             <PropertyRef Name="CASEID" />
           </Key>
+<<<<<<< HEAD
+          <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="None" a:GetterAccess="Public" />
+=======
           <Property Name="CASEID" Type="Int32" Nullable="false" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="None" ConcurrencyMode="None" />
+>>>>>>> 65fdc61ab53aca711b61ac9467e4c567d44612ff
           <Property Name="CLIENTID" Type="Int32" />
           <Property Name="SDATE" Type="DateTime" />
           <Property Name="EDATE" Type="DateTime" />

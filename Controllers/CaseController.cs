@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLawFirm.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace MvcLawFirm.Controllers
 {
@@ -18,7 +20,7 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            var nrbm_case = db.NRBM_CASE.Include(n => n.NRBM_CLIENT);
+            var nrbm_case = db.NRBM_CASE.Include(n => n.NRBM_CLIENT).Take(20);
             return View(nrbm_case.ToList());
         }
         public ActionResult Results(string searchString)
@@ -64,8 +66,17 @@ namespace MvcLawFirm.Controllers
         {
             if (ModelState.IsValid)
             {
+                nrbm_case.CASEID = db.NRBM_CASE.Max(x => x.CASEID) + 1;
                 db.NRBM_CASE.Add(nrbm_case);
-                db.SaveChanges();
+                var odb = ((IObjectContextAdapter)db).ObjectContext;
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateException)
+                {
+                    odb.Refresh(RefreshMode.ClientWins, nrbm_case);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
@@ -96,7 +107,15 @@ namespace MvcLawFirm.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(nrbm_case).State = EntityState.Modified;
-                db.SaveChanges();
+                var odb = ((IObjectContextAdapter)db).ObjectContext;
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    odb.Refresh(RefreshMode.StoreWins, nrbm_case);
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.CLIENTID = new SelectList(db.NRBM_CLIENT, "CLIENTID", "FullName", nrbm_case.CLIENTID);
@@ -125,7 +144,15 @@ namespace MvcLawFirm.Controllers
         {
             NRBM_CASE nrbm_case = db.NRBM_CASE.Find(id);
             db.NRBM_CASE.Remove(nrbm_case);
-            db.SaveChanges();
+            var odb = ((IObjectContextAdapter)db).ObjectContext;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                odb.Refresh(RefreshMode.StoreWins, nrbm_case);
+            }
             return RedirectToAction("Index");
         }
 

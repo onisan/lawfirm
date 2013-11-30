@@ -20,7 +20,7 @@ namespace MvcLawFirm.Models
         public string SDATE { get; set; }
         public string EDATE { get; set; }
         public Nullable<decimal> HOURS { get; set; }
-        public string FEES { get; set; }
+        public Nullable<decimal> FEES { get; set; }
         public Nullable<System.DateTime> DATEDELETED { get; set; }
     }
 }

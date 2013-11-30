@@ -1,27 +1,21 @@
-﻿@model MvcLawFirm.Models.LawyerReport
+@model IEnumerable<MvcLawFirm.Models.NRBM_LAWYER>
 
 @{
-    ViewBag.Title = "Lawyer Report";
+    ViewBag.Title = "Report";
 }
 
-<!DOCTYPE html>
+<h2>Report</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table>
+<table style="width: 100%;">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FullName)
+            Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.POSITION)
+            Position
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Earnings)
@@ -33,44 +27,41 @@
                 @Html.DisplayNameFor(model => model.Appointments)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CourtAppearances)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cases)
+            Court Dates
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Clients)
             </th>
+        <th></th>
         </tr>
     
-
+@foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(model => model.FullName)
+            @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
-                @Html.DisplayFor(model => model.POSITION)
+            @Html.DisplayFor(modelItem => item.POSITION)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Earnings)
+            @Html.DisplayFor(modelItem => item.Earnings)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Expenses)
+            @Html.DisplayFor(modelItem => item.Expenses)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Appointments)
+            @Html.DisplayFor(modelItem => item.Appointments)
             </td>
             <td>
-                @Html.DisplayFor(model => model.CourtAppearances)
+            @Html.DisplayFor(modelItem => item.CourtAppearances)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Cases)
+            @Html.DisplayFor(modelItem => item.Clients)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Clients)
+            @Html.ActionLink("Details", "ReportDetails", new { id=item.LAWID })
             </td>
         </tr>
+}
     
     </table>
-</body>
-</html>

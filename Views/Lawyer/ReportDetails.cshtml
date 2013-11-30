@@ -1,0 +1,151 @@
+﻿@model MvcLawFirm.Models.NRBM_LAWYER
+
+@{
+    ViewBag.Title = "ReportDetails";
+}
+
+<h2>Report Details for @Html.DisplayFor(model => model.FullName)</h2>
+
+<fieldset>
+    <legend>Lawyer Report Details</legend>
+    <table style="width: 100%;">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Earnings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expenses)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Appointments)
+            </th>
+            <th>
+                Court Dates
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Clients)
+            </th>
+        </tr>
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.POSITION)
+            </td>
+            <td>
+                $@Html.DisplayFor(model => model.Earnings)
+            </td>
+            <td>
+                $@Html.DisplayFor(model => model.Expenses)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Appointments)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CourtAppearances)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Clients)
+            </td>
+        </tr>
+    </table>
+
+
+
+    <table style="width: 75%; margin: 0 auto;">
+        <caption><h3>Income Details</h3></caption>
+        <tr>
+            <th>Client</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Hours</th>
+            <th>Fees</th>
+        </tr>
+        @foreach(var m in Model.NRBM_COUNSELS)
+        {
+            <tr>
+                <td>@Html.DisplayFor(mItem => m.NRBM_CLIENT.FullName)</td>
+                <td>@Html.DisplayFor(mItem => m.SDATE)</td>
+                <td>@Html.DisplayFor(mItem => m.EDATE)</td>
+                <td>@Html.DisplayFor(mItem => m.HOURS)</td>
+                <td>$@Html.DisplayFor(mItem => m.FEES)/hr</td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+
+    <table style="width: 75%; margin: 0 auto;">
+        <caption><h3>Expense Details</h3></caption>
+        <tr>
+            <th>Staff</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Hours</th>
+            <th>Annual Salary</th>
+        </tr>
+        @foreach(var m in Model.NRBM_WORKSFOR)
+        {
+            <tr>
+                <td>@Html.DisplayFor(mItem => m.NRBM_STAFF.FullName)</td>
+                <td>@Html.DisplayFor(mItem => m.SDATE)</td>
+                <td>@Html.DisplayFor(mItem => m.EDATE)</td>
+                <td>@Html.DisplayFor(mItem => m.HOURS)</td>
+                <td>$@Html.DisplayFor(mItem => m.SALARY)/yr</td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+
+    <table style="width: 75%; margin: 0 auto;">
+        <caption><h3>Appointent Details</h3></caption>
+        <tr>
+            <th>Client</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+        @foreach(var m in Model.NRBM_APPOINTMENT)
+        {
+            <tr>
+                <td>@Html.DisplayFor(mItem => m.NRBM_CLIENT.FullName)</td>
+                <td>@Html.DisplayFor(mItem => m.LOCATION)</td>
+                <td>@Html.DisplayFor(mItem => m.DESCRIPTION)</td>
+                <td>@Html.DisplayFor(mItem => m.DATEON)</td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+
+    <table style="width: 75%; margin: 0 auto;">
+        <caption><h3>Court Date Details</h3></caption>
+        <tr>
+            <th>Client</th>
+            <th>Adverse Lawyer</th>
+            <th>Results</th>
+            <th>Date</th>
+        </tr>
+        @foreach(var m in Model.NRBM_COURTAPPEARANCE)
+        {
+            <tr>
+                <td>@Html.DisplayFor(mItem => m.NRBM_CLIENT.FullName)</td>
+                <td>@Html.DisplayFor(mItem => m.NRBM_ADVERSELAWYER.FullName)</td>
+                <td>@Html.DisplayFor(mItem => m.RESULTS)</td>
+                <td>@Html.DisplayFor(mItem => m.DATEON)</td>
+            </tr>
+        }
+    </table>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

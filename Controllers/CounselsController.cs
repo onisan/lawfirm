@@ -18,7 +18,7 @@ namespace MvcLawFirm.Controllers
 
         public ActionResult Index()
         {
-            var nrbm_counsels = db.NRBM_COUNSELS.Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER);
+            var nrbm_counsels = db.NRBM_COUNSELS.Include(n => n.NRBM_CLIENT).Include(n => n.NRBM_LAWYER).Take(20);
             return View(nrbm_counsels.ToList());
         }
         public ActionResult Results(string searchString)

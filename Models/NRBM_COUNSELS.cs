@@ -17,10 +17,10 @@ namespace MvcLawFirm.Models
         public int COUNSELSID { get; set; }
         public Nullable<int> LAWID { get; set; }
         public Nullable<int> CLIENTID { get; set; }
-        public string SDATE { get; set; }
-        public string EDATE { get; set; }
+        public Nullable<System.DateTime> SDATE { get; set; }
+        public Nullable<System.DateTime> EDATE { get; set; }
         public Nullable<decimal> HOURS { get; set; }
-        public string FEES { get; set; }
+        public Nullable<decimal> FEES { get; set; }
     
         public virtual NRBM_CLIENT NRBM_CLIENT { get; set; }
         public virtual NRBM_LAWYER NRBM_LAWYER { get; set; }
